@@ -1,0 +1,86 @@
+[
+ {
+  "_id": "P1",
+  "tenPhong": "P1",
+  "sucChua": 18,
+  "trangThaiPhong": "ChuaSuDung",
+  "moTa": "76 Phạm Tứ · 18 chỗ"
+ },
+ {
+  "_id": "P101",
+  "tenPhong": "P.101",
+  "sucChua": 20,
+  "trangThaiPhong": "ChuaSuDung",
+  "moTa": "Tầng 1 · 20 chỗ"
+ },
+ {
+  "_id": "P102",
+  "tenPhong": "P.102",
+  "sucChua": 16,
+  "trangThaiPhong": "ChuaSuDung",
+  "moTa": "Tầng 1 · 16 chỗ"
+ },
+ {
+  "_id": "P2",
+  "tenPhong": "P2",
+  "sucChua": 18,
+  "trangThaiPhong": "ChuaSuDung",
+  "moTa": "76 Phạm Tứ · 18 chỗ"
+ },
+ {
+  "_id": "P201",
+  "tenPhong": "P.201",
+  "sucChua": 24,
+  "trangThaiPhong": "ChuaSuDung",
+  "moTa": "Tầng 2 · 24 chỗ"
+ },
+ {
+  "_id": "P202",
+  "tenPhong": "P.202",
+  "sucChua": 24,
+  "trangThaiPhong": "ChuaSuDung",
+  "moTa": "Tầng 2 · 24 chỗ"
+ },
+ {
+  "_id": "P3",
+  "tenPhong": "P3",
+  "sucChua": 15,
+  "trangThaiPhong": "ChuaSuDung",
+  "moTa": "76 Phạm Tứ · 15 chỗ"
+ },
+ {
+  "_id": "P301",
+  "tenPhong": "P.301",
+  "sucChua": 30,
+  "trangThaiPhong": "ChuaSuDung",
+  "moTa": "Lab · 30 chỗ"
+ },
+ {
+  "_id": "P302",
+  "tenPhong": "P.302",
+  "sucChua": 20,
+  "trangThaiPhong": "ChuaSuDung",
+  "moTa": "Tầng 3 · 20 chỗ"
+ },
+ {
+  "_id": "P303",
+  "tenPhong": "P.303",
+  "sucChua": 20,
+  "trangThaiPhong": "ChuaSuDung",
+  "moTa": "Tầng 3 · 20 chỗ"
+ },
+ {
+  "_id": "P401",
+  "tenPhong": "P.401",
+  "sucChua": 25,
+  "trangThaiPhong": "ChuaSuDung",
+  "moTa": "Tầng 4 · 25 chỗ"
+ },
+ {
+  "_id": "P402",
+  "tenPhong": "P.402",
+  "sucChua": 25,
+  "trangThaiPhong": "ChuaSuDung",
+  "moTa": "Tầng 4 · 25 chỗ"
+ }
+]

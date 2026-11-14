@@ -1,0 +1,13 @@
+export { default as TrangChu } from './TrangChu';
+export { default as PhongHoc } from './PhongHoc';
+export { default as HoSoDanhSach } from './HoSoDanhSach';
+export { default as HoSoForm } from './HoSoForm';
+export { default as HoSoChiTiet } from './HoSoChiTiet';
+export { default as PhanHoiDanhSach } from './PhanHoiDanhSach';
+export { default as PhanHoiChiTiet } from './PhanHoiChiTiet';
+export { default as TraCuuLich } from './TraCuuLich';
+export { default as QuanLyLich } from './QuanLyLich';
+export { default as TaoLich } from './TaoLich';
+export { default as LichTuanToi } from './LichTuanToi';
+export { default as PhanCong } from './PhanCong';
+export { default as PheDuyet } from './PheDuyet';

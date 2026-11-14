@@ -1,0 +1,38 @@
+{
+  "name": "broadway-backend",
+  "version": "1.0.0",
+  "description": "Backend he thong quan ly lich day va phan cong giao vien - Trung tam Broadway",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "NODE_ENV=test node --test --test-concurrency=1 \"test/**/*.test.js\"",
+    "start": "NODE_ENV=production node src/server.js",
+    "dev": "NODE_ENV=development nodemon src/server.js",
+    "db:dev": "node scripts/dev-db.js",
+    "test:bao-cao": "NODE_ENV=test BAO_CAO_TIEU_DE='Kết quả kiểm thử nghiệp vụ và tiêu chuẩn production' node --test --test-concurrency=1 --test-reporter=spec --test-reporter-destination=stdout --test-reporter=./test/bao-cao-markdown.mjs --test-reporter-destination=../tai-lieu/kiem-thu/KET_QUA_KIEM_THU.md \"test/**/*.test.js\"",
+    "init-master-data": "node src/seed/init-master-data.js",
+    "seed:demo": "node src/seed/seed-demo.js",
+    "sinh-du-lieu-thu": "node scripts/sinh-du-lieu-thu.js",
+    "nap-du-lieu-thu": "node scripts/nap-du-lieu-thu.js",
+    "dev:start": "NODE_ENV=development node src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^4.22.3",
+    "express-rate-limit": "^7.5.1",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^8.24.8",
+    "morgan": "^1.12.1",
+    "multer": "^2.5.0"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^11.3.0",
+    "nodemon": "^3.1.14"
+  }
+}

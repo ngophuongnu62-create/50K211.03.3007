@@ -1,0 +1,103 @@
+# Triển khai Broadway bằng Docker Compose: MongoDB 7 (replica set 1 nút – cần cho giao dịch, BẬT XÁC THỰC) + ứng dụng.
+# Chạy: cp .env.example .env  (đặt JWT_SECRET, CORS_ORIGIN, ADMIN_*, MONGO_ROOT_PASSWORD, MONGO_APP_PASSWORD)
+#       →  docker compose up -d --build  →  mở địa chỉ CORS_ORIGIN
+# Lần đầu: xem mật khẩu tạm của Admin bằng  docker compose logs app | grep "Mật khẩu tạm"  (bắt buộc đổi khi đăng nhập)
+#
+# Tài khoản MongoDB:
+#  - quản trị (MONGO_ROOT_USER): chỉ dùng cho bước thiết lập, sao lưu / khôi phục – ứng dụng KHÔNG dùng
+#  - ứng dụng (MONGO_APP_USER, vai trò broadwayApp): đọc / thêm / sửa dữ liệu nghiệp vụ, KHÔNG xóa;
+#    trên audit_logs CHỈ được đọc và thêm (không sửa, không xóa, không đổi chỉ mục / validator)
+name: broadway
+
+# Giới hạn log mỗi dịch vụ (5 tệp × 10 MB) – chạy 24/7 nhiều tháng không làm đầy ổ đĩa
+x-nhat-ky: &nhat-ky
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "5"
+
+x-tai-khoan-quan-tri: &tai-khoan-quan-tri
+  MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USER:-quantri}
+  MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD:?Cần đặt MONGO_ROOT_PASSWORD trong tệp .env (openssl rand -hex 24)}
+
+services:
+  mongo:
+    image: mongo:7.0
+    logging: *nhat-ky
+    # Sinh keyfile (lần đầu) rồi chạy mongod --replSet rs0 --keyFile → bắt buộc đăng nhập
+    entrypoint: ["bash", "/docker-broadway/khoi-dong.sh"]
+    restart: unless-stopped
+    environment:
+      <<: *tai-khoan-quan-tri
+      MONGO_CACHE_GB: ${MONGO_CACHE_GB:-}
+    volumes:
+      - mongo-data:/data/db
+      - mongo-config:/data/configdb
+      - ./docker/mongo:/docker-broadway:ro
+    healthcheck:
+      # Đăng nhập quản trị, khởi tạo replica set ở lần chạy đầu; nâng cấp bản cũ chưa có tài khoản → tạo tài khoản quản trị
+      test: ["CMD", "mongosh", "--quiet", "--norc", "/docker-broadway/kiem-tra.js"]
+      interval: 10s
+      timeout: 10s
+      start_period: 30s
+      retries: 10
+
+  # Chạy bằng tài khoản quản trị rồi thoát: đồng bộ validator + chỉ mục, tạo / cập nhật vai trò và tài khoản ứng dụng
+  thiet-lap-csdl:
+    build: .
+    logging: *nhat-ky
+    image: broadway-lich-day:latest
+    command: ["node", "src/db/thiet-lap-csdl.js"]
+    restart: "no"
+    depends_on:
+      mongo:
+        condition: service_healthy
+    environment:
+      MONGODB_URI: mongodb://mongo:27017/BroadwayDB?replicaSet=rs0
+      MONGODB_USER: ${MONGO_ROOT_USER:-quantri}
+      MONGODB_PASSWORD: ${MONGO_ROOT_PASSWORD:?Cần đặt MONGO_ROOT_PASSWORD trong tệp .env}
+      MONGODB_AUTH_SOURCE: admin
+      MONGO_APP_USER: ${MONGO_APP_USER:-broadway_app}
+      MONGO_APP_PASSWORD: ${MONGO_APP_PASSWORD:?Cần đặt MONGO_APP_PASSWORD trong tệp .env (openssl rand -hex 24)}
+
+  app:
+    build: .
+    logging: *nhat-ky
+    image: broadway-lich-day:latest
+    restart: unless-stopped
+    depends_on:
+      mongo:
+        condition: service_healthy
+      thiet-lap-csdl:
+        condition: service_completed_successfully
+    environment:
+      MONGODB_URI: mongodb://mongo:27017/BroadwayDB?replicaSet=rs0
+      # Tài khoản ứng dụng quyền hạn chế; cấu trúc CSDL do thiet-lap-csdl tạo nên ứng dụng không tự đồng bộ
+      MONGODB_USER: ${MONGO_APP_USER:-broadway_app}
+      MONGODB_PASSWORD: ${MONGO_APP_PASSWORD:?Cần đặt MONGO_APP_PASSWORD trong tệp .env}
+      MONGODB_AUTH_SOURCE: admin
+      MONGODB_DONG_BO_CAU_TRUC: "0"
+      JWT_SECRET: ${JWT_SECRET:?Cần đặt JWT_SECRET trong tệp .env}
+      JWT_EXPIRES_NHAN_SU: ${JWT_EXPIRES_NHAN_SU:-8h}
+      JWT_EXPIRES_PHU_HUYNH: ${JWT_EXPIRES_PHU_HUYNH:-4h}
+      TRUST_PROXY: ${TRUST_PROXY:-0}
+      # Địa chỉ giao diện thật (CORS nghiêm ngặt). Bắt buộc; nhiều địa chỉ phân tách bằng dấu phẩy
+      CORS_ORIGIN: ${CORS_ORIGIN:?Cần đặt CORS_ORIGIN trong tệp .env (VD https://lichday.broadway.edu.vn)}
+      BCRYPT_ROUNDS: ${BCRYPT_ROUNDS:-12}
+      RATE_LIMIT_API_PHUT: ${RATE_LIMIT_API_PHUT:-600}
+      RATE_LIMIT_DANG_NHAP: ${RATE_LIMIT_DANG_NHAP:-10}
+      # Tài khoản Quản lý khởi tạo (chỉ tạo khi CSDL chưa có Quản lý nào; bắt buộc đổi mật khẩu ở lần đăng nhập đầu)
+      ADMIN_TEN_DANG_NHAP: ${ADMIN_TEN_DANG_NHAP:-admin}
+      ADMIN_HO_TEN: ${ADMIN_HO_TEN:-Quản trị hệ thống}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-}
+      ADMIN_SO_DIEN_THOAI: ${ADMIN_SO_DIEN_THOAI:-}
+      ADMIN_MAT_KHAU_TAM: ${ADMIN_MAT_KHAU_TAM:-}
+    ports:
+      - "${CONG:-8080}:8080"
+    volumes:
+      - uploads:/data/uploads
+
+volumes:
+  mongo-data:
+  mongo-config:
+  uploads:

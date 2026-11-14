@@ -1,0 +1,35 @@
+# Proxy ngược HTTPS cho hệ thống Broadway (dùng với docker-compose.https.yml).
+# - Tự xin và tự gia hạn chứng chỉ (Let's Encrypt, dự phòng ZeroSSL) cho tên miền TEN_MIEN; chứng chỉ lưu ở volume caddy-data.
+# - Tự chuyển hướng http:// → https:// (308), bật HTTP/2 và HTTP/3.
+# - Ghi đè X-Forwarded-For bằng IP thật của người dùng (không tin header do trình duyệt tự gửi) → ứng dụng (TRUST_PROXY=1)
+#   giới hạn tần suất và ghi nhật ký đúng IP.
+# Biến {$...} lấy từ môi trường của container caddy, được thay trước khi Caddy đọc tệp.
+{
+	email {$EMAIL_ACME}
+	# Tùy chọn nâng cao (để trống khi chạy thật). VD thử nghiệm không tốn hạn mức Let's Encrypt:
+	# CADDY_TUY_CHON="acme_ca https://acme-staging-v02.api.letsencrypt.org/directory"
+	{$CADDY_TUY_CHON}
+}
+
+{$TEN_MIEN} {
+	encode zstd gzip
+
+	reverse_proxy app:8080 {
+		# Tải tệp bằng cấp / minh chứng có thể lâu trên mạng chậm
+		transport http {
+			read_timeout 3m
+			write_timeout 3m
+		}
+	}
+
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		-Server
+		-X-Powered-By
+	}
+
+	log {
+		output stdout
+		format console
+	}
+}

@@ -1,0 +1,109 @@
+[
+ {
+  "_id": "DK-00001",
+  "maPhong": "P401",
+  "maCa": "CA1",
+  "maQuanLy": "QL-001",
+  "ngaySuDung": {
+   "$date": "2026-11-09T00:00:00Z"
+  },
+  "trangThaiDangKy": "DaDangKy",
+  "thoiDiemDangKy": {
+   "$date": "2026-11-05T08:20:00Z"
+  }
+ },
+ {
+  "_id": "DK-00002",
+  "maPhong": "P102",
+  "maCa": "CA2",
+  "maQuanLy": "QL-001",
+  "ngaySuDung": {
+   "$date": "2026-11-11T00:00:00Z"
+  },
+  "trangThaiDangKy": "DaDangKy",
+  "thoiDiemDangKy": {
+   "$date": "2026-11-06T09:10:00Z"
+  }
+ },
+ {
+  "_id": "DK-00003",
+  "maPhong": "P202",
+  "maCa": "CA3",
+  "maQuanLy": "QL-001",
+  "ngaySuDung": {
+   "$date": "2026-11-12T00:00:00Z"
+  },
+  "trangThaiDangKy": "DaDangKy",
+  "thoiDiemDangKy": {
+   "$date": "2026-11-10T03:00:00Z"
+  }
+ },
+ {
+  "_id": "DK-00004",
+  "maPhong": "P301",
+  "maCa": "CA1",
+  "maQuanLy": "QL-002",
+  "ngaySuDung": {
+   "$date": "2026-11-13T00:00:00Z"
+  },
+  "trangThaiDangKy": "DaHuy",
+  "thoiDiemDangKy": {
+   "$date": "2026-11-09T07:00:00Z"
+  },
+  "thoiDiemHuy": {
+   "$date": "2026-11-11T02:30:00Z"
+  }
+ },
+ {
+  "_id": "DK-00005",
+  "maPhong": "P201",
+  "maCa": "CA2",
+  "maQuanLy": "QL-002",
+  "ngaySuDung": {
+   "$date": "2026-11-14T00:00:00Z"
+  },
+  "trangThaiDangKy": "DaDangKy",
+  "thoiDiemDangKy": {
+   "$date": "2026-11-11T04:00:00Z"
+  }
+ },
+ {
+  "_id": "DK-00006",
+  "maPhong": "P402",
+  "maCa": "CA2",
+  "maQuanLy": "QL-001",
+  "ngaySuDung": {
+   "$date": "2026-11-14T00:00:00Z"
+  },
+  "trangThaiDangKy": "DaDangKy",
+  "thoiDiemDangKy": {
+   "$date": "2026-11-10T09:45:00Z"
+  }
+ },
+ {
+  "_id": "DK-00007",
+  "maPhong": "P1",
+  "maCa": "CA1",
+  "maQuanLy": "QL-001",
+  "ngaySuDung": {
+   "$date": "2026-11-18T00:00:00Z"
+  },
+  "trangThaiDangKy": "DaDangKy",
+  "thoiDiemDangKy": {
+   "$date": "2026-11-12T02:15:00Z"
+  }
+ },
+ {
+  "_id": "DK-00008",
+  "maPhong": "P303",
+  "maCa": "CA2",
+  "maQuanLy": "QL-002",
+  "ngaySuDung": {
+   "$date": "2026-11-22T00:00:00Z"
+  },
+  "trangThaiDangKy": "DaDangKy",
+  "thoiDiemDangKy": {
+   "$date": "2026-11-12T03:40:00Z"
+  }
+ }
+]

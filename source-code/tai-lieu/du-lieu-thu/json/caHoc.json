@@ -1,0 +1,20 @@
+[
+ {
+  "_id": "CA1",
+  "tenCa": "Ca 1",
+  "gioBatDau": "07:30",
+  "gioKetThuc": "11:30"
+ },
+ {
+  "_id": "CA2",
+  "tenCa": "Ca 2",
+  "gioBatDau": "13:30",
+  "gioKetThuc": "16:30"
+ },
+ {
+  "_id": "CA3",
+  "tenCa": "Ca 3",
+  "gioBatDau": "17:30",
+  "gioKetThuc": "21:00"
+ }
+]

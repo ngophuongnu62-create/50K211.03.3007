@@ -1,0 +1,133 @@
+/**
+ * MH29 – Chi tiết ca dạy và gửi phản hồi (GV-8-b)
+ * 5a.1.A bỏ trống lý do (GV-8-e), 5a.1.B ca đề xuất trùng ca hiện tại (GV-8-f), BR03 quá 24 giờ (GV-8-g)
+ */
+import { useEffect, useState } from 'react';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { Check, Clock, Lock, Send } from 'lucide-react';
+import { api } from '../../api/client';
+import { useToast } from '../../components/Toast';
+import { Alert, Badge, Button, Field, Loading, PageHeader, Select, TextArea } from '../../components/ui';
+import { ddmm, nhanNgay, thuCua } from '../../lib/format';
+import { useLang } from '../../lib/lang';
+
+export default function ChiTietCaDuKien() {
+  const { maLichDay } = useParams();
+  const nav = useNavigate();
+  const loc = useLocation();
+  const toast = useToast();
+  const { t } = useLang();
+  const [b, setB] = useState(null);
+  const [lyDo, setLyDo] = useState('');
+  const [caThayThe, setCaThayThe] = useState('');
+  const [loi, setLoi] = useState({});
+  const [dang, setDang] = useState('');
+
+  useEffect(() => {
+    api(`/giao-vien/ca-du-kien/${maLichDay}`).then((r) => setB(r.data)).catch((e) => {
+      toast({ type: 'error', title: e.message });
+      nav('/giao-vien/phan-hoi-lich-day', { replace: true });
+    });
+  }, [maLichDay, nav, toast]);
+
+  useEffect(() => {
+    if (b && loc.state?.cheDo === 'deXuat') document.getElementById('ly-do-thay-doi')?.focus();
+  }, [b, loc.state]);
+
+  if (!b) return <Loading />;
+  // Quá hạn 24 giờ: còn "Chờ xác nhận" nhưng hết hạn, hoặc hệ thống đã đánh dấu "Hết hạn" (BR03)
+  const quaHan = b.quaHan ?? (b.trangThaiPhanCong === 'HetHan' || (b.trangThaiPhanCong === 'ChoXacNhan' && !b.coThePhanHoi));
+  const daPhanHoi = !quaHan && b.trangThaiPhanCong !== 'ChoXacNhan';
+  const khoa = quaHan || daPhanHoi;
+  const caHienTai = { value: `${b.ngayDay}|${b.maCa}`, label: `${thuCua(b.ngayDay)} ${ddmm(b.ngayDay)} · ${b.gioHoc}` };
+  const dsCa = [caHienTai, ...(b.caThayThe || []).map((c) => ({ value: `${c.ngayDeXuat}|${c.maCaDeXuat}`, label: c.nhan }))];
+
+  const veDanhSach = (trangThai, toastTb) => nav('/giao-vien/phan-hoi-lich-day', { state: { vuaPhanHoi: { buoi: b, trangThai }, toast: toastTb } });
+
+  const xacNhan = async () => {
+    setDang('xacNhan');
+    try {
+      const { message } = await api(`/giao-vien/ca-du-kien/${maLichDay}/xac-nhan`, { method: 'POST' });
+      veDanhSach('DaXacNhan', { title: t(message === 'Đã xác nhận thành công' ? 'Đã xác nhận thành công' : message), text: `${t('Quản lý đã nhận thông báo xác nhận ca')} ${thuCua(b.ngayDay)} ${ddmm(b.ngayDay)}.` });
+    } catch (e) {
+      toast({ type: 'error', title: e.message });
+      if (e.status === 403) setB((x) => ({ ...x, coThePhanHoi: false }));
+    } finally {
+      setDang('');
+    }
+  };
+
+  const guiDeXuat = async () => {
+    setLoi({});
+    if (!lyDo.trim()) { setLoi({ lyDoThayDoi: 'Không được để trống' }); return; }
+    if (caThayThe === caHienTai.value) { setLoi({ maCaDeXuat: 'Ca dạy đề xuất không được trùng với ca dạy hiện tại!' }); return; }
+    const [ngayDeXuat, maCaDeXuat] = caThayThe ? caThayThe.split('|') : [];
+    setDang('gui');
+    try {
+      const { message } = await api(`/giao-vien/ca-du-kien/${maLichDay}/de-xuat-thay-doi`, { method: 'POST', body: { lyDoThayDoi: lyDo, ngayDeXuat, maCaDeXuat } });
+      veDanhSach('DeXuatThayDoi', { title: t(message), text: t('Phản hồi được lưu ở trạng thái “Chờ xử lý” và đã gửi tới Quản lý.') });
+    } catch (e) {
+      if (Object.keys(e.fieldErrors).length) setLoi(e.fieldErrors);
+      else toast({ type: 'error', title: e.message }); // nội dung đã nhập được giữ nguyên
+      if (e.status === 403) setB((x) => ({ ...x, coThePhanHoi: false }));
+    } finally {
+      setDang('');
+    }
+  };
+
+  return (
+    <>
+      <PageHeader crumbs={[{ label: t('Trang chủ'), to: '/giao-vien' }, { label: t('Phản hồi lịch dạy'), to: '/giao-vien/phan-hoi-lich-day' }, { label: t('Chi tiết ca dạy') }]}
+        title={t('Chi tiết ca dạy và gửi phản hồi')} sub={b.tenLop} />
+      <div className="row gap-20" style={{ alignItems: 'flex-start' }}>
+        <section className="card" style={{ width: 420, flex: 'none', padding: 24 }}>
+          <div className="row between" style={{ paddingBottom: 16, borderBottom: '1px solid var(--line)' }}>
+            <div className="card-title">{t('Thông tin ca dạy')}</div>
+            <Badge tone="blue">{t('Chờ GV xác nhận')}</Badge>
+          </div>
+          <dl className="kv" style={{ gridTemplateColumns: '86px 1fr', marginTop: 16, rowGap: 14 }}>
+            <dt>{t('Lớp')}</dt><dd>{b.tenLop}</dd>
+            <dt>{t('Ca dạy')}</dt><dd>{b.gioHoc}</dd>
+            <dt>{t('Ngày')}</dt><dd>{nhanNgay(b.ngayDay)} · {t('Tuần')} {b.tuan}</dd>
+            <dt>{t('Phòng')}</dt><dd>{b.tenPhong}</dd>
+          </dl>
+          <div style={{ marginTop: 16 }}>
+            {quaHan ? <Badge tone="red" icon={Clock}>{t('Quá hạn')}</Badge>
+              : daPhanHoi ? <Badge tone={b.trangThaiPhanCong === 'DaXacNhan' ? 'green' : 'amber'}>{t(b.trangThaiPhanCong === 'DaXacNhan' ? 'Đã xác nhận' : 'Chờ xử lý')}</Badge>
+                : <span className="badge" style={{ background: 'var(--gray-100)', color: 'var(--ink-700)' }}><Clock size={13} />{t('Còn')} {b.conLaiGio} {t('giờ')} {t('để phản hồi')}</span>}
+          </div>
+        </section>
+
+        <section className="card grow" style={{ padding: 24 }}>
+          <div className="card-title">{t('Đồng ý với lịch này?')}</div>
+          {quaHan && (
+            <div style={{ marginTop: 16 }}>
+              <Alert type="error" title={t('Đã quá thời hạn gửi phản hồi')}>{t('Tính năng phản hồi của ca dạy này đã bị khóa. Vui lòng liên hệ Quản lý nếu cần thay đổi.')}</Alert>
+            </div>
+          )}
+          {daPhanHoi && !quaHan && <div style={{ marginTop: 16 }}><Alert type="info">{t('Bạn đã phản hồi ca dạy này.')}</Alert></div>}
+          <Button block size="lg" icon={khoa ? Lock : Check} loading={dang === 'xacNhan'} disabled={khoa} onClick={xacNhan} style={{ marginTop: 16 }}>
+            {t('Xác nhận duyệt lịch dạy')}
+          </Button>
+          {!khoa && (
+            <>
+              <div className="hoac"><span>{t('hoặc đề xuất thay đổi')}</span></div>
+              <Field label={t('Lý do thay đổi')} required error={loi.lyDoThayDoi && t(loi.lyDoThayDoi)}>
+                <TextArea id="ly-do-thay-doi" value={lyDo} error={loi.lyDoThayDoi} placeholder={t('Nhập lý do (10 – 500 ký tự)')} rows={4}
+                  onChange={(e) => { setLyDo(e.target.value); setLoi((l) => ({ ...l, lyDoThayDoi: undefined })); }} />
+              </Field>
+              <div style={{ marginTop: 16 }}>
+                <Field label={<>{t('Ca dạy đề xuất thay thế')} <span className="c-muted w-500 t-12">{t('(không bắt buộc)')}</span></>} error={loi.maCaDeXuat}>
+                  <Select value={caThayThe} onChange={(v) => { setCaThayThe(v); setLoi((l) => ({ ...l, maCaDeXuat: undefined })); }}
+                    placeholder={t('Chọn ca dạy thay thế')} error={loi.maCaDeXuat} options={dsCa} />
+                </Field>
+              </div>
+              <Button block variant="outline" icon={Send} loading={dang === 'gui'} onClick={guiDeXuat} style={{ marginTop: 18 }}>{t('Gửi phản hồi')}</Button>
+            </>
+          )}
+          {khoa && quaHan && <Button block variant="outline" icon={Lock} disabled style={{ marginTop: 14 }}>{t('Gửi phản hồi')}</Button>}
+        </section>
+      </div>
+    </>
+  );
+}

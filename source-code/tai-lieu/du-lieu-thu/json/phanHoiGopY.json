@@ -1,0 +1,333 @@
+[
+ {
+  "_id": "PH-2610-0001",
+  "maNhanSu": "GV-007",
+  "maQuanLy": "QL-001",
+  "loaiPhanHoi": "DoiLich",
+  "tieuDe": "Xin đổi ca GS Rabbit Chủ Nhật 08/11",
+  "noiDung": "Em xin đổi buổi GS Rabbit – U29 Chủ Nhật 08/11 từ Ca 1 sang Ca 2.",
+  "thoiGianGui": {
+   "$date": "2026-10-28T13:00:00Z"
+  },
+  "trangThaiXuLy": "TuChoi",
+  "tepDinhKem": [],
+  "lichSuXuLy": [
+   {
+    "maLichSu": "XL-000001",
+    "maQuanLy": "QL-001",
+    "loaiThaoTac": "CapNhatTrangThai",
+    "trangThaiTruoc": "ChoXuLy",
+    "trangThaiSau": "TuChoi",
+    "ghiChuXuLy": "Phụ huynh lớp GS Rabbit đã đăng ký học Ca 1, không đổi được ca.",
+    "thoiGianXuLy": {
+     "$date": "2026-10-29T02:30:00Z"
+    }
+   }
+  ]
+ },
+ {
+  "_id": "PH-2610-0002",
+  "maNhanSu": "GV-006",
+  "maQuanLy": "QL-001",
+  "loaiPhanHoi": "GopY",
+  "tieuDe": "Đề xuất bổ sung bộ thẻ từ vựng cho lớp GS Milky",
+  "noiDung": "Đề xuất trung tâm mua thêm bộ thẻ từ vựng (flashcards) chủ đề động vật và đồ vật cho lớp GS Milky – U15.",
+  "thoiGianGui": {
+   "$date": "2026-10-30T11:00:00Z"
+  },
+  "trangThaiXuLy": "DaXuLy",
+  "tepDinhKem": [],
+  "lichSuXuLy": [
+   {
+    "maLichSu": "XL-000002",
+    "maQuanLy": "QL-001",
+    "loaiThaoTac": "CapNhatTrangThai",
+    "trangThaiTruoc": "ChoXuLy",
+    "trangThaiSau": "DangXuLy",
+    "ghiChuXuLy": "Đã chuyển bộ phận học liệu",
+    "thoiGianXuLy": {
+     "$date": "2026-10-31T02:00:00Z"
+    }
+   },
+   {
+    "maLichSu": "XL-000003",
+    "maQuanLy": "QL-001",
+    "loaiThaoTac": "CapNhatTrangThai",
+    "trangThaiTruoc": "DangXuLy",
+    "trangThaiSau": "DaXuLy",
+    "ghiChuXuLy": "Đã mua 2 bộ thẻ từ vựng, để tại tủ phòng P.302",
+    "thoiGianXuLy": {
+     "$date": "2026-11-02T08:00:00Z"
+    }
+   }
+  ]
+ },
+ {
+  "_id": "PH-2610-0003",
+  "maPHHV": "HV-0003",
+  "maQuanLy": "QL-001",
+  "loaiPhanHoi": "ChatLuongGiangDay",
+  "tieuDe": "Đề nghị tăng thời lượng luyện nói",
+  "noiDung": "Mong trung tâm tăng thời lượng luyện nói trong mỗi buổi học lớp Giao tiếp A2 – K08.",
+  "thoiGianGui": {
+   "$date": "2026-10-31T13:05:00Z"
+  },
+  "trangThaiXuLy": "DaXuLy",
+  "tepDinhKem": [],
+  "lichSuXuLy": [
+   {
+    "maLichSu": "XL-000004",
+    "maQuanLy": "QL-001",
+    "loaiThaoTac": "CapNhatTrangThai",
+    "trangThaiTruoc": "ChoXuLy",
+    "trangThaiSau": "DangXuLy",
+    "ghiChuXuLy": "Đã trao đổi với GV Trần Minh Quân",
+    "thoiGianXuLy": {
+     "$date": "2026-11-02T02:00:00Z"
+    }
+   },
+   {
+    "maLichSu": "XL-000005",
+    "maQuanLy": "QL-001",
+    "loaiThaoTac": "PhanHoiNguoiGui",
+    "noiDungPhanHoi": "Cảm ơn phụ huynh đã góp ý. Từ tuần sau mỗi buổi học sẽ có thêm 20 phút luyện nói theo nhóm.",
+    "thoiGianXuLy": {
+     "$date": "2026-11-03T03:15:00Z"
+    }
+   },
+   {
+    "maLichSu": "XL-000006",
+    "maQuanLy": "QL-001",
+    "loaiThaoTac": "CapNhatTrangThai",
+    "trangThaiTruoc": "DangXuLy",
+    "trangThaiSau": "DaXuLy",
+    "thoiGianXuLy": {
+     "$date": "2026-11-03T03:16:00Z"
+    }
+   }
+  ]
+ },
+ {
+  "_id": "PH-2611-0001",
+  "maPHHV": "HV-0009",
+  "maQuanLy": "QL-001",
+  "loaiPhanHoi": "ChatLuongGiangDay",
+  "tieuDe": "Cảm ơn cô Haley",
+  "noiDung": "Bé tiến bộ rõ sau mấy tuần học lớp GS Rabbit, gia đình cảm ơn cô Haley đã rất nhiệt tình.",
+  "thoiGianGui": {
+   "$date": "2026-11-01T13:10:00Z"
+  },
+  "trangThaiXuLy": "DaXuLy",
+  "tepDinhKem": [],
+  "lichSuXuLy": [
+   {
+    "maLichSu": "XL-000007",
+    "maQuanLy": "QL-001",
+    "loaiThaoTac": "CapNhatTrangThai",
+    "trangThaiTruoc": "ChoXuLy",
+    "trangThaiSau": "DangXuLy",
+    "thoiGianXuLy": {
+     "$date": "2026-11-02T01:30:00Z"
+    }
+   },
+   {
+    "maLichSu": "XL-000008",
+    "maQuanLy": "QL-001",
+    "loaiThaoTac": "PhanHoiNguoiGui",
+    "noiDungPhanHoi": "Trung tâm cảm ơn phụ huynh, đã chuyển lời khen đến cô Haley.",
+    "thoiGianXuLy": {
+     "$date": "2026-11-02T01:40:00Z"
+    }
+   },
+   {
+    "maLichSu": "XL-000009",
+    "maQuanLy": "QL-001",
+    "loaiThaoTac": "CapNhatTrangThai",
+    "trangThaiTruoc": "DangXuLy",
+    "trangThaiSau": "DaXuLy",
+    "thoiGianXuLy": {
+     "$date": "2026-11-02T01:41:00Z"
+    }
+   }
+  ]
+ },
+ {
+  "_id": "PH-2611-0002",
+  "maPHHV": "HV-0001",
+  "maQuanLy": "QL-001",
+  "loaiPhanHoi": "CoSoVatChat",
+  "tieuDe": "Phòng P.102 thiếu máy chiếu",
+  "noiDung": "Buổi học Giao tiếp A2 – K08 chiều nay ở phòng P.102 không có máy chiếu, giáo viên phải dạy trên bảng. Mong trung tâm kiểm tra.",
+  "thoiGianGui": {
+   "$date": "2026-11-04T12:40:00Z"
+  },
+  "trangThaiXuLy": "DaXuLy",
+  "tepDinhKem": [
+   {
+    "maTep": "TP-000001",
+    "tenTep": "may-chieu-p102.png",
+    "loaiTep": "PNG",
+    "duongDan": "/uploads/phanhoi/ph-2611-0002-minh-chung.png"
+   }
+  ],
+  "lichSuXuLy": [
+   {
+    "maLichSu": "XL-000010",
+    "maQuanLy": "QL-001",
+    "loaiThaoTac": "CapNhatTrangThai",
+    "trangThaiTruoc": "ChoXuLy",
+    "trangThaiSau": "DangXuLy",
+    "ghiChuXuLy": "Đã báo bộ phận kỹ thuật kiểm tra máy chiếu P.102",
+    "thoiGianXuLy": {
+     "$date": "2026-11-05T01:12:00Z"
+    }
+   },
+   {
+    "maLichSu": "XL-000011",
+    "maQuanLy": "QL-001",
+    "loaiThaoTac": "PhanHoiNguoiGui",
+    "noiDungPhanHoi": "Trung tâm xin lỗi vì sự bất tiện. Bộ phận kỹ thuật đang kiểm tra máy chiếu phòng P.102, trung tâm sẽ báo lại lịch thay máy.",
+    "thoiGianXuLy": {
+     "$date": "2026-11-05T01:30:00Z"
+    }
+   },
+   {
+    "maLichSu": "XL-000012",
+    "maQuanLy": "QL-001",
+    "loaiThaoTac": "PhanHoiNguoiGui",
+    "noiDungPhanHoi": "Máy chiếu P.102 sẽ được thay mới vào Thứ Tư 11/11. Buổi học ngày đó tạm nghỉ và học bù Thứ Bảy 14/11 · Ca 1 · P.102.",
+    "thoiGianXuLy": {
+     "$date": "2026-11-06T09:20:00Z"
+    }
+   },
+   {
+    "maLichSu": "XL-000013",
+    "maQuanLy": "QL-001",
+    "loaiThaoTac": "CapNhatTrangThai",
+    "trangThaiTruoc": "DangXuLy",
+    "trangThaiSau": "DaXuLy",
+    "ghiChuXuLy": "Đã thay máy chiếu mới cho P.102",
+    "thoiGianXuLy": {
+     "$date": "2026-11-11T10:00:00Z"
+    }
+   }
+  ]
+ },
+ {
+  "_id": "PH-2611-0003",
+  "maPHHV": "HV-0004",
+  "maQuanLy": "QL-001",
+  "loaiPhanHoi": "DichVu",
+  "tieuDe": "Hỏi về xe đưa đón cuối tuần",
+  "noiDung": "Trung tâm có xe đưa đón học viên lớp Kids Starters vào Thứ Bảy, Chủ Nhật không ạ?",
+  "thoiGianGui": {
+   "$date": "2026-11-09T12:30:00Z"
+  },
+  "trangThaiXuLy": "DangXuLy",
+  "tepDinhKem": [],
+  "lichSuXuLy": [
+   {
+    "maLichSu": "XL-000014",
+    "maQuanLy": "QL-001",
+    "loaiThaoTac": "CapNhatTrangThai",
+    "trangThaiTruoc": "ChoXuLy",
+    "trangThaiSau": "DangXuLy",
+    "ghiChuXuLy": "Đang liên hệ bộ phận xe đưa đón",
+    "thoiGianXuLy": {
+     "$date": "2026-11-10T01:30:00Z"
+    }
+   }
+  ]
+ },
+ {
+  "_id": "PH-2611-0004",
+  "maNhanSu": "GV-008",
+  "loaiPhanHoi": "GopY",
+  "tieuDe": "Đăng ký nhận thêm lớp Giao tiếp",
+  "noiDung": "Em còn trống Thứ Tư Ca 2 và Thứ Sáu Ca 2, xin nhận thêm lớp Giao tiếp nếu trung tâm cần.",
+  "thoiGianGui": {
+   "$date": "2026-11-10T06:00:00Z"
+  },
+  "trangThaiXuLy": "ChoXuLy",
+  "tepDinhKem": [],
+  "lichSuXuLy": []
+ },
+ {
+  "_id": "PH-2611-0005",
+  "maNhanSu": "TG-002",
+  "maQuanLy": "QL-001",
+  "loaiPhanHoi": "GopY",
+  "tieuDe": "Bổ sung tài liệu luyện nghe cho lớp IELTS Foundation",
+  "noiDung": "Đề xuất bổ sung bộ tài liệu luyện nghe cho lớp IELTS Foundation – K15.",
+  "thoiGianGui": {
+   "$date": "2026-11-10T14:30:00Z"
+  },
+  "trangThaiXuLy": "DangXuLy",
+  "tepDinhKem": [],
+  "lichSuXuLy": [
+   {
+    "maLichSu": "XL-000015",
+    "maQuanLy": "QL-001",
+    "loaiThaoTac": "CapNhatTrangThai",
+    "trangThaiTruoc": "ChoXuLy",
+    "trangThaiSau": "DangXuLy",
+    "ghiChuXuLy": "Đã chuyển bộ phận học thuật",
+    "thoiGianXuLy": {
+     "$date": "2026-11-11T01:45:00Z"
+    }
+   }
+  ]
+ },
+ {
+  "_id": "PH-2611-0006",
+  "maNhanSu": "GV-002",
+  "loaiPhanHoi": "NghiPhep",
+  "tieuDe": "Xin nghỉ phép Thứ Tư 18/11",
+  "noiDung": "Em xin nghỉ phép Thứ Tư 18/11 vì việc gia đình; đã bỏ Thứ Tư Ca 2 khỏi lịch rảnh tuần tới. Nhờ trung tâm sắp xếp giáo viên dạy thay lớp Giao tiếp A2 – K08.",
+  "thoiGianGui": {
+   "$date": "2026-11-11T03:20:00Z"
+  },
+  "trangThaiXuLy": "ChoXuLy",
+  "tepDinhKem": [],
+  "lichSuXuLy": []
+ },
+ {
+  "_id": "PH-2611-0007",
+  "maPHHV": "HV-0007",
+  "loaiPhanHoi": "YKienKhac",
+  "tieuDe": "Xin tài liệu ôn tập trước khai giảng",
+  "noiDung": "Trung tâm có thể gửi trước tài liệu ôn tập cho lớp TOEIC 650 – K05 không ạ?",
+  "thoiGianGui": {
+   "$date": "2026-11-12T04:25:00Z"
+  },
+  "trangThaiXuLy": "ChoXuLy",
+  "tepDinhKem": [],
+  "lichSuXuLy": []
+ },
+ {
+  "_id": "PH-2611-0008",
+  "maPHHV": "HV-0008",
+  "loaiPhanHoi": "CoSoVatChat",
+  "tieuDe": "Điều hòa phòng P.302 kêu to",
+  "noiDung": "Điều hòa phòng P.302 kêu to trong giờ học lớp GS Milky, các bé khó nghe giáo viên.",
+  "thoiGianGui": {
+   "$date": "2026-11-12T12:10:00Z"
+  },
+  "trangThaiXuLy": "ChoXuLy",
+  "tepDinhKem": [],
+  "lichSuXuLy": []
+ },
+ {
+  "_id": "PH-2611-0009",
+  "maNhanSu": "GV-001",
+  "loaiPhanHoi": "DoiLich",
+  "tieuDe": "Xin đổi buổi IELTS Foundation – K15 Thứ Ba 17/11",
+  "noiDung": "Thứ Ba 17/11 em có lịch thi chứng chỉ, xin chuyển buổi IELTS Foundation – K15 (Ca 3, P.201) sang Thứ Sáu 20/11 Ca 1.",
+  "thoiGianGui": {
+   "$date": "2026-11-12T14:05:00Z"
+  },
+  "trangThaiXuLy": "ChoXuLy",
+  "tepDinhKem": [],
+  "lichSuXuLy": []
+ }
+]

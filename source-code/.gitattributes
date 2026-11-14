@@ -1,0 +1,8 @@
+# Giữ ký tự xuống dòng kiểu Linux (LF) cho tệp chạy trong container / máy chủ Linux,
+# kể cả khi clone trên Windows (Git for Windows mặc định đổi sang CRLF làm hỏng script bash).
+*.sh        text eol=lf
+Dockerfile  text eol=lf
+Caddyfile   text eol=lf
+docker/**   text eol=lf
+*.yml       text eol=lf
+.env*       text eol=lf

@@ -1,0 +1,361 @@
+[
+ {
+  "_id": "GV-001",
+  "hoTen": "Nguyễn Thị Lan",
+  "soDienThoai": "0905100001",
+  "email": "gvnguyenlan@broadway.edu.vn",
+  "tenDangNhap": "gvnguyenlan",
+  "matKhau": "$2b$10$Nd4LM8a/FM6iixorRs9hI.ItYDaMB9/NQLbcg7FTyokETRX2e1n2G",
+  "trangThaiTaiKhoan": "HoatDong",
+  "mustChangePassword": false,
+  "phienBanToken": 0,
+  "loaiNguoiDung": "NhanSuGiangDay",
+  "diaChi": "Hải Châu, Đà Nẵng",
+  "loaiNhanSu": "GiaoVien",
+  "hinhThucLamViec": "ToanThoiGian",
+  "kinhNghiem": 6,
+  "bangCap": [
+   {
+    "maBangCap": "BC-00001",
+    "tenBangCap": "Cử nhân Ngôn ngữ Anh – ĐH Ngoại ngữ Đà Nẵng",
+    "hinhAnh": "/uploads/bangcap/bc-00001-cu-nhan-ngon-ngu-anh.png"
+   },
+   {
+    "maBangCap": "BC-00002",
+    "tenBangCap": "IELTS Academic 8.0 – IDP · 2025",
+    "hinhAnh": "/uploads/bangcap/bc-00002-ielts-8-0.png"
+   }
+  ],
+  "chuyenMon": [
+   "MH-IELTS",
+   "MH-GT"
+  ]
+ },
+ {
+  "_id": "GV-002",
+  "hoTen": "Trần Minh Quân",
+  "soDienThoai": "0905100002",
+  "email": "gvtranquan@broadway.edu.vn",
+  "tenDangNhap": "gvtranquan",
+  "matKhau": "$2b$10$Nd4LM8a/FM6iixorRs9hI.ItYDaMB9/NQLbcg7FTyokETRX2e1n2G",
+  "trangThaiTaiKhoan": "HoatDong",
+  "mustChangePassword": false,
+  "phienBanToken": 0,
+  "loaiNguoiDung": "NhanSuGiangDay",
+  "diaChi": "Thanh Khê, Đà Nẵng",
+  "loaiNhanSu": "GiaoVien",
+  "hinhThucLamViec": "BanThoiGian",
+  "kinhNghiem": 4,
+  "bangCap": [
+   {
+    "maBangCap": "BC-00003",
+    "tenBangCap": "Cử nhân Sư phạm Tiếng Anh – ĐH Sư phạm Đà Nẵng",
+    "hinhAnh": "/uploads/bangcap/bc-00003-cu-nhan-su-pham-tieng-anh.png"
+   },
+   {
+    "maBangCap": "BC-00004",
+    "tenBangCap": "TESOL Certificate – Arizona State University",
+    "hinhAnh": "/uploads/bangcap/bc-00004-tesol.png"
+   }
+  ],
+  "chuyenMon": [
+   "MH-GT"
+  ]
+ },
+ {
+  "_id": "GV-003",
+  "hoTen": "Phạm Thu Hà",
+  "soDienThoai": "0905100003",
+  "email": "gvphamha@broadway.edu.vn",
+  "tenDangNhap": "gvphamha",
+  "matKhau": "$2b$10$Nd4LM8a/FM6iixorRs9hI.ItYDaMB9/NQLbcg7FTyokETRX2e1n2G",
+  "trangThaiTaiKhoan": "HoatDong",
+  "mustChangePassword": false,
+  "phienBanToken": 0,
+  "loaiNguoiDung": "NhanSuGiangDay",
+  "diaChi": "Sơn Trà, Đà Nẵng",
+  "loaiNhanSu": "GiaoVien",
+  "hinhThucLamViec": "ToanThoiGian",
+  "kinhNghiem": 5,
+  "bangCap": [
+   {
+    "maBangCap": "BC-00005",
+    "tenBangCap": "Cử nhân Ngôn ngữ Anh – ĐH Ngoại ngữ Đà Nẵng",
+    "hinhAnh": "/uploads/bangcap/bc-00005-cu-nhan-ngon-ngu-anh.png"
+   },
+   {
+    "maBangCap": "BC-00006",
+    "tenBangCap": "TOEIC 950 – IIG Việt Nam",
+    "hinhAnh": "/uploads/bangcap/bc-00006-toeic-950.png"
+   }
+  ],
+  "chuyenMon": [
+   "MH-IELTS",
+   "MH-TOEIC"
+  ]
+ },
+ {
+  "_id": "GV-004",
+  "hoTen": "Võ Ngọc Mai",
+  "soDienThoai": "0905100004",
+  "email": "gvvomai@broadway.edu.vn",
+  "tenDangNhap": "gvvomai",
+  "matKhau": "$2b$10$Nd4LM8a/FM6iixorRs9hI.ItYDaMB9/NQLbcg7FTyokETRX2e1n2G",
+  "trangThaiTaiKhoan": "HoatDong",
+  "mustChangePassword": false,
+  "phienBanToken": 0,
+  "loaiNguoiDung": "NhanSuGiangDay",
+  "diaChi": "Ngũ Hành Sơn, Đà Nẵng",
+  "loaiNhanSu": "GiaoVien",
+  "hinhThucLamViec": "ToanThoiGian",
+  "kinhNghiem": 3,
+  "bangCap": [
+   {
+    "maBangCap": "BC-00007",
+    "tenBangCap": "Cử nhân Sư phạm Tiếng Anh – ĐH Sư phạm Đà Nẵng",
+    "hinhAnh": "/uploads/bangcap/bc-00007-cu-nhan-su-pham-tieng-anh.png"
+   },
+   {
+    "maBangCap": "BC-00008",
+    "tenBangCap": "TKT Young Learners – Cambridge English",
+    "hinhAnh": "/uploads/bangcap/bc-00008-tkt-young-learners.png"
+   }
+  ],
+  "chuyenMon": [
+   "MH-KIDS",
+   "MH-GT"
+  ]
+ },
+ {
+  "_id": "GV-005",
+  "hoTen": "David Miller",
+  "soDienThoai": "0905100005",
+  "email": "gvdavid@broadway.edu.vn",
+  "tenDangNhap": "gvdavid",
+  "matKhau": "$2b$10$Nd4LM8a/FM6iixorRs9hI.ItYDaMB9/NQLbcg7FTyokETRX2e1n2G",
+  "trangThaiTaiKhoan": "HoatDong",
+  "mustChangePassword": false,
+  "phienBanToken": 0,
+  "loaiNguoiDung": "NhanSuGiangDay",
+  "diaChi": "Sơn Trà, Đà Nẵng",
+  "loaiNhanSu": "GiaoVien",
+  "hinhThucLamViec": "BanThoiGian",
+  "kinhNghiem": 3,
+  "bangCap": [
+   {
+    "maBangCap": "BC-00009",
+    "tenBangCap": "CELTA – Cambridge English",
+    "hinhAnh": "/uploads/bangcap/bc-00009-celta.png"
+   }
+  ],
+  "chuyenMon": [
+   "MH-IELTS"
+  ]
+ },
+ {
+  "_id": "GV-006",
+  "hoTen": "Mandy",
+  "soDienThoai": "0905100006",
+  "email": "gvmandy@broadway.edu.vn",
+  "tenDangNhap": "gvmandy",
+  "matKhau": "$2b$10$Nd4LM8a/FM6iixorRs9hI.ItYDaMB9/NQLbcg7FTyokETRX2e1n2G",
+  "trangThaiTaiKhoan": "HoatDong",
+  "mustChangePassword": false,
+  "phienBanToken": 0,
+  "loaiNguoiDung": "NhanSuGiangDay",
+  "diaChi": "Hải Châu, Đà Nẵng",
+  "loaiNhanSu": "GiaoVien",
+  "hinhThucLamViec": "BanThoiGian",
+  "kinhNghiem": 4,
+  "bangCap": [
+   {
+    "maBangCap": "BC-00010",
+    "tenBangCap": "TEFL Certificate 120 giờ – The TEFL Org",
+    "hinhAnh": "/uploads/bangcap/bc-00010-tefl-120.png"
+   }
+  ],
+  "chuyenMon": [
+   "MH-KIDS"
+  ]
+ },
+ {
+  "_id": "GV-007",
+  "hoTen": "Haley",
+  "soDienThoai": "0905100007",
+  "email": "gvhaley@broadway.edu.vn",
+  "tenDangNhap": "gvhaley",
+  "matKhau": "$2b$10$Nd4LM8a/FM6iixorRs9hI.ItYDaMB9/NQLbcg7FTyokETRX2e1n2G",
+  "trangThaiTaiKhoan": "HoatDong",
+  "mustChangePassword": false,
+  "phienBanToken": 0,
+  "loaiNguoiDung": "NhanSuGiangDay",
+  "diaChi": "Ngũ Hành Sơn, Đà Nẵng",
+  "loaiNhanSu": "GiaoVien",
+  "hinhThucLamViec": "BanThoiGian",
+  "kinhNghiem": 2,
+  "bangCap": [
+   {
+    "maBangCap": "BC-00011",
+    "tenBangCap": "TEFL Certificate 120 giờ – The TEFL Org",
+    "hinhAnh": "/uploads/bangcap/bc-00011-tefl-120.png"
+   }
+  ],
+  "chuyenMon": [
+   "MH-KIDS"
+  ]
+ },
+ {
+  "_id": "GV-008",
+  "hoTen": "John",
+  "soDienThoai": "0905100008",
+  "email": "gvjohn@broadway.edu.vn",
+  "tenDangNhap": "gvjohn",
+  "matKhau": "$2b$10$Nd4LM8a/FM6iixorRs9hI.ItYDaMB9/NQLbcg7FTyokETRX2e1n2G",
+  "trangThaiTaiKhoan": "HoatDong",
+  "mustChangePassword": false,
+  "phienBanToken": 0,
+  "loaiNguoiDung": "NhanSuGiangDay",
+  "diaChi": "Sơn Trà, Đà Nẵng",
+  "loaiNhanSu": "GiaoVien",
+  "hinhThucLamViec": "BanThoiGian",
+  "kinhNghiem": 5,
+  "bangCap": [
+   {
+    "maBangCap": "BC-00012",
+    "tenBangCap": "CELTA – Cambridge English",
+    "hinhAnh": "/uploads/bangcap/bc-00012-celta.png"
+   },
+   {
+    "maBangCap": "BC-00013",
+    "tenBangCap": "TKT Young Learners – Cambridge English",
+    "hinhAnh": "/uploads/bangcap/bc-00013-tkt-young-learners.png"
+   }
+  ],
+  "chuyenMon": [
+   "MH-KIDS",
+   "MH-GT"
+  ]
+ },
+ {
+  "_id": "QL-001",
+  "hoTen": "Trần Thu Trang",
+  "soDienThoai": "0905000000",
+  "email": "trang.tran@broadway.edu.vn",
+  "tenDangNhap": "quanly",
+  "matKhau": "$2b$10$Nd4LM8a/FM6iixorRs9hI.ItYDaMB9/NQLbcg7FTyokETRX2e1n2G",
+  "trangThaiTaiKhoan": "HoatDong",
+  "mustChangePassword": false,
+  "phienBanToken": 0,
+  "loaiNguoiDung": "QuanLy"
+ },
+ {
+  "_id": "QL-002",
+  "hoTen": "Lê Minh Hoàng",
+  "soDienThoai": "0905000009",
+  "email": "hoang.le@broadway.edu.vn",
+  "tenDangNhap": "quanly2",
+  "matKhau": "$2b$10$Nd4LM8a/FM6iixorRs9hI.ItYDaMB9/NQLbcg7FTyokETRX2e1n2G",
+  "trangThaiTaiKhoan": "HoatDong",
+  "mustChangePassword": false,
+  "phienBanToken": 0,
+  "loaiNguoiDung": "QuanLy"
+ },
+ {
+  "_id": "TG-001",
+  "hoTen": "Lê Hoàng Anh",
+  "soDienThoai": "0905200001",
+  "email": "tgleanh@broadway.edu.vn",
+  "tenDangNhap": "tgleanh",
+  "matKhau": "$2b$10$Nd4LM8a/FM6iixorRs9hI.ItYDaMB9/NQLbcg7FTyokETRX2e1n2G",
+  "trangThaiTaiKhoan": "HoatDong",
+  "mustChangePassword": false,
+  "phienBanToken": 0,
+  "loaiNguoiDung": "NhanSuGiangDay",
+  "diaChi": "Liên Chiểu, Đà Nẵng",
+  "loaiNhanSu": "TroGiang",
+  "hinhThucLamViec": "ToanThoiGian",
+  "kinhNghiem": 2,
+  "bangCap": [
+   {
+    "maBangCap": "BC-00014",
+    "tenBangCap": "IELTS Academic 7.5 – British Council · 2024",
+    "hinhAnh": "/uploads/bangcap/bc-00014-ielts-7-5.png"
+   }
+  ],
+  "chuyenMon": [
+   "MH-GT"
+  ]
+ },
+ {
+  "_id": "TG-002",
+  "hoTen": "Ty Na",
+  "soDienThoai": "0905200002",
+  "email": "tgtyna@broadway.edu.vn",
+  "tenDangNhap": "tgtyna",
+  "matKhau": "$2b$10$Nd4LM8a/FM6iixorRs9hI.ItYDaMB9/NQLbcg7FTyokETRX2e1n2G",
+  "trangThaiTaiKhoan": "HoatDong",
+  "mustChangePassword": false,
+  "phienBanToken": 0,
+  "loaiNguoiDung": "NhanSuGiangDay",
+  "diaChi": "Cẩm Lệ, Đà Nẵng",
+  "loaiNhanSu": "TroGiang",
+  "hinhThucLamViec": "BanThoiGian",
+  "kinhNghiem": 1,
+  "bangCap": [
+   {
+    "maBangCap": "BC-00015",
+    "tenBangCap": "IELTS Academic 7.5 – British Council · 2024",
+    "hinhAnh": "/uploads/bangcap/bc-00015-ielts-7-5.png"
+   }
+  ],
+  "chuyenMon": []
+ },
+ {
+  "_id": "TG-003",
+  "hoTen": "Tuyết Nhi",
+  "soDienThoai": "0905200003",
+  "email": "tgtuyetnhi@broadway.edu.vn",
+  "tenDangNhap": "tgtuyetnhi",
+  "matKhau": "$2b$10$Nd4LM8a/FM6iixorRs9hI.ItYDaMB9/NQLbcg7FTyokETRX2e1n2G",
+  "trangThaiTaiKhoan": "HoatDong",
+  "mustChangePassword": false,
+  "phienBanToken": 0,
+  "loaiNguoiDung": "NhanSuGiangDay",
+  "diaChi": "Thanh Khê, Đà Nẵng",
+  "loaiNhanSu": "TroGiang",
+  "hinhThucLamViec": "BanThoiGian",
+  "kinhNghiem": 1,
+  "bangCap": [
+   {
+    "maBangCap": "BC-00016",
+    "tenBangCap": "Chứng chỉ Nghiệp vụ sư phạm – Đại học Đà Nẵng",
+    "hinhAnh": "/uploads/bangcap/bc-00016-nghiep-vu-su-pham.png"
+   }
+  ],
+  "chuyenMon": []
+ },
+ {
+  "_id": "TG-004",
+  "hoTen": "Như Ý",
+  "soDienThoai": "0905200004",
+  "email": "tgnhuy@broadway.edu.vn",
+  "tenDangNhap": "tgnhuy",
+  "matKhau": "$2b$10$Nd4LM8a/FM6iixorRs9hI.ItYDaMB9/NQLbcg7FTyokETRX2e1n2G",
+  "trangThaiTaiKhoan": "HoatDong",
+  "mustChangePassword": false,
+  "phienBanToken": 0,
+  "loaiNguoiDung": "NhanSuGiangDay",
+  "diaChi": "Hải Châu, Đà Nẵng",
+  "loaiNhanSu": "TroGiang",
+  "hinhThucLamViec": "BanThoiGian",
+  "kinhNghiem": 1,
+  "bangCap": [
+   {
+    "maBangCap": "BC-00017",
+    "tenBangCap": "Chứng chỉ Nghiệp vụ sư phạm – Đại học Đà Nẵng",
+    "hinhAnh": "/uploads/bangcap/bc-00017-nghiep-vu-su-pham.png"
+   }
+  ],
+  "chuyenMon": []
+ }
+]

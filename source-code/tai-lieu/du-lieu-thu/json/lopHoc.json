@@ -1,0 +1,122 @@
+[
+ {
+  "_id": "GS-MILKY",
+  "maMonHoc": "MH-KIDS",
+  "maKhoaHoc": "KH-GS-2026",
+  "tenLop": "GS Milky – U15",
+  "loaiLop": "GS",
+  "soLuongHocVien": 12,
+  "tongSoTiet": 60,
+  "trangThaiLop": "DangHoc"
+ },
+ {
+  "_id": "GS-RABBIT",
+  "maMonHoc": "MH-KIDS",
+  "maKhoaHoc": "KH-GS-2026",
+  "tenLop": "GS Rabbit – U29",
+  "loaiLop": "GS",
+  "soLuongHocVien": 10,
+  "tongSoTiet": 60,
+  "trangThaiLop": "DangHoc"
+ },
+ {
+  "_id": "GT-A2-08",
+  "maMonHoc": "MH-GT",
+  "maKhoaHoc": "KH-GTA2-08",
+  "tenLop": "Giao tiếp A2 – K08",
+  "loaiLop": "Giao tiếp",
+  "soLuongHocVien": 16,
+  "tongSoTiet": 48,
+  "trangThaiLop": "DangHoc"
+ },
+ {
+  "_id": "GT-B1-09",
+  "maMonHoc": "MH-GT",
+  "maKhoaHoc": "KH-GTB1-09",
+  "tenLop": "Giao tiếp B1 – K09",
+  "loaiLop": "Giao tiếp",
+  "soLuongHocVien": 14,
+  "tongSoTiet": 36,
+  "trangThaiLop": "ChuaMo"
+ },
+ {
+  "_id": "IE65-K12",
+  "maMonHoc": "MH-IELTS",
+  "maKhoaHoc": "KH-IE65-12",
+  "tenLop": "IELTS 6.5 – K12",
+  "loaiLop": "IELTS",
+  "soLuongHocVien": 18,
+  "tongSoTiet": 48,
+  "trangThaiLop": "ChuaMo"
+ },
+ {
+  "_id": "IE65-K13",
+  "maMonHoc": "MH-IELTS",
+  "maKhoaHoc": "KH-IE65-13",
+  "tenLop": "IELTS 6.5 – K13",
+  "loaiLop": "IELTS",
+  "soLuongHocVien": 18,
+  "tongSoTiet": 48,
+  "trangThaiLop": "ChuaMo"
+ },
+ {
+  "_id": "IEF-K14",
+  "maMonHoc": "MH-IELTS",
+  "maKhoaHoc": "KH-IEF-14",
+  "tenLop": "IELTS Foundation – K14",
+  "loaiLop": "IELTS",
+  "soLuongHocVien": 16,
+  "tongSoTiet": 48,
+  "trangThaiLop": "KetThuc"
+ },
+ {
+  "_id": "IEF-K15",
+  "maMonHoc": "MH-IELTS",
+  "maKhoaHoc": "KH-IEF-15",
+  "tenLop": "IELTS Foundation – K15",
+  "loaiLop": "IELTS",
+  "soLuongHocVien": 16,
+  "tongSoTiet": 48,
+  "trangThaiLop": "DangHoc"
+ },
+ {
+  "_id": "Kids-K03",
+  "maMonHoc": "MH-KIDS",
+  "maKhoaHoc": "KH-KIDS-03",
+  "tenLop": "Kids Starters – K03",
+  "loaiLop": "Thiếu nhi",
+  "soLuongHocVien": 12,
+  "tongSoTiet": 60,
+  "trangThaiLop": "DangHoc"
+ },
+ {
+  "_id": "Kids-K04",
+  "maMonHoc": "MH-KIDS",
+  "maKhoaHoc": "KH-KIDS-04",
+  "tenLop": "Kids Movers – K04",
+  "loaiLop": "Thiếu nhi",
+  "soLuongHocVien": 12,
+  "tongSoTiet": 60,
+  "trangThaiLop": "ChuaMo"
+ },
+ {
+  "_id": "TOEIC-K05",
+  "maMonHoc": "MH-TOEIC",
+  "maKhoaHoc": "KH-TOEIC-05",
+  "tenLop": "TOEIC 650 – K05",
+  "loaiLop": "TOEIC",
+  "soLuongHocVien": 20,
+  "tongSoTiet": 42,
+  "trangThaiLop": "ChuaMo"
+ },
+ {
+  "_id": "TOEIC-K06",
+  "maMonHoc": "MH-TOEIC",
+  "maKhoaHoc": "KH-TOEIC-06",
+  "tenLop": "TOEIC 650 – K06",
+  "loaiLop": "TOEIC",
+  "soLuongHocVien": 18,
+  "tongSoTiet": 42,
+  "trangThaiLop": "ChuaMo"
+ }
+]

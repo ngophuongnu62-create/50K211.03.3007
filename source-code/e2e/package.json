@@ -1,0 +1,16 @@
+{
+  "name": "broadway-e2e",
+  "private": true,
+  "description": "Kiểm thử đầu–cuối trên trình duyệt cho bản triển khai (Ưu tiên 4)",
+  "scripts": {
+    "test": "node --test --test-concurrency=1 golive.test.js",
+    "test:bao-cao": "BAO_CAO_TIEU_DE='Kết quả kiểm thử đầu–cuối trên bản triển khai (Ưu tiên 4)' BAO_CAO_MO_TA=\"bằng \\`npm run test:bao-cao\\` (thư mục \\`e2e\\`) trên trình duyệt Chromium, gọi vào bản production chạy bằng Docker Compose.\" node --test --test-concurrency=1 --test-reporter=spec --test-reporter-destination=stdout --test-reporter=../backend/test/bao-cao-markdown.mjs --test-reporter-destination=../tai-lieu/golive/KET_QUA_E2E.md golive.test.js",
+    "test:production": "node --test --test-concurrency=1 production.test.js",
+    "test:production:bao-cao": "BAO_CAO_TIEU_DE='Kết quả kiểm thử đầu–cuối tiêu chuẩn production' BAO_CAO_MO_TA=\"bằng \\`npm run test:production:bao-cao\\` (thư mục \\`e2e\\`) trên Chromium, gọi vào bản Docker vừa khởi tạo bằng init-master-data (chưa nạp dữ liệu demo).\" node --test --test-concurrency=1 --test-reporter=spec --test-reporter-destination=stdout --test-reporter=../backend/test/bao-cao-markdown.mjs --test-reporter-destination=../tai-lieu/golive/KET_QUA_E2E_PRODUCTION.md production.test.js",
+    "test:https": "node --test --test-concurrency=1 https.test.js",
+    "test:https:bao-cao": "BAO_CAO_TIEU_DE='Kết quả kiểm thử HTTPS (Caddy)' BAO_CAO_MO_TA=\"bằng \\`npm run test:https:bao-cao\\` (thư mục \\`e2e\\`), gọi vào bản Docker chạy sau Caddy.\" node --test --test-concurrency=1 --test-reporter=spec --test-reporter-destination=stdout --test-reporter=../backend/test/bao-cao-markdown.mjs --test-reporter-destination=../tai-lieu/golive/KET_QUA_E2E_HTTPS.md https.test.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0"
+  }
+}

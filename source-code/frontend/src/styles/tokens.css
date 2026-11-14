@@ -1,0 +1,80 @@
+/*
+ * Design tokens – trích từ file Figma (xuất PDF vector): mã màu hex, font Inter 3.19,
+ * thang cỡ chữ và bo góc đo trực tiếp. Không tự đặt màu ngoài bảng này.
+ */
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+
+:root {
+  /* Thương hiệu (đỏ Broadway) */
+  --brand: #e22128;
+  --brand-600: #c81a21;
+  --brand-700: #c31a1f;
+  --brand-800: #9e1c21;
+  --danger: #db2626;
+  --danger-900: #991a1a;
+
+  /* Chữ */
+  --ink-900: #1f2833;
+  --ink-700: #3a444d;
+  --ink-600: #5e6b75;
+  --ink-500: #79858e;
+  --ink-400: #89939c;
+  --ink-300: #a3acb3;
+  --gray-700: #4d4d4d;
+  --gray-600: #636363;
+  --gray-500: #767676;
+  --gray-400: #8f8f8f;
+  --gray-350: #b4b4b4;
+  --slate-600: #4b5462;
+
+  /* Nền và viền */
+  --page: #fffbf6;
+  --topbar: #f4e4c6;
+  --topbar-line: #e8d3ae;
+  --cream-50: #fdf9f0;
+  --cream-100: #fdf6eb;
+  --cream-200: #f9eddd;
+  --cream-300: #f6ddae;
+  --white: #ffffff;
+  --gray-50: #f8f8f8;
+  --gray-100: #f3f3f3;
+  --gray-150: #f1f1f1;
+  --line: #eff0f2;
+  --border: #e6e8eb;
+  --border-strong: #d4d8dd;
+
+  /* Trạng thái */
+  --green-900: #13522d;
+  --green-800: #166434;
+  --green-700: #16793b;
+  --green-500: #16a349;
+  --green-bg: #ddefe4;
+  --blue-900: #1d3a89;
+  --blue-bg: #dfe8f7;
+  --amber-900: #894d05;
+  --amber-bg: #fff6d8;
+  --amber-icon: #f2c14d;
+  --red-bg: #fdeded;
+  --red-bg-2: #fbe2e2;
+  --red-line: #f6c8cc;
+  --pink-bg: #fdebed;
+  --overlay: rgba(15, 22, 42, 0.6);
+
+  /* Bo góc (đo từ thiết kế) */
+  --r-sm: 6px;
+  --r-md: 8px;
+  --r-lg: 10px;
+  --r-xl: 12px;
+  --r-full: 999px;
+
+  /* Bố cục */
+  --topbar-h: 64px;
+  --sidebar-w: 256px;
+  --content-w: 1120px;
+
+  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --shadow-pop: 0 12px 32px rgba(31, 40, 51, 0.12), 0 2px 6px rgba(31, 40, 51, 0.06);
+}

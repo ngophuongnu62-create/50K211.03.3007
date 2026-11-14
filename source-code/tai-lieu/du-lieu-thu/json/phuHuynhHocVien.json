@@ -1,0 +1,1374 @@
+[
+ {
+  "_id": "HV-0001",
+  "tenHocVien": "Nguyễn Minh An",
+  "soDienThoai": "0905000456",
+  "lopTheoHoc": [
+   "IEF-K15",
+   "GT-A2-08"
+  ]
+ },
+ {
+  "_id": "HV-0002",
+  "tenHocVien": "Lê Văn Bình",
+  "soDienThoai": "0934556778",
+  "lopTheoHoc": [
+   "GT-B1-09"
+  ]
+ },
+ {
+  "_id": "HV-0003",
+  "tenHocVien": "Đỗ Thị Hằng",
+  "soDienThoai": "0905667889",
+  "lopTheoHoc": [
+   "GT-A2-08"
+  ]
+ },
+ {
+  "_id": "HV-0004",
+  "tenHocVien": "Trần Gia Huy",
+  "soDienThoai": "0912345001",
+  "lopTheoHoc": [
+   "Kids-K03"
+  ]
+ },
+ {
+  "_id": "HV-0005",
+  "tenHocVien": "Phạm Bảo Ngọc",
+  "soDienThoai": "0912345002",
+  "lopTheoHoc": [
+   "Kids-K04"
+  ]
+ },
+ {
+  "_id": "HV-0006",
+  "tenHocVien": "Hoàng Minh Khoa",
+  "soDienThoai": "0912345003",
+  "lopTheoHoc": [
+   "IEF-K15"
+  ]
+ },
+ {
+  "_id": "HV-0007",
+  "tenHocVien": "Vũ Thanh Tâm",
+  "soDienThoai": "0912345004",
+  "lopTheoHoc": [
+   "TOEIC-K05"
+  ]
+ },
+ {
+  "_id": "HV-0008",
+  "tenHocVien": "Bùi Anh Thư",
+  "soDienThoai": "0912345005",
+  "lopTheoHoc": [
+   "GS-MILKY"
+  ]
+ },
+ {
+  "_id": "HV-0009",
+  "tenHocVien": "Ngô Gia Bảo",
+  "soDienThoai": "0912345006",
+  "lopTheoHoc": [
+   "GS-RABBIT"
+  ]
+ },
+ {
+  "_id": "HV-0010",
+  "tenHocVien": "Đặng Khánh Linh",
+  "soDienThoai": "0912345007",
+  "lopTheoHoc": [
+   "Kids-K03"
+  ]
+ },
+ {
+  "_id": "HV-0011",
+  "tenHocVien": "Trần Gia Hân",
+  "soDienThoai": "0912345001",
+  "lopTheoHoc": [
+   "GS-MILKY"
+  ]
+ },
+ {
+  "_id": "HV-0012",
+  "tenHocVien": "Mai Gia Vinh",
+  "soDienThoai": "0972733538",
+  "lopTheoHoc": [
+   "IEF-K14",
+   "IE65-K12"
+  ]
+ },
+ {
+  "_id": "HV-0013",
+  "tenHocVien": "Nguyễn Mai Thư",
+  "soDienThoai": "0811975025",
+  "lopTheoHoc": [
+   "IEF-K14",
+   "IE65-K12"
+  ]
+ },
+ {
+  "_id": "HV-0014",
+  "tenHocVien": "Lâm Thu Tâm",
+  "soDienThoai": "0362701135",
+  "lopTheoHoc": [
+   "IEF-K14",
+   "IE65-K12"
+  ]
+ },
+ {
+  "_id": "HV-0015",
+  "tenHocVien": "Huỳnh Quốc Tùng",
+  "soDienThoai": "0863278038",
+  "lopTheoHoc": [
+   "IEF-K14",
+   "IE65-K12"
+  ]
+ },
+ {
+  "_id": "HV-0016",
+  "tenHocVien": "Ngô Hữu Đạt",
+  "soDienThoai": "0795020180",
+  "lopTheoHoc": [
+   "IEF-K14",
+   "IE65-K12"
+  ]
+ },
+ {
+  "_id": "HV-0017",
+  "tenHocVien": "Hoàng Phương Vy",
+  "soDienThoai": "0832351063",
+  "lopTheoHoc": [
+   "IEF-K14",
+   "IE65-K12"
+  ]
+ },
+ {
+  "_id": "HV-0018",
+  "tenHocVien": "Trương Thu Như",
+  "soDienThoai": "0326106869",
+  "lopTheoHoc": [
+   "IEF-K15",
+   "GT-A2-08"
+  ]
+ },
+ {
+  "_id": "HV-0019",
+  "tenHocVien": "Vũ Bảo Vinh",
+  "soDienThoai": "0769107378",
+  "lopTheoHoc": [
+   "IEF-K15",
+   "GT-A2-08"
+  ]
+ },
+ {
+  "_id": "HV-0020",
+  "tenHocVien": "Hồ Hoàng Phúc",
+  "soDienThoai": "0337946290",
+  "lopTheoHoc": [
+   "IEF-K15",
+   "GT-A2-08"
+  ]
+ },
+ {
+  "_id": "HV-0021",
+  "tenHocVien": "Võ Thu Thư",
+  "soDienThoai": "0880267974",
+  "lopTheoHoc": [
+   "Kids-K03",
+   "GS-RABBIT"
+  ]
+ },
+ {
+  "_id": "HV-0022",
+  "tenHocVien": "Đặng Hữu Phong",
+  "soDienThoai": "0705371428",
+  "lopTheoHoc": [
+   "Kids-K03",
+   "GS-RABBIT"
+  ]
+ },
+ {
+  "_id": "HV-0023",
+  "tenHocVien": "Vũ Mai Ngân",
+  "soDienThoai": "0767452982",
+  "lopTheoHoc": [
+   "IEF-K14"
+  ]
+ },
+ {
+  "_id": "HV-0024",
+  "tenHocVien": "Võ Gia Oanh",
+  "soDienThoai": "0797942991",
+  "lopTheoHoc": [
+   "IEF-K14"
+  ]
+ },
+ {
+  "_id": "HV-0025",
+  "tenHocVien": "Vũ Diệu Như",
+  "soDienThoai": "0391697759",
+  "lopTheoHoc": [
+   "IEF-K14"
+  ]
+ },
+ {
+  "_id": "HV-0026",
+  "tenHocVien": "Lê Minh Giang",
+  "soDienThoai": "0948329540",
+  "lopTheoHoc": [
+   "IEF-K14"
+  ]
+ },
+ {
+  "_id": "HV-0027",
+  "tenHocVien": "Trần Khánh Ngân",
+  "soDienThoai": "0331137326",
+  "lopTheoHoc": [
+   "IEF-K14"
+  ]
+ },
+ {
+  "_id": "HV-0028",
+  "tenHocVien": "Hoàng Khánh Ngân",
+  "soDienThoai": "0775741025",
+  "lopTheoHoc": [
+   "IEF-K14"
+  ]
+ },
+ {
+  "_id": "HV-0029",
+  "tenHocVien": "Lâm Thu Giang",
+  "soDienThoai": "0856195073",
+  "lopTheoHoc": [
+   "IEF-K14"
+  ]
+ },
+ {
+  "_id": "HV-0030",
+  "tenHocVien": "Bùi Thanh Như",
+  "soDienThoai": "0915532568",
+  "lopTheoHoc": [
+   "IEF-K14"
+  ]
+ },
+ {
+  "_id": "HV-0031",
+  "tenHocVien": "Phan Đức Khôi",
+  "soDienThoai": "0353776245",
+  "lopTheoHoc": [
+   "IEF-K14"
+  ]
+ },
+ {
+  "_id": "HV-0032",
+  "tenHocVien": "Ngô Gia Đạt",
+  "soDienThoai": "0394610122",
+  "lopTheoHoc": [
+   "IEF-K14"
+  ]
+ },
+ {
+  "_id": "HV-0033",
+  "tenHocVien": "Lâm Diệu Ly",
+  "soDienThoai": "0811535386",
+  "lopTheoHoc": [
+   "IEF-K15"
+  ]
+ },
+ {
+  "_id": "HV-0034",
+  "tenHocVien": "Hồ Văn Huy",
+  "soDienThoai": "0864434306",
+  "lopTheoHoc": [
+   "IEF-K15"
+  ]
+ },
+ {
+  "_id": "HV-0035",
+  "tenHocVien": "Phan Mai Hằng",
+  "soDienThoai": "0884476856",
+  "lopTheoHoc": [
+   "IEF-K15"
+  ]
+ },
+ {
+  "_id": "HV-0036",
+  "tenHocVien": "Võ Thu Hương",
+  "soDienThoai": "0353867479",
+  "lopTheoHoc": [
+   "IEF-K15"
+  ]
+ },
+ {
+  "_id": "HV-0037",
+  "tenHocVien": "Mai Gia Vy",
+  "soDienThoai": "0795252569",
+  "lopTheoHoc": [
+   "IEF-K15"
+  ]
+ },
+ {
+  "_id": "HV-0038",
+  "tenHocVien": "Trương Văn Kiên",
+  "soDienThoai": "0839928401",
+  "lopTheoHoc": [
+   "IEF-K15"
+  ]
+ },
+ {
+  "_id": "HV-0039",
+  "tenHocVien": "Trần Văn Phúc",
+  "soDienThoai": "0837049599",
+  "lopTheoHoc": [
+   "IEF-K15"
+  ]
+ },
+ {
+  "_id": "HV-0040",
+  "tenHocVien": "Đỗ Nhật Kiên",
+  "soDienThoai": "0905278264",
+  "lopTheoHoc": [
+   "IEF-K15"
+  ]
+ },
+ {
+  "_id": "HV-0041",
+  "tenHocVien": "Hoàng Hữu Tiến",
+  "soDienThoai": "0335849075",
+  "lopTheoHoc": [
+   "IEF-K15"
+  ]
+ },
+ {
+  "_id": "HV-0042",
+  "tenHocVien": "Dương Hoài Thảo",
+  "soDienThoai": "0981966401",
+  "lopTheoHoc": [
+   "IEF-K15"
+  ]
+ },
+ {
+  "_id": "HV-0043",
+  "tenHocVien": "Lê Văn Duy",
+  "soDienThoai": "0339323285",
+  "lopTheoHoc": [
+   "IEF-K15"
+  ]
+ },
+ {
+  "_id": "HV-0044",
+  "tenHocVien": "Nguyễn Bảo Mai",
+  "soDienThoai": "0354639431",
+  "lopTheoHoc": [
+   "GT-A2-08"
+  ]
+ },
+ {
+  "_id": "HV-0045",
+  "tenHocVien": "Vũ Văn Trí",
+  "soDienThoai": "0898011104",
+  "lopTheoHoc": [
+   "GT-A2-08"
+  ]
+ },
+ {
+  "_id": "HV-0046",
+  "tenHocVien": "Huỳnh Ngọc Lan",
+  "soDienThoai": "0906653513",
+  "lopTheoHoc": [
+   "GT-A2-08"
+  ]
+ },
+ {
+  "_id": "HV-0047",
+  "tenHocVien": "Lê Minh Long",
+  "soDienThoai": "0369728222",
+  "lopTheoHoc": [
+   "GT-A2-08"
+  ]
+ },
+ {
+  "_id": "HV-0048",
+  "tenHocVien": "Trần Anh Khang",
+  "soDienThoai": "0972209911",
+  "lopTheoHoc": [
+   "GT-A2-08"
+  ]
+ },
+ {
+  "_id": "HV-0049",
+  "tenHocVien": "Mai Thu Yến",
+  "soDienThoai": "0971491410",
+  "lopTheoHoc": [
+   "GT-A2-08"
+  ]
+ },
+ {
+  "_id": "HV-0050",
+  "tenHocVien": "Mai Hoài Trang",
+  "soDienThoai": "0332476607",
+  "lopTheoHoc": [
+   "GT-A2-08"
+  ]
+ },
+ {
+  "_id": "HV-0051",
+  "tenHocVien": "Hồ Bảo Vy",
+  "soDienThoai": "0895195923",
+  "lopTheoHoc": [
+   "GT-A2-08"
+  ]
+ },
+ {
+  "_id": "HV-0052",
+  "tenHocVien": "Phạm Văn Sơn",
+  "soDienThoai": "0985722076",
+  "lopTheoHoc": [
+   "GT-A2-08"
+  ]
+ },
+ {
+  "_id": "HV-0053",
+  "tenHocVien": "Trương Ngọc Yến",
+  "soDienThoai": "0791010518",
+  "lopTheoHoc": [
+   "GT-A2-08"
+  ]
+ },
+ {
+  "_id": "HV-0054",
+  "tenHocVien": "Dương Minh Hạnh",
+  "soDienThoai": "0398572434",
+  "lopTheoHoc": [
+   "GT-A2-08"
+  ]
+ },
+ {
+  "_id": "HV-0055",
+  "tenHocVien": "Hoàng Gia Hạnh",
+  "soDienThoai": "0894364209",
+  "lopTheoHoc": [
+   "GT-B1-09"
+  ]
+ },
+ {
+  "_id": "HV-0056",
+  "tenHocVien": "Vũ Hoài Châu",
+  "soDienThoai": "0865395955",
+  "lopTheoHoc": [
+   "GT-B1-09"
+  ]
+ },
+ {
+  "_id": "HV-0057",
+  "tenHocVien": "Võ Bảo Phong",
+  "soDienThoai": "0395029047",
+  "lopTheoHoc": [
+   "GT-B1-09"
+  ]
+ },
+ {
+  "_id": "HV-0058",
+  "tenHocVien": "Đặng Khánh Quỳnh",
+  "soDienThoai": "0761815427",
+  "lopTheoHoc": [
+   "GT-B1-09"
+  ]
+ },
+ {
+  "_id": "HV-0059",
+  "tenHocVien": "Trần Văn Quân",
+  "soDienThoai": "0933180414",
+  "lopTheoHoc": [
+   "GT-B1-09"
+  ]
+ },
+ {
+  "_id": "HV-0060",
+  "tenHocVien": "Bùi Diệu Hương",
+  "soDienThoai": "0772604521",
+  "lopTheoHoc": [
+   "GT-B1-09"
+  ]
+ },
+ {
+  "_id": "HV-0061",
+  "tenHocVien": "Trương Hữu Nam",
+  "soDienThoai": "0919224145",
+  "lopTheoHoc": [
+   "GT-B1-09"
+  ]
+ },
+ {
+  "_id": "HV-0062",
+  "tenHocVien": "Trần Mai Ngân",
+  "soDienThoai": "0833685670",
+  "lopTheoHoc": [
+   "GT-B1-09"
+  ]
+ },
+ {
+  "_id": "HV-0063",
+  "tenHocVien": "Bùi Minh Duy",
+  "soDienThoai": "0793898258",
+  "lopTheoHoc": [
+   "GT-B1-09"
+  ]
+ },
+ {
+  "_id": "HV-0064",
+  "tenHocVien": "Võ Văn Nam",
+  "soDienThoai": "0797545509",
+  "lopTheoHoc": [
+   "GT-B1-09"
+  ]
+ },
+ {
+  "_id": "HV-0065",
+  "tenHocVien": "Mai Hoàng Sơn",
+  "soDienThoai": "0779907905",
+  "lopTheoHoc": [
+   "GT-B1-09"
+  ]
+ },
+ {
+  "_id": "HV-0066",
+  "tenHocVien": "Võ Tuấn Long",
+  "soDienThoai": "0914335349",
+  "lopTheoHoc": [
+   "GT-B1-09"
+  ]
+ },
+ {
+  "_id": "HV-0067",
+  "tenHocVien": "Lý Phương Hạnh",
+  "soDienThoai": "0368466954",
+  "lopTheoHoc": [
+   "GT-B1-09"
+  ]
+ },
+ {
+  "_id": "HV-0068",
+  "tenHocVien": "Đặng Thị Thảo",
+  "soDienThoai": "0361675890",
+  "lopTheoHoc": [
+   "TOEIC-K05"
+  ]
+ },
+ {
+  "_id": "HV-0069",
+  "tenHocVien": "Trương Thanh Vy",
+  "soDienThoai": "0907072878",
+  "lopTheoHoc": [
+   "TOEIC-K05"
+  ]
+ },
+ {
+  "_id": "HV-0070",
+  "tenHocVien": "Đinh Hữu Đạt",
+  "soDienThoai": "0330577516",
+  "lopTheoHoc": [
+   "TOEIC-K05"
+  ]
+ },
+ {
+  "_id": "HV-0071",
+  "tenHocVien": "Trương Anh Bảo",
+  "soDienThoai": "0931896379",
+  "lopTheoHoc": [
+   "TOEIC-K05"
+  ]
+ },
+ {
+  "_id": "HV-0072",
+  "tenHocVien": "Đặng Hữu Phúc",
+  "soDienThoai": "0980983468",
+  "lopTheoHoc": [
+   "TOEIC-K05"
+  ]
+ },
+ {
+  "_id": "HV-0073",
+  "tenHocVien": "Đinh Thanh Như",
+  "soDienThoai": "0352681050",
+  "lopTheoHoc": [
+   "TOEIC-K05"
+  ]
+ },
+ {
+  "_id": "HV-0074",
+  "tenHocVien": "Đỗ Thu Ly",
+  "soDienThoai": "0330495517",
+  "lopTheoHoc": [
+   "TOEIC-K05"
+  ]
+ },
+ {
+  "_id": "HV-0075",
+  "tenHocVien": "Trương Quốc Tiến",
+  "soDienThoai": "0394382274",
+  "lopTheoHoc": [
+   "TOEIC-K05"
+  ]
+ },
+ {
+  "_id": "HV-0076",
+  "tenHocVien": "Mai Mai Anh",
+  "soDienThoai": "0390378891",
+  "lopTheoHoc": [
+   "TOEIC-K05"
+  ]
+ },
+ {
+  "_id": "HV-0077",
+  "tenHocVien": "Đinh Anh Huy",
+  "soDienThoai": "0908750054",
+  "lopTheoHoc": [
+   "TOEIC-K05"
+  ]
+ },
+ {
+  "_id": "HV-0078",
+  "tenHocVien": "Vũ Gia My",
+  "soDienThoai": "0776195454",
+  "lopTheoHoc": [
+   "TOEIC-K05"
+  ]
+ },
+ {
+  "_id": "HV-0079",
+  "tenHocVien": "Lâm Bảo Ngân",
+  "soDienThoai": "0865692024",
+  "lopTheoHoc": [
+   "TOEIC-K05"
+  ]
+ },
+ {
+  "_id": "HV-0080",
+  "tenHocVien": "Trần Bảo Thư",
+  "soDienThoai": "0357464863",
+  "lopTheoHoc": [
+   "TOEIC-K05"
+  ]
+ },
+ {
+  "_id": "HV-0081",
+  "tenHocVien": "Huỳnh Gia Bảo",
+  "soDienThoai": "0765018898",
+  "lopTheoHoc": [
+   "TOEIC-K05"
+  ]
+ },
+ {
+  "_id": "HV-0082",
+  "tenHocVien": "Dương Thành Quân",
+  "soDienThoai": "0868496286",
+  "lopTheoHoc": [
+   "TOEIC-K05"
+  ]
+ },
+ {
+  "_id": "HV-0083",
+  "tenHocVien": "Huỳnh Ngọc Hà",
+  "soDienThoai": "0354174208",
+  "lopTheoHoc": [
+   "TOEIC-K05"
+  ]
+ },
+ {
+  "_id": "HV-0084",
+  "tenHocVien": "Phạm Nhật Thắng",
+  "soDienThoai": "0938982795",
+  "lopTheoHoc": [
+   "TOEIC-K05"
+  ]
+ },
+ {
+  "_id": "HV-0085",
+  "tenHocVien": "Hồ Bảo Oanh",
+  "soDienThoai": "0776069728",
+  "lopTheoHoc": [
+   "TOEIC-K05"
+  ]
+ },
+ {
+  "_id": "HV-0086",
+  "tenHocVien": "Hồ Gia Hà",
+  "soDienThoai": "0338489367",
+  "lopTheoHoc": [
+   "TOEIC-K05"
+  ]
+ },
+ {
+  "_id": "HV-0087",
+  "tenHocVien": "Lê Anh An",
+  "soDienThoai": "0798153966",
+  "lopTheoHoc": [
+   "TOEIC-K06"
+  ]
+ },
+ {
+  "_id": "HV-0088",
+  "tenHocVien": "Vũ Bảo Đạt",
+  "soDienThoai": "0335243732",
+  "lopTheoHoc": [
+   "TOEIC-K06"
+  ]
+ },
+ {
+  "_id": "HV-0089",
+  "tenHocVien": "Phan Bảo Khôi",
+  "soDienThoai": "0975623087",
+  "lopTheoHoc": [
+   "TOEIC-K06"
+  ]
+ },
+ {
+  "_id": "HV-0090",
+  "tenHocVien": "Đinh Khánh Vy",
+  "soDienThoai": "0356204637",
+  "lopTheoHoc": [
+   "TOEIC-K06"
+  ]
+ },
+ {
+  "_id": "HV-0091",
+  "tenHocVien": "Trần Khánh Trâm",
+  "soDienThoai": "0937226480",
+  "lopTheoHoc": [
+   "TOEIC-K06"
+  ]
+ },
+ {
+  "_id": "HV-0092",
+  "tenHocVien": "Trần Bảo Thịnh",
+  "soDienThoai": "0369976903",
+  "lopTheoHoc": [
+   "TOEIC-K06"
+  ]
+ },
+ {
+  "_id": "HV-0093",
+  "tenHocVien": "Võ Gia Quân",
+  "soDienThoai": "0881847852",
+  "lopTheoHoc": [
+   "TOEIC-K06"
+  ]
+ },
+ {
+  "_id": "HV-0094",
+  "tenHocVien": "Lê Hoài Vy",
+  "soDienThoai": "0704923003",
+  "lopTheoHoc": [
+   "TOEIC-K06"
+  ]
+ },
+ {
+  "_id": "HV-0095",
+  "tenHocVien": "Hoàng Thành Long",
+  "soDienThoai": "0762253612",
+  "lopTheoHoc": [
+   "TOEIC-K06"
+  ]
+ },
+ {
+  "_id": "HV-0096",
+  "tenHocVien": "Ngô Minh Khang",
+  "soDienThoai": "0939039027",
+  "lopTheoHoc": [
+   "TOEIC-K06"
+  ]
+ },
+ {
+  "_id": "HV-0097",
+  "tenHocVien": "Mai Minh Phúc",
+  "soDienThoai": "0366779554",
+  "lopTheoHoc": [
+   "TOEIC-K06"
+  ]
+ },
+ {
+  "_id": "HV-0098",
+  "tenHocVien": "Trần Thu My",
+  "soDienThoai": "0854287786",
+  "lopTheoHoc": [
+   "TOEIC-K06"
+  ]
+ },
+ {
+  "_id": "HV-0099",
+  "tenHocVien": "Đỗ Thu Yến",
+  "soDienThoai": "0363784463",
+  "lopTheoHoc": [
+   "TOEIC-K06"
+  ]
+ },
+ {
+  "_id": "HV-0100",
+  "tenHocVien": "Mai Bảo An",
+  "soDienThoai": "0795096875",
+  "lopTheoHoc": [
+   "TOEIC-K06"
+  ]
+ },
+ {
+  "_id": "HV-0101",
+  "tenHocVien": "Nguyễn Anh Quân",
+  "soDienThoai": "0333591087",
+  "lopTheoHoc": [
+   "TOEIC-K06"
+  ]
+ },
+ {
+  "_id": "HV-0102",
+  "tenHocVien": "Lê Quốc Phúc",
+  "soDienThoai": "0394746147",
+  "lopTheoHoc": [
+   "TOEIC-K06"
+  ]
+ },
+ {
+  "_id": "HV-0103",
+  "tenHocVien": "Trương Thành Tùng",
+  "soDienThoai": "0897509810",
+  "lopTheoHoc": [
+   "TOEIC-K06"
+  ]
+ },
+ {
+  "_id": "HV-0104",
+  "tenHocVien": "Đỗ Minh Anh",
+  "soDienThoai": "0389440300",
+  "lopTheoHoc": [
+   "TOEIC-K06"
+  ]
+ },
+ {
+  "_id": "HV-0105",
+  "tenHocVien": "Đỗ Văn Phúc",
+  "soDienThoai": "0850222483",
+  "lopTheoHoc": [
+   "Kids-K03"
+  ]
+ },
+ {
+  "_id": "HV-0106",
+  "tenHocVien": "Đỗ Phương Giang",
+  "soDienThoai": "0362732135",
+  "lopTheoHoc": [
+   "Kids-K03"
+  ]
+ },
+ {
+  "_id": "HV-0107",
+  "tenHocVien": "Nguyễn Ngọc Mai",
+  "soDienThoai": "0764044746",
+  "lopTheoHoc": [
+   "Kids-K03"
+  ]
+ },
+ {
+  "_id": "HV-0108",
+  "tenHocVien": "Vũ Gia An",
+  "soDienThoai": "0359973148",
+  "lopTheoHoc": [
+   "Kids-K03"
+  ]
+ },
+ {
+  "_id": "HV-0109",
+  "tenHocVien": "Vũ Diệu Vy",
+  "soDienThoai": "0766267922",
+  "lopTheoHoc": [
+   "Kids-K03"
+  ]
+ },
+ {
+  "_id": "HV-0110",
+  "tenHocVien": "Phạm Hoàng Trí",
+  "soDienThoai": "0932416003",
+  "lopTheoHoc": [
+   "Kids-K03"
+  ]
+ },
+ {
+  "_id": "HV-0111",
+  "tenHocVien": "Trương Bảo Nam",
+  "soDienThoai": "0937581379",
+  "lopTheoHoc": [
+   "Kids-K03"
+  ]
+ },
+ {
+  "_id": "HV-0112",
+  "tenHocVien": "Trương Minh An",
+  "soDienThoai": "0327524883",
+  "lopTheoHoc": [
+   "Kids-K03"
+  ]
+ },
+ {
+  "_id": "HV-0113",
+  "tenHocVien": "Bùi Thị Ly",
+  "soDienThoai": "0330235804",
+  "lopTheoHoc": [
+   "Kids-K04"
+  ]
+ },
+ {
+  "_id": "HV-0114",
+  "tenHocVien": "Trương Anh Vinh",
+  "soDienThoai": "0891684503",
+  "lopTheoHoc": [
+   "Kids-K04"
+  ]
+ },
+ {
+  "_id": "HV-0115",
+  "tenHocVien": "Trương Nhật Quân",
+  "soDienThoai": "0704386174",
+  "lopTheoHoc": [
+   "Kids-K04"
+  ]
+ },
+ {
+  "_id": "HV-0116",
+  "tenHocVien": "Võ Bảo Quỳnh",
+  "soDienThoai": "0986928268",
+  "lopTheoHoc": [
+   "Kids-K04"
+  ]
+ },
+ {
+  "_id": "HV-0117",
+  "tenHocVien": "Hoàng Bảo Hằng",
+  "soDienThoai": "0338520812",
+  "lopTheoHoc": [
+   "Kids-K04"
+  ]
+ },
+ {
+  "_id": "HV-0118",
+  "tenHocVien": "Lý Bảo Quân",
+  "soDienThoai": "0354508326",
+  "lopTheoHoc": [
+   "Kids-K04"
+  ]
+ },
+ {
+  "_id": "HV-0119",
+  "tenHocVien": "Phan Hoài Hằng",
+  "soDienThoai": "0883710011",
+  "lopTheoHoc": [
+   "Kids-K04"
+  ]
+ },
+ {
+  "_id": "HV-0120",
+  "tenHocVien": "Phan Bảo My",
+  "soDienThoai": "0934592080",
+  "lopTheoHoc": [
+   "Kids-K04"
+  ]
+ },
+ {
+  "_id": "HV-0121",
+  "tenHocVien": "Dương Mai My",
+  "soDienThoai": "0948677703",
+  "lopTheoHoc": [
+   "Kids-K04"
+  ]
+ },
+ {
+  "_id": "HV-0122",
+  "tenHocVien": "Đinh Thành Thắng",
+  "soDienThoai": "0810315555",
+  "lopTheoHoc": [
+   "Kids-K04"
+  ]
+ },
+ {
+  "_id": "HV-0123",
+  "tenHocVien": "Phan Gia An",
+  "soDienThoai": "0765245191",
+  "lopTheoHoc": [
+   "Kids-K04"
+  ]
+ },
+ {
+  "_id": "HV-0124",
+  "tenHocVien": "Hồ Nhật Hải",
+  "soDienThoai": "0794180449",
+  "lopTheoHoc": [
+   "IE65-K12"
+  ]
+ },
+ {
+  "_id": "HV-0125",
+  "tenHocVien": "Vũ Gia Chi",
+  "soDienThoai": "0795936184",
+  "lopTheoHoc": [
+   "IE65-K12"
+  ]
+ },
+ {
+  "_id": "HV-0126",
+  "tenHocVien": "Mai Hữu Tài",
+  "soDienThoai": "0984928440",
+  "lopTheoHoc": [
+   "IE65-K12"
+  ]
+ },
+ {
+  "_id": "HV-0127",
+  "tenHocVien": "Vũ Phương Yến",
+  "soDienThoai": "0850266406",
+  "lopTheoHoc": [
+   "IE65-K12"
+  ]
+ },
+ {
+  "_id": "HV-0128",
+  "tenHocVien": "Dương Anh Thắng",
+  "soDienThoai": "0945414807",
+  "lopTheoHoc": [
+   "IE65-K12"
+  ]
+ },
+ {
+  "_id": "HV-0129",
+  "tenHocVien": "Trần Bảo Uyên",
+  "soDienThoai": "0900035851",
+  "lopTheoHoc": [
+   "IE65-K12"
+  ]
+ },
+ {
+  "_id": "HV-0130",
+  "tenHocVien": "Vũ Mai Yến",
+  "soDienThoai": "0868441040",
+  "lopTheoHoc": [
+   "IE65-K12"
+  ]
+ },
+ {
+  "_id": "HV-0131",
+  "tenHocVien": "Đinh Gia Thảo",
+  "soDienThoai": "0768999709",
+  "lopTheoHoc": [
+   "IE65-K12"
+  ]
+ },
+ {
+  "_id": "HV-0132",
+  "tenHocVien": "Vũ Thành Nam",
+  "soDienThoai": "0817927372",
+  "lopTheoHoc": [
+   "IE65-K12"
+  ]
+ },
+ {
+  "_id": "HV-0133",
+  "tenHocVien": "Vũ Bảo Yến",
+  "soDienThoai": "0799885244",
+  "lopTheoHoc": [
+   "IE65-K12"
+  ]
+ },
+ {
+  "_id": "HV-0134",
+  "tenHocVien": "Lâm Hữu Khôi",
+  "soDienThoai": "0895923093",
+  "lopTheoHoc": [
+   "IE65-K12"
+  ]
+ },
+ {
+  "_id": "HV-0135",
+  "tenHocVien": "Trần Ngọc Uyên",
+  "soDienThoai": "0708691373",
+  "lopTheoHoc": [
+   "IE65-K12"
+  ]
+ },
+ {
+  "_id": "HV-0136",
+  "tenHocVien": "Dương Đức Phúc",
+  "soDienThoai": "0359185354",
+  "lopTheoHoc": [
+   "IE65-K13"
+  ]
+ },
+ {
+  "_id": "HV-0137",
+  "tenHocVien": "Võ Quốc Trí",
+  "soDienThoai": "0798004922",
+  "lopTheoHoc": [
+   "IE65-K13"
+  ]
+ },
+ {
+  "_id": "HV-0138",
+  "tenHocVien": "Võ Bảo Thảo",
+  "soDienThoai": "0765386878",
+  "lopTheoHoc": [
+   "IE65-K13"
+  ]
+ },
+ {
+  "_id": "HV-0139",
+  "tenHocVien": "Phạm Hữu Sơn",
+  "soDienThoai": "0867490838",
+  "lopTheoHoc": [
+   "IE65-K13"
+  ]
+ },
+ {
+  "_id": "HV-0140",
+  "tenHocVien": "Dương Gia Hiếu",
+  "soDienThoai": "0933826698",
+  "lopTheoHoc": [
+   "IE65-K13"
+  ]
+ },
+ {
+  "_id": "HV-0141",
+  "tenHocVien": "Trần Đức Bảo",
+  "soDienThoai": "0881924322",
+  "lopTheoHoc": [
+   "IE65-K13"
+  ]
+ },
+ {
+  "_id": "HV-0142",
+  "tenHocVien": "Hoàng Thị Hân",
+  "soDienThoai": "0973300479",
+  "lopTheoHoc": [
+   "IE65-K13"
+  ]
+ },
+ {
+  "_id": "HV-0143",
+  "tenHocVien": "Phạm Tuấn Khoa",
+  "soDienThoai": "0336837096",
+  "lopTheoHoc": [
+   "IE65-K13"
+  ]
+ },
+ {
+  "_id": "HV-0144",
+  "tenHocVien": "Võ Gia Như",
+  "soDienThoai": "0978061510",
+  "lopTheoHoc": [
+   "IE65-K13"
+  ]
+ },
+ {
+  "_id": "HV-0145",
+  "tenHocVien": "Hoàng Minh Hạnh",
+  "soDienThoai": "0765451056",
+  "lopTheoHoc": [
+   "IE65-K13"
+  ]
+ },
+ {
+  "_id": "HV-0146",
+  "tenHocVien": "Phan Bảo Huy",
+  "soDienThoai": "0852795909",
+  "lopTheoHoc": [
+   "IE65-K13"
+  ]
+ },
+ {
+  "_id": "HV-0147",
+  "tenHocVien": "Hồ Phương Nhi",
+  "soDienThoai": "0859598134",
+  "lopTheoHoc": [
+   "IE65-K13"
+  ]
+ },
+ {
+  "_id": "HV-0148",
+  "tenHocVien": "Phạm Minh Hà",
+  "soDienThoai": "0932303653",
+  "lopTheoHoc": [
+   "IE65-K13"
+  ]
+ },
+ {
+  "_id": "HV-0149",
+  "tenHocVien": "Phan Thành Nam",
+  "soDienThoai": "0904749043",
+  "lopTheoHoc": [
+   "IE65-K13"
+  ]
+ },
+ {
+  "_id": "HV-0150",
+  "tenHocVien": "Huỳnh Đức Trí",
+  "soDienThoai": "0936223044",
+  "lopTheoHoc": [
+   "IE65-K13"
+  ]
+ },
+ {
+  "_id": "HV-0151",
+  "tenHocVien": "Võ Phương Trang",
+  "soDienThoai": "0335004001",
+  "lopTheoHoc": [
+   "IE65-K13"
+  ]
+ },
+ {
+  "_id": "HV-0152",
+  "tenHocVien": "Võ Quốc Hải",
+  "soDienThoai": "0930558833",
+  "lopTheoHoc": [
+   "IE65-K13"
+  ]
+ },
+ {
+  "_id": "HV-0153",
+  "tenHocVien": "Lâm Phương Quỳnh",
+  "soDienThoai": "0896126910",
+  "lopTheoHoc": [
+   "IE65-K13"
+  ]
+ },
+ {
+  "_id": "HV-0154",
+  "tenHocVien": "Dương Diệu Chi",
+  "soDienThoai": "0332694124",
+  "lopTheoHoc": [
+   "GS-MILKY"
+  ]
+ },
+ {
+  "_id": "HV-0155",
+  "tenHocVien": "Ngô Anh Khoa",
+  "soDienThoai": "0359543040",
+  "lopTheoHoc": [
+   "GS-MILKY"
+  ]
+ },
+ {
+  "_id": "HV-0156",
+  "tenHocVien": "Phan Tuấn Sơn",
+  "soDienThoai": "0393980282",
+  "lopTheoHoc": [
+   "GS-MILKY"
+  ]
+ },
+ {
+  "_id": "HV-0157",
+  "tenHocVien": "Hoàng Khánh Tâm",
+  "soDienThoai": "0332695814",
+  "lopTheoHoc": [
+   "GS-MILKY"
+  ]
+ },
+ {
+  "_id": "HV-0158",
+  "tenHocVien": "Võ Khánh Anh",
+  "soDienThoai": "0353451144",
+  "lopTheoHoc": [
+   "GS-MILKY"
+  ]
+ },
+ {
+  "_id": "HV-0159",
+  "tenHocVien": "Lê Hoàng Minh",
+  "soDienThoai": "0792118580",
+  "lopTheoHoc": [
+   "GS-MILKY"
+  ]
+ },
+ {
+  "_id": "HV-0160",
+  "tenHocVien": "Huỳnh Tuấn Đạt",
+  "soDienThoai": "0363127154",
+  "lopTheoHoc": [
+   "GS-MILKY"
+  ]
+ },
+ {
+  "_id": "HV-0161",
+  "tenHocVien": "Trần Thành Bảo",
+  "soDienThoai": "0898965253",
+  "lopTheoHoc": [
+   "GS-MILKY"
+  ]
+ },
+ {
+  "_id": "HV-0162",
+  "tenHocVien": "Ngô Đức Tùng",
+  "soDienThoai": "0882914567",
+  "lopTheoHoc": [
+   "GS-MILKY"
+  ]
+ },
+ {
+  "_id": "HV-0163",
+  "tenHocVien": "Võ Minh Quỳnh",
+  "soDienThoai": "0857332261",
+  "lopTheoHoc": [
+   "GS-MILKY"
+  ]
+ },
+ {
+  "_id": "HV-0164",
+  "tenHocVien": "Hồ Phương Tâm",
+  "soDienThoai": "0330235804",
+  "lopTheoHoc": [
+   "GS-RABBIT"
+  ]
+ },
+ {
+  "_id": "HV-0165",
+  "tenHocVien": "Trần Anh Kiên",
+  "soDienThoai": "0350678932",
+  "lopTheoHoc": [
+   "GS-RABBIT"
+  ]
+ },
+ {
+  "_id": "HV-0166",
+  "tenHocVien": "Lâm Thanh Vy",
+  "soDienThoai": "0336859125",
+  "lopTheoHoc": [
+   "GS-RABBIT"
+  ]
+ },
+ {
+  "_id": "HV-0167",
+  "tenHocVien": "Mai Minh Chi",
+  "soDienThoai": "0974980672",
+  "lopTheoHoc": [
+   "GS-RABBIT"
+  ]
+ },
+ {
+  "_id": "HV-0168",
+  "tenHocVien": "Lê Thị Ly",
+  "soDienThoai": "0916736565",
+  "lopTheoHoc": [
+   "GS-RABBIT"
+  ]
+ },
+ {
+  "_id": "HV-0169",
+  "tenHocVien": "Hồ Ngọc Anh",
+  "soDienThoai": "0765338635",
+  "lopTheoHoc": [
+   "GS-RABBIT"
+  ]
+ },
+ {
+  "_id": "HV-0170",
+  "tenHocVien": "Đỗ Nhật Phúc",
+  "soDienThoai": "0365959299",
+  "lopTheoHoc": [
+   "GS-RABBIT"
+  ]
+ }
+]

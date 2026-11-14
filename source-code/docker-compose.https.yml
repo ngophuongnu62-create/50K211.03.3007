@@ -1,0 +1,42 @@
+# HTTPS cho tên miền thật bằng Caddy (proxy ngược, tự xin + tự gia hạn chứng chỉ).
+# Dùng KÈM tệp chính – đặt trong .env:
+#   COMPOSE_FILE=docker-compose.yml:docker-compose.https.yml
+#   TEN_MIEN=lichday.ten-mien-cua-trung-tam.vn
+#   EMAIL_ACME=email nhận cảnh báo chứng chỉ
+# Trước khi chạy: bản ghi DNS A (và AAAA nếu có IPv6) của TEN_MIEN trỏ về IP máy chủ; tường lửa mở 80/tcp, 443/tcp, 443/udp.
+services:
+  caddy:
+    image: caddy:2.11
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
+    restart: unless-stopped
+    depends_on:
+      app:
+        condition: service_healthy
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      TEN_MIEN: ${TEN_MIEN:?Cần đặt TEN_MIEN trong tệp .env (VD lichday.broadway.edu.vn)}
+      EMAIL_ACME: ${EMAIL_ACME:?Cần đặt EMAIL_ACME trong tệp .env (email nhận thông báo chứng chỉ)}
+      CADDY_TUY_CHON: ${CADDY_TUY_CHON:-}
+    volumes:
+      - ./docker/caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+
+  app:
+    # Không mở cổng ứng dụng ra Internet nữa: chỉ máy chủ tự gọi được (kiểm tra, xử lý sự cố); người dùng đi qua Caddy
+    ports: !override
+      - "127.0.0.1:${CONG:-8080}:8080"
+    environment:
+      TRUST_PROXY: "1"
+      CORS_ORIGIN: https://${TEN_MIEN:?Cần đặt TEN_MIEN trong tệp .env}
+
+volumes:
+  caddy-data:
+  caddy-config:

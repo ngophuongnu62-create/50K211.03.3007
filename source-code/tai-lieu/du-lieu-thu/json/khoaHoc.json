@@ -1,0 +1,112 @@
+[
+ {
+  "_id": "KH-GS-2026",
+  "tenKhoaHoc": "GS · 2026",
+  "ngayBatDau": {
+   "$date": "2026-10-17T00:00:00Z"
+  },
+  "ngayKetThuc": {
+   "$date": "2026-12-20T00:00:00Z"
+  }
+ },
+ {
+  "_id": "KH-GTA2-08",
+  "tenKhoaHoc": "Giao tiếp A2 · Khóa 8",
+  "ngayBatDau": {
+   "$date": "2026-10-26T00:00:00Z"
+  },
+  "ngayKetThuc": {
+   "$date": "2026-12-16T00:00:00Z"
+  }
+ },
+ {
+  "_id": "KH-GTB1-09",
+  "tenKhoaHoc": "Giao tiếp B1 · Khóa 9",
+  "ngayBatDau": {
+   "$date": "2026-11-16T00:00:00Z"
+  },
+  "ngayKetThuc": {
+   "$date": "2026-12-23T00:00:00Z"
+  }
+ },
+ {
+  "_id": "KH-IE65-12",
+  "tenKhoaHoc": "IELTS 6.5 · Khóa 12",
+  "ngayBatDau": {
+   "$date": "2026-11-17T00:00:00Z"
+  },
+  "ngayKetThuc": {
+   "$date": "2027-01-07T00:00:00Z"
+  }
+ },
+ {
+  "_id": "KH-IE65-13",
+  "tenKhoaHoc": "IELTS 6.5 · Khóa 13",
+  "ngayBatDau": {
+   "$date": "2026-11-16T00:00:00Z"
+  },
+  "ngayKetThuc": {
+   "$date": "2027-03-08T00:00:00Z"
+  }
+ },
+ {
+  "_id": "KH-IEF-14",
+  "tenKhoaHoc": "IELTS Foundation · Khóa 14",
+  "ngayBatDau": {
+   "$date": "2026-09-01T00:00:00Z"
+  },
+  "ngayKetThuc": {
+   "$date": "2026-10-22T00:00:00Z"
+  }
+ },
+ {
+  "_id": "KH-IEF-15",
+  "tenKhoaHoc": "IELTS Foundation · Khóa 15",
+  "ngayBatDau": {
+   "$date": "2026-10-27T00:00:00Z"
+  },
+  "ngayKetThuc": {
+   "$date": "2026-12-17T00:00:00Z"
+  }
+ },
+ {
+  "_id": "KH-KIDS-03",
+  "tenKhoaHoc": "Kids Starters · Khóa 3",
+  "ngayBatDau": {
+   "$date": "2026-10-17T00:00:00Z"
+  },
+  "ngayKetThuc": {
+   "$date": "2026-12-20T00:00:00Z"
+  }
+ },
+ {
+  "_id": "KH-KIDS-04",
+  "tenKhoaHoc": "Kids Movers · Khóa 4",
+  "ngayBatDau": {
+   "$date": "2026-11-17T00:00:00Z"
+  },
+  "ngayKetThuc": {
+   "$date": "2027-01-21T00:00:00Z"
+  }
+ },
+ {
+  "_id": "KH-TOEIC-05",
+  "tenKhoaHoc": "TOEIC 650 · Khóa 5",
+  "ngayBatDau": {
+   "$date": "2026-11-17T00:00:00Z"
+  },
+  "ngayKetThuc": {
+   "$date": "2026-12-31T00:00:00Z"
+  }
+ },
+ {
+  "_id": "KH-TOEIC-06",
+  "tenKhoaHoc": "TOEIC 650 · Khóa 6",
+  "ngayBatDau": {
+   "$date": "2026-11-16T00:00:00Z"
+  },
+  "ngayKetThuc": {
+   "$date": "2026-12-30T00:00:00Z"
+  }
+ }
+]

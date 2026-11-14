@@ -1,0 +1,20 @@
+[
+ {
+  "_id": "MH-GT",
+  "tenMonHoc": "Tiếng Anh giao tiếp"
+ },
+ {
+  "_id": "MH-IELTS",
+  "tenMonHoc": "IELTS",
+  "moTa": "Luyện thi IELTS"
+ },
+ {
+  "_id": "MH-KIDS",
+  "tenMonHoc": "Tiếng Anh thiếu nhi"
+ },
+ {
+  "_id": "MH-TOEIC",
+  "tenMonHoc": "TOEIC",
+  "moTa": "Luyện thi TOEIC"
+ }
+]

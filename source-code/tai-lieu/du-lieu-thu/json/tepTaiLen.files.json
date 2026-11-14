@@ -1,0 +1,272 @@
+[
+ {
+  "_id": {
+   "$oid": "6af7a353727a0093a457e1df"
+  },
+  "length": 21512,
+  "chunkSize": 261120,
+  "uploadDate": {
+   "$date": "2026-08-24T02:00:00Z"
+  },
+  "filename": "bangcap/bc-00001-cu-nhan-ngon-ngu-anh.png",
+  "metadata": {
+   "loaiNoiDung": "image/png",
+   "tenGoc": "cu-nhan-ngon-ngu-anh.png"
+  }
+ },
+ {
+  "_id": {
+   "$oid": "6af7a353727a0093a457e1e1"
+  },
+  "length": 19872,
+  "chunkSize": 261120,
+  "uploadDate": {
+   "$date": "2026-08-24T02:00:00Z"
+  },
+  "filename": "bangcap/bc-00002-ielts-8-0.png",
+  "metadata": {
+   "loaiNoiDung": "image/png",
+   "tenGoc": "ielts-8-0.png"
+  }
+ },
+ {
+  "_id": {
+   "$oid": "6af7a353727a0093a457e1e3"
+  },
+  "length": 22900,
+  "chunkSize": 261120,
+  "uploadDate": {
+   "$date": "2026-08-24T02:00:00Z"
+  },
+  "filename": "bangcap/bc-00003-cu-nhan-su-pham-tieng-anh.png",
+  "metadata": {
+   "loaiNoiDung": "image/png",
+   "tenGoc": "cu-nhan-su-pham-tieng-anh.png"
+  }
+ },
+ {
+  "_id": {
+   "$oid": "6af7a353727a0093a457e1e5"
+  },
+  "length": 29661,
+  "chunkSize": 261120,
+  "uploadDate": {
+   "$date": "2026-08-24T02:00:00Z"
+  },
+  "filename": "bangcap/bc-00004-tesol.png",
+  "metadata": {
+   "loaiNoiDung": "image/png",
+   "tenGoc": "tesol.png"
+  }
+ },
+ {
+  "_id": {
+   "$oid": "6af7a353727a0093a457e1e7"
+  },
+  "length": 21512,
+  "chunkSize": 261120,
+  "uploadDate": {
+   "$date": "2026-08-24T02:00:00Z"
+  },
+  "filename": "bangcap/bc-00005-cu-nhan-ngon-ngu-anh.png",
+  "metadata": {
+   "loaiNoiDung": "image/png",
+   "tenGoc": "cu-nhan-ngon-ngu-anh.png"
+  }
+ },
+ {
+  "_id": {
+   "$oid": "6af7a353727a0093a457e1e9"
+  },
+  "length": 20345,
+  "chunkSize": 261120,
+  "uploadDate": {
+   "$date": "2026-08-24T02:00:00Z"
+  },
+  "filename": "bangcap/bc-00006-toeic-950.png",
+  "metadata": {
+   "loaiNoiDung": "image/png",
+   "tenGoc": "toeic-950.png"
+  }
+ },
+ {
+  "_id": {
+   "$oid": "6af7a353727a0093a457e1eb"
+  },
+  "length": 22900,
+  "chunkSize": 261120,
+  "uploadDate": {
+   "$date": "2026-08-24T02:00:00Z"
+  },
+  "filename": "bangcap/bc-00007-cu-nhan-su-pham-tieng-anh.png",
+  "metadata": {
+   "loaiNoiDung": "image/png",
+   "tenGoc": "cu-nhan-su-pham-tieng-anh.png"
+  }
+ },
+ {
+  "_id": {
+   "$oid": "6af7a353727a0093a457e1ed"
+  },
+  "length": 22979,
+  "chunkSize": 261120,
+  "uploadDate": {
+   "$date": "2026-08-24T02:00:00Z"
+  },
+  "filename": "bangcap/bc-00008-tkt-young-learners.png",
+  "metadata": {
+   "loaiNoiDung": "image/png",
+   "tenGoc": "tkt-young-learners.png"
+  }
+ },
+ {
+  "_id": {
+   "$oid": "6af7a353727a0093a457e1ef"
+  },
+  "length": 32371,
+  "chunkSize": 261120,
+  "uploadDate": {
+   "$date": "2026-08-24T02:00:00Z"
+  },
+  "filename": "bangcap/bc-00009-celta.png",
+  "metadata": {
+   "loaiNoiDung": "image/png",
+   "tenGoc": "celta.png"
+  }
+ },
+ {
+  "_id": {
+   "$oid": "6af7a353727a0093a457e1f1"
+  },
+  "length": 26948,
+  "chunkSize": 261120,
+  "uploadDate": {
+   "$date": "2026-08-24T02:00:00Z"
+  },
+  "filename": "bangcap/bc-00010-tefl-120.png",
+  "metadata": {
+   "loaiNoiDung": "image/png",
+   "tenGoc": "tefl-120.png"
+  }
+ },
+ {
+  "_id": {
+   "$oid": "6af7a353727a0093a457e1f3"
+  },
+  "length": 26948,
+  "chunkSize": 261120,
+  "uploadDate": {
+   "$date": "2026-08-24T02:00:00Z"
+  },
+  "filename": "bangcap/bc-00011-tefl-120.png",
+  "metadata": {
+   "loaiNoiDung": "image/png",
+   "tenGoc": "tefl-120.png"
+  }
+ },
+ {
+  "_id": {
+   "$oid": "6af7a353727a0093a457e1f5"
+  },
+  "length": 32371,
+  "chunkSize": 261120,
+  "uploadDate": {
+   "$date": "2026-08-24T02:00:00Z"
+  },
+  "filename": "bangcap/bc-00012-celta.png",
+  "metadata": {
+   "loaiNoiDung": "image/png",
+   "tenGoc": "celta.png"
+  }
+ },
+ {
+  "_id": {
+   "$oid": "6af7a353727a0093a457e1f7"
+  },
+  "length": 22979,
+  "chunkSize": 261120,
+  "uploadDate": {
+   "$date": "2026-08-24T02:00:00Z"
+  },
+  "filename": "bangcap/bc-00013-tkt-young-learners.png",
+  "metadata": {
+   "loaiNoiDung": "image/png",
+   "tenGoc": "tkt-young-learners.png"
+  }
+ },
+ {
+  "_id": {
+   "$oid": "6af7a353727a0093a457e1f9"
+  },
+  "length": 19303,
+  "chunkSize": 261120,
+  "uploadDate": {
+   "$date": "2026-08-24T02:00:00Z"
+  },
+  "filename": "bangcap/bc-00014-ielts-7-5.png",
+  "metadata": {
+   "loaiNoiDung": "image/png",
+   "tenGoc": "ielts-7-5.png"
+  }
+ },
+ {
+  "_id": {
+   "$oid": "6af7a353727a0093a457e1fb"
+  },
+  "length": 19303,
+  "chunkSize": 261120,
+  "uploadDate": {
+   "$date": "2026-08-24T02:00:00Z"
+  },
+  "filename": "bangcap/bc-00015-ielts-7-5.png",
+  "metadata": {
+   "loaiNoiDung": "image/png",
+   "tenGoc": "ielts-7-5.png"
+  }
+ },
+ {
+  "_id": {
+   "$oid": "6af7a353727a0093a457e1fd"
+  },
+  "length": 20012,
+  "chunkSize": 261120,
+  "uploadDate": {
+   "$date": "2026-08-24T02:00:00Z"
+  },
+  "filename": "bangcap/bc-00016-nghiep-vu-su-pham.png",
+  "metadata": {
+   "loaiNoiDung": "image/png",
+   "tenGoc": "nghiep-vu-su-pham.png"
+  }
+ },
+ {
+  "_id": {
+   "$oid": "6af7a353727a0093a457e1ff"
+  },
+  "length": 20012,
+  "chunkSize": 261120,
+  "uploadDate": {
+   "$date": "2026-08-24T02:00:00Z"
+  },
+  "filename": "bangcap/bc-00017-nghiep-vu-su-pham.png",
+  "metadata": {
+   "loaiNoiDung": "image/png",
+   "tenGoc": "nghiep-vu-su-pham.png"
+  }
+ },
+ {
+  "_id": {
+   "$oid": "6af7a353727a0093a457e21b"
+  },
+  "length": 18792,
+  "chunkSize": 261120,
+  "uploadDate": {
+   "$date": "2026-11-04T12:40:00Z"
+  },
+  "filename": "phanhoi/ph-2611-0002-minh-chung.png",
+  "metadata": {
+   "loaiNoiDung": "image/png",
+   "tenGoc": "may-chieu-p102.png"
+  }
+ }
+]

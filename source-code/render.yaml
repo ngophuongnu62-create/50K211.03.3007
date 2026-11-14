@@ -1,0 +1,42 @@
+# Triển khai miễn phí trên Render (gói Free) + MongoDB Atlas (gói Free) – xem tai-lieu/golive/TRIEN_KHAI_RENDER_ATLAS.md
+# Render đọc tệp này khi tạo dịch vụ bằng New → Blueprint. Dùng chung Dockerfile với bản Docker Compose:
+# một dịch vụ phục vụ cả API và giao diện; mỗi lần khởi động tự bổ sung danh mục gốc + tài khoản Admin (chỉ thêm, không xóa).
+# Ảnh bằng cấp / tệp minh chứng lưu trong MongoDB (GridFS) nên không mất khi Render xóa ổ đĩa lúc khởi động lại.
+services:
+  - type: web
+    name: broadway-lich-day
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/suc-khoe
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: "8080"
+      # Chuỗi kết nối Atlas KHÔNG kèm tài khoản, VD: mongodb+srv://cluster0.abcde.mongodb.net/BroadwayDB?retryWrites=true&w=majority
+      - key: MONGODB_URI
+        sync: false
+      # Tài khoản Atlas (Database Access) – tách riêng để mật khẩu không phải mã hóa URL
+      - key: MONGODB_USER
+        sync: false
+      - key: MONGODB_PASSWORD
+        sync: false
+      - key: MONGODB_AUTH_SOURCE
+        value: admin
+      # Atlas không cho tạo vai trò bằng lệnh → ứng dụng tự đồng bộ validator + chỉ mục khi khởi động
+      - key: MONGODB_DONG_BO_CAU_TRUC
+        value: "1"
+      - key: JWT_SECRET
+        generateValue: true
+      # Địa chỉ Render cấp cho dịch vụ, VD https://broadway-lich-day.onrender.com (không có dấu / ở cuối)
+      - key: CORS_ORIGIN
+        sync: false
+      # Render đặt 1 bộ cân bằng tải phía trước → đọc đúng IP người dùng cho giới hạn tần suất và nhật ký
+      - key: TRUST_PROXY
+        value: "1"
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_SO_DIEN_THOAI
+        sync: false

@@ -1,0 +1,6260 @@
+[
+ {
+  "_id": "LR-000001",
+  "maNhanSu": "GV-001",
+  "tuanBatDau": {
+   "$date": "2026-08-31T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-08-31T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-01T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-02T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-03T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-04T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-05T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-08-26T09:21:00Z"
+  }
+ },
+ {
+  "_id": "LR-000002",
+  "maNhanSu": "GV-001",
+  "tuanBatDau": {
+   "$date": "2026-09-07T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-07T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-08T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-09T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-10T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-11T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-12T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-08-31T11:31:00Z"
+  }
+ },
+ {
+  "_id": "LR-000003",
+  "maNhanSu": "GV-001",
+  "tuanBatDau": {
+   "$date": "2026-09-14T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-14T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-15T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-16T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-17T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-18T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-19T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-10T14:41:00Z"
+  }
+ },
+ {
+  "_id": "LR-000004",
+  "maNhanSu": "GV-001",
+  "tuanBatDau": {
+   "$date": "2026-09-21T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-21T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-22T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-23T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-24T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-25T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-26T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-17T05:56:00Z"
+  }
+ },
+ {
+  "_id": "LR-000005",
+  "maNhanSu": "GV-001",
+  "tuanBatDau": {
+   "$date": "2026-09-28T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-28T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-29T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-30T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-01T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-02T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-03T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-21T13:12:00Z"
+  }
+ },
+ {
+  "_id": "LR-000006",
+  "maNhanSu": "GV-001",
+  "tuanBatDau": {
+   "$date": "2026-10-05T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-05T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-06T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-07T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-08T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-09T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-10T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-30T03:12:00Z"
+  }
+ },
+ {
+  "_id": "LR-000007",
+  "maNhanSu": "GV-001",
+  "tuanBatDau": {
+   "$date": "2026-10-12T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-12T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-13T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-14T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-15T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-16T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-17T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-08T08:10:00Z"
+  }
+ },
+ {
+  "_id": "LR-000008",
+  "maNhanSu": "GV-001",
+  "tuanBatDau": {
+   "$date": "2026-10-19T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-19T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-20T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-21T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-22T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-23T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-24T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-15T01:06:00Z"
+  }
+ },
+ {
+  "_id": "LR-000009",
+  "maNhanSu": "GV-001",
+  "tuanBatDau": {
+   "$date": "2026-10-26T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-26T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-27T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-28T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-29T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-30T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-31T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-20T11:29:00Z"
+  }
+ },
+ {
+  "_id": "LR-000010",
+  "maNhanSu": "GV-001",
+  "tuanBatDau": {
+   "$date": "2026-11-02T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-02T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-03T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-04T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-05T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-06T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-07T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-28T06:18:00Z"
+  }
+ },
+ {
+  "_id": "LR-000011",
+  "maNhanSu": "GV-001",
+  "tuanBatDau": {
+   "$date": "2026-11-09T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-09T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-10T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-11T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-12T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-13T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-14T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-11-02T03:49:00Z"
+  }
+ },
+ {
+  "_id": "LR-000012",
+  "maNhanSu": "GV-001",
+  "tuanBatDau": {
+   "$date": "2026-11-16T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-16T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-17T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-18T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-19T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-20T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-21T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-11-09T04:46:00Z"
+  }
+ },
+ {
+  "_id": "LR-000013",
+  "maNhanSu": "GV-002",
+  "tuanBatDau": {
+   "$date": "2026-08-31T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-08-31T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-01T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-02T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-03T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-04T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-05T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-08-25T03:13:00Z"
+  }
+ },
+ {
+  "_id": "LR-000014",
+  "maNhanSu": "GV-002",
+  "tuanBatDau": {
+   "$date": "2026-09-07T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-07T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-08T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-09T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-10T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-11T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-12T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-01T09:40:00Z"
+  }
+ },
+ {
+  "_id": "LR-000015",
+  "maNhanSu": "GV-002",
+  "tuanBatDau": {
+   "$date": "2026-09-14T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-14T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-15T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-16T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-17T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-18T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-19T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-08T07:32:00Z"
+  }
+ },
+ {
+  "_id": "LR-000016",
+  "maNhanSu": "GV-002",
+  "tuanBatDau": {
+   "$date": "2026-09-21T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-21T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-22T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-23T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-24T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-25T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-26T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-15T11:53:00Z"
+  }
+ },
+ {
+  "_id": "LR-000017",
+  "maNhanSu": "GV-002",
+  "tuanBatDau": {
+   "$date": "2026-09-28T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-28T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-29T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-30T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-01T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-02T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-03T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-24T08:21:00Z"
+  }
+ },
+ {
+  "_id": "LR-000018",
+  "maNhanSu": "GV-002",
+  "tuanBatDau": {
+   "$date": "2026-10-05T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-05T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-06T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-07T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-08T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-09T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-10T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-28T14:12:00Z"
+  }
+ },
+ {
+  "_id": "LR-000019",
+  "maNhanSu": "GV-002",
+  "tuanBatDau": {
+   "$date": "2026-10-12T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-12T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-13T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-14T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-15T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-16T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-17T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-06T06:52:00Z"
+  }
+ },
+ {
+  "_id": "LR-000020",
+  "maNhanSu": "GV-002",
+  "tuanBatDau": {
+   "$date": "2026-10-19T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-19T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-20T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-21T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-22T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-23T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-24T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-14T01:25:00Z"
+  }
+ },
+ {
+  "_id": "LR-000021",
+  "maNhanSu": "GV-002",
+  "tuanBatDau": {
+   "$date": "2026-10-26T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-26T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-27T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-28T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-29T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-30T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-31T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-21T07:08:00Z"
+  }
+ },
+ {
+  "_id": "LR-000022",
+  "maNhanSu": "GV-002",
+  "tuanBatDau": {
+   "$date": "2026-11-02T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-02T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-03T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-04T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-05T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-06T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-07T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-26T06:16:00Z"
+  }
+ },
+ {
+  "_id": "LR-000023",
+  "maNhanSu": "GV-002",
+  "tuanBatDau": {
+   "$date": "2026-11-09T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-09T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-10T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-11T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-12T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-13T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-14T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-11-03T09:25:00Z"
+  }
+ },
+ {
+  "_id": "LR-000024",
+  "maNhanSu": "GV-002",
+  "tuanBatDau": {
+   "$date": "2026-11-16T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-16T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-17T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-19T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-20T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-21T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-11-11T03:05:00Z"
+  }
+ },
+ {
+  "_id": "LR-000025",
+  "maNhanSu": "GV-003",
+  "tuanBatDau": {
+   "$date": "2026-08-31T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-08-31T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-02T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-01T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-03T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-05T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-08-26T13:25:00Z"
+  }
+ },
+ {
+  "_id": "LR-000026",
+  "maNhanSu": "GV-003",
+  "tuanBatDau": {
+   "$date": "2026-09-07T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-07T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-09T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-08T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-10T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-12T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-08-31T11:41:00Z"
+  }
+ },
+ {
+  "_id": "LR-000027",
+  "maNhanSu": "GV-003",
+  "tuanBatDau": {
+   "$date": "2026-09-14T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-14T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-16T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-15T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-17T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-19T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-08T11:57:00Z"
+  }
+ },
+ {
+  "_id": "LR-000028",
+  "maNhanSu": "GV-003",
+  "tuanBatDau": {
+   "$date": "2026-09-21T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-21T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-23T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-22T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-24T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-26T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-16T14:02:00Z"
+  }
+ },
+ {
+  "_id": "LR-000029",
+  "maNhanSu": "GV-003",
+  "tuanBatDau": {
+   "$date": "2026-09-28T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-28T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-30T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-29T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-01T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-03T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-23T03:15:00Z"
+  }
+ },
+ {
+  "_id": "LR-000030",
+  "maNhanSu": "GV-003",
+  "tuanBatDau": {
+   "$date": "2026-10-05T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-05T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-07T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-06T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-08T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-10T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-29T14:45:00Z"
+  }
+ },
+ {
+  "_id": "LR-000031",
+  "maNhanSu": "GV-003",
+  "tuanBatDau": {
+   "$date": "2026-10-12T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-12T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-14T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-13T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-15T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-17T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-07T11:46:00Z"
+  }
+ },
+ {
+  "_id": "LR-000032",
+  "maNhanSu": "GV-003",
+  "tuanBatDau": {
+   "$date": "2026-10-19T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-19T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-21T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-20T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-22T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-24T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-13T08:16:00Z"
+  }
+ },
+ {
+  "_id": "LR-000033",
+  "maNhanSu": "GV-003",
+  "tuanBatDau": {
+   "$date": "2026-10-26T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-26T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-28T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-27T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-29T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-31T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-20T03:25:00Z"
+  }
+ },
+ {
+  "_id": "LR-000034",
+  "maNhanSu": "GV-003",
+  "tuanBatDau": {
+   "$date": "2026-11-02T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-02T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-04T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-03T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-05T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-07T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-29T07:22:00Z"
+  }
+ },
+ {
+  "_id": "LR-000035",
+  "maNhanSu": "GV-003",
+  "tuanBatDau": {
+   "$date": "2026-11-09T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-09T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-11T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-10T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-12T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-14T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-11-04T10:04:00Z"
+  }
+ },
+ {
+  "_id": "LR-000036",
+  "maNhanSu": "GV-003",
+  "tuanBatDau": {
+   "$date": "2026-11-16T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-16T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-18T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-17T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-19T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-21T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-11-12T07:50:00Z"
+  }
+ },
+ {
+  "_id": "LR-000037",
+  "maNhanSu": "GV-004",
+  "tuanBatDau": {
+   "$date": "2026-08-31T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-01T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-03T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-05T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-06T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-08-31T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-04T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-08-24T04:07:00Z"
+  }
+ },
+ {
+  "_id": "LR-000038",
+  "maNhanSu": "GV-004",
+  "tuanBatDau": {
+   "$date": "2026-09-07T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-08T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-10T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-12T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-13T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-07T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-11T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-03T12:45:00Z"
+  }
+ },
+ {
+  "_id": "LR-000039",
+  "maNhanSu": "GV-004",
+  "tuanBatDau": {
+   "$date": "2026-09-14T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-15T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-17T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-19T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-20T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-14T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-18T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-09T03:35:00Z"
+  }
+ },
+ {
+  "_id": "LR-000040",
+  "maNhanSu": "GV-004",
+  "tuanBatDau": {
+   "$date": "2026-09-21T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-22T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-24T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-26T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-27T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-21T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-25T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-17T13:43:00Z"
+  }
+ },
+ {
+  "_id": "LR-000041",
+  "maNhanSu": "GV-004",
+  "tuanBatDau": {
+   "$date": "2026-09-28T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-29T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-01T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-03T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-04T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-28T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-02T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-24T09:47:00Z"
+  }
+ },
+ {
+  "_id": "LR-000042",
+  "maNhanSu": "GV-004",
+  "tuanBatDau": {
+   "$date": "2026-10-05T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-06T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-08T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-10T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-11T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-05T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-09T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-01T09:37:00Z"
+  }
+ },
+ {
+  "_id": "LR-000043",
+  "maNhanSu": "GV-004",
+  "tuanBatDau": {
+   "$date": "2026-10-12T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-13T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-15T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-17T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-18T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-12T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-16T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-05T09:37:00Z"
+  }
+ },
+ {
+  "_id": "LR-000044",
+  "maNhanSu": "GV-004",
+  "tuanBatDau": {
+   "$date": "2026-10-19T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-20T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-22T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-24T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-25T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-19T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-23T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-15T10:51:00Z"
+  }
+ },
+ {
+  "_id": "LR-000045",
+  "maNhanSu": "GV-004",
+  "tuanBatDau": {
+   "$date": "2026-10-26T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-27T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-29T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-31T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-01T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-26T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-30T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-20T02:16:00Z"
+  }
+ },
+ {
+  "_id": "LR-000046",
+  "maNhanSu": "GV-004",
+  "tuanBatDau": {
+   "$date": "2026-11-02T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-03T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-05T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-07T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-08T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-02T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-06T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-26T10:56:00Z"
+  }
+ },
+ {
+  "_id": "LR-000047",
+  "maNhanSu": "GV-004",
+  "tuanBatDau": {
+   "$date": "2026-11-09T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-10T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-12T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-14T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-15T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-09T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-13T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-11-04T00:21:00Z"
+  }
+ },
+ {
+  "_id": "LR-000048",
+  "maNhanSu": "GV-004",
+  "tuanBatDau": {
+   "$date": "2026-11-16T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-17T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-19T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-21T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-22T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-16T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-20T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-11-12T01:10:00Z"
+  }
+ },
+ {
+  "_id": "LR-000049",
+  "maNhanSu": "GV-005",
+  "tuanBatDau": {
+   "$date": "2026-08-31T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-01T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-03T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-08-31T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-02T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-04T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-08-26T08:06:00Z"
+  }
+ },
+ {
+  "_id": "LR-000050",
+  "maNhanSu": "GV-005",
+  "tuanBatDau": {
+   "$date": "2026-09-07T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-08T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-10T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-07T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-09T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-11T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-02T05:21:00Z"
+  }
+ },
+ {
+  "_id": "LR-000051",
+  "maNhanSu": "GV-005",
+  "tuanBatDau": {
+   "$date": "2026-09-14T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-15T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-17T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-14T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-16T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-18T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-10T00:57:00Z"
+  }
+ },
+ {
+  "_id": "LR-000052",
+  "maNhanSu": "GV-005",
+  "tuanBatDau": {
+   "$date": "2026-09-21T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-22T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-24T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-21T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-23T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-25T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-14T10:15:00Z"
+  }
+ },
+ {
+  "_id": "LR-000053",
+  "maNhanSu": "GV-005",
+  "tuanBatDau": {
+   "$date": "2026-09-28T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-29T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-01T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-28T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-30T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-02T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-24T13:06:00Z"
+  }
+ },
+ {
+  "_id": "LR-000054",
+  "maNhanSu": "GV-005",
+  "tuanBatDau": {
+   "$date": "2026-10-05T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-06T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-08T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-05T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-07T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-09T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-29T03:16:00Z"
+  }
+ },
+ {
+  "_id": "LR-000055",
+  "maNhanSu": "GV-005",
+  "tuanBatDau": {
+   "$date": "2026-10-12T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-13T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-15T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-12T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-14T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-16T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-06T11:10:00Z"
+  }
+ },
+ {
+  "_id": "LR-000056",
+  "maNhanSu": "GV-005",
+  "tuanBatDau": {
+   "$date": "2026-10-19T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-20T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-22T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-19T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-21T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-23T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-12T04:46:00Z"
+  }
+ },
+ {
+  "_id": "LR-000057",
+  "maNhanSu": "GV-005",
+  "tuanBatDau": {
+   "$date": "2026-10-26T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-27T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-29T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-26T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-28T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-30T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-20T04:11:00Z"
+  }
+ },
+ {
+  "_id": "LR-000058",
+  "maNhanSu": "GV-005",
+  "tuanBatDau": {
+   "$date": "2026-11-02T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-03T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-05T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-02T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-04T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-06T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-28T02:19:00Z"
+  }
+ },
+ {
+  "_id": "LR-000059",
+  "maNhanSu": "GV-005",
+  "tuanBatDau": {
+   "$date": "2026-11-09T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-10T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-12T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-09T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-11T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-13T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-11-04T11:07:00Z"
+  }
+ },
+ {
+  "_id": "LR-000060",
+  "maNhanSu": "GV-005",
+  "tuanBatDau": {
+   "$date": "2026-11-16T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-17T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-19T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-16T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-18T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-20T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-11-10T09:41:00Z"
+  }
+ },
+ {
+  "_id": "LR-000061",
+  "maNhanSu": "GV-006",
+  "tuanBatDau": {
+   "$date": "2026-08-31T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-08-31T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-01T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-02T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-03T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-04T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-08-24T08:45:00Z"
+  }
+ },
+ {
+  "_id": "LR-000062",
+  "maNhanSu": "GV-006",
+  "tuanBatDau": {
+   "$date": "2026-09-07T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-07T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-08T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-09T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-10T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-11T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-01T11:04:00Z"
+  }
+ },
+ {
+  "_id": "LR-000063",
+  "maNhanSu": "GV-006",
+  "tuanBatDau": {
+   "$date": "2026-09-14T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-14T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-15T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-16T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-17T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-18T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-09T15:35:00Z"
+  }
+ },
+ {
+  "_id": "LR-000064",
+  "maNhanSu": "GV-006",
+  "tuanBatDau": {
+   "$date": "2026-09-21T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-21T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-22T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-23T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-24T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-25T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-16T12:30:00Z"
+  }
+ },
+ {
+  "_id": "LR-000065",
+  "maNhanSu": "GV-006",
+  "tuanBatDau": {
+   "$date": "2026-09-28T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-28T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-29T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-30T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-01T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-02T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-23T01:39:00Z"
+  }
+ },
+ {
+  "_id": "LR-000066",
+  "maNhanSu": "GV-006",
+  "tuanBatDau": {
+   "$date": "2026-10-05T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-05T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-06T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-07T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-08T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-09T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-01T09:10:00Z"
+  }
+ },
+ {
+  "_id": "LR-000067",
+  "maNhanSu": "GV-006",
+  "tuanBatDau": {
+   "$date": "2026-10-12T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-12T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-13T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-14T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-15T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-16T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-08T09:04:00Z"
+  }
+ },
+ {
+  "_id": "LR-000068",
+  "maNhanSu": "GV-006",
+  "tuanBatDau": {
+   "$date": "2026-10-19T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-19T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-20T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-21T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-22T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-23T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-14T13:23:00Z"
+  }
+ },
+ {
+  "_id": "LR-000069",
+  "maNhanSu": "GV-006",
+  "tuanBatDau": {
+   "$date": "2026-10-26T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-26T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-27T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-28T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-29T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-30T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-21T03:48:00Z"
+  }
+ },
+ {
+  "_id": "LR-000070",
+  "maNhanSu": "GV-006",
+  "tuanBatDau": {
+   "$date": "2026-11-02T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-02T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-03T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-04T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-05T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-06T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-27T06:47:00Z"
+  }
+ },
+ {
+  "_id": "LR-000071",
+  "maNhanSu": "GV-006",
+  "tuanBatDau": {
+   "$date": "2026-11-09T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-09T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-10T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-11T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-12T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-13T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-11-05T09:29:00Z"
+  }
+ },
+ {
+  "_id": "LR-000072",
+  "maNhanSu": "GV-006",
+  "tuanBatDau": {
+   "$date": "2026-11-16T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-16T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-17T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-18T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-19T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-20T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-11-11T15:15:00Z"
+  }
+ },
+ {
+  "_id": "LR-000073",
+  "maNhanSu": "GV-007",
+  "tuanBatDau": {
+   "$date": "2026-08-31T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-05T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-06T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-08-31T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-01T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-02T00:00:00Z"
+    },
+    "maCa": "CA2"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-08-24T06:14:00Z"
+  }
+ },
+ {
+  "_id": "LR-000074",
+  "maNhanSu": "GV-007",
+  "tuanBatDau": {
+   "$date": "2026-09-07T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-12T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-13T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-07T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-08T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-09T00:00:00Z"
+    },
+    "maCa": "CA2"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-08-31T06:21:00Z"
+  }
+ },
+ {
+  "_id": "LR-000075",
+  "maNhanSu": "GV-007",
+  "tuanBatDau": {
+   "$date": "2026-09-14T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-19T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-20T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-14T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-15T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-16T00:00:00Z"
+    },
+    "maCa": "CA2"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-07T05:12:00Z"
+  }
+ },
+ {
+  "_id": "LR-000076",
+  "maNhanSu": "GV-007",
+  "tuanBatDau": {
+   "$date": "2026-09-21T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-26T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-27T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-21T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-22T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-23T00:00:00Z"
+    },
+    "maCa": "CA2"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-15T06:01:00Z"
+  }
+ },
+ {
+  "_id": "LR-000077",
+  "maNhanSu": "GV-007",
+  "tuanBatDau": {
+   "$date": "2026-09-28T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-03T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-04T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-28T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-29T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-30T00:00:00Z"
+    },
+    "maCa": "CA2"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-24T15:03:00Z"
+  }
+ },
+ {
+  "_id": "LR-000078",
+  "maNhanSu": "GV-007",
+  "tuanBatDau": {
+   "$date": "2026-10-05T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-10T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-11T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-05T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-06T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-07T00:00:00Z"
+    },
+    "maCa": "CA2"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-29T01:02:00Z"
+  }
+ },
+ {
+  "_id": "LR-000079",
+  "maNhanSu": "GV-007",
+  "tuanBatDau": {
+   "$date": "2026-10-12T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-17T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-18T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-12T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-13T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-14T00:00:00Z"
+    },
+    "maCa": "CA2"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-05T05:54:00Z"
+  }
+ },
+ {
+  "_id": "LR-000080",
+  "maNhanSu": "GV-007",
+  "tuanBatDau": {
+   "$date": "2026-10-19T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-24T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-25T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-19T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-20T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-21T00:00:00Z"
+    },
+    "maCa": "CA2"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-13T10:38:00Z"
+  }
+ },
+ {
+  "_id": "LR-000081",
+  "maNhanSu": "GV-007",
+  "tuanBatDau": {
+   "$date": "2026-10-26T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-31T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-01T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-26T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-27T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-28T00:00:00Z"
+    },
+    "maCa": "CA2"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-19T02:15:00Z"
+  }
+ },
+ {
+  "_id": "LR-000082",
+  "maNhanSu": "GV-007",
+  "tuanBatDau": {
+   "$date": "2026-11-02T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-07T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-08T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-02T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-03T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-04T00:00:00Z"
+    },
+    "maCa": "CA2"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-26T09:44:00Z"
+  }
+ },
+ {
+  "_id": "LR-000083",
+  "maNhanSu": "GV-007",
+  "tuanBatDau": {
+   "$date": "2026-11-09T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-14T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-15T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-09T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-10T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-11T00:00:00Z"
+    },
+    "maCa": "CA2"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-11-04T07:49:00Z"
+  }
+ },
+ {
+  "_id": "LR-000084",
+  "maNhanSu": "GV-007",
+  "tuanBatDau": {
+   "$date": "2026-11-16T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-21T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-22T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-16T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-17T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-18T00:00:00Z"
+    },
+    "maCa": "CA2"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-11-10T04:48:00Z"
+  }
+ },
+ {
+  "_id": "LR-000085",
+  "maNhanSu": "GV-008",
+  "tuanBatDau": {
+   "$date": "2026-08-31T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-08-31T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-02T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-04T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-05T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-06T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-08-26T09:12:00Z"
+  }
+ },
+ {
+  "_id": "LR-000086",
+  "maNhanSu": "GV-008",
+  "tuanBatDau": {
+   "$date": "2026-09-07T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-07T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-09T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-11T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-12T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-13T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-08-31T03:07:00Z"
+  }
+ },
+ {
+  "_id": "LR-000087",
+  "maNhanSu": "GV-008",
+  "tuanBatDau": {
+   "$date": "2026-09-14T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-14T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-16T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-18T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-19T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-20T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-10T03:13:00Z"
+  }
+ },
+ {
+  "_id": "LR-000088",
+  "maNhanSu": "GV-008",
+  "tuanBatDau": {
+   "$date": "2026-09-21T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-21T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-23T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-25T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-26T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-27T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-14T13:33:00Z"
+  }
+ },
+ {
+  "_id": "LR-000089",
+  "maNhanSu": "GV-008",
+  "tuanBatDau": {
+   "$date": "2026-09-28T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-28T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-30T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-02T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-03T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-04T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-23T03:42:00Z"
+  }
+ },
+ {
+  "_id": "LR-000090",
+  "maNhanSu": "GV-008",
+  "tuanBatDau": {
+   "$date": "2026-10-05T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-05T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-07T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-09T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-10T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-11T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-01T01:53:00Z"
+  }
+ },
+ {
+  "_id": "LR-000091",
+  "maNhanSu": "GV-008",
+  "tuanBatDau": {
+   "$date": "2026-10-12T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-12T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-14T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-16T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-17T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-18T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-07T08:04:00Z"
+  }
+ },
+ {
+  "_id": "LR-000092",
+  "maNhanSu": "GV-008",
+  "tuanBatDau": {
+   "$date": "2026-10-19T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-19T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-21T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-23T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-24T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-25T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-14T10:00:00Z"
+  }
+ },
+ {
+  "_id": "LR-000093",
+  "maNhanSu": "GV-008",
+  "tuanBatDau": {
+   "$date": "2026-10-26T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-26T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-28T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-30T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-31T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-01T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-21T01:15:00Z"
+  }
+ },
+ {
+  "_id": "LR-000094",
+  "maNhanSu": "GV-008",
+  "tuanBatDau": {
+   "$date": "2026-11-02T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-02T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-04T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-06T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-07T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-08T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-27T13:39:00Z"
+  }
+ },
+ {
+  "_id": "LR-000095",
+  "maNhanSu": "GV-008",
+  "tuanBatDau": {
+   "$date": "2026-11-09T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-09T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-11T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-13T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-14T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-15T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-11-02T09:57:00Z"
+  }
+ },
+ {
+  "_id": "LR-000096",
+  "maNhanSu": "GV-008",
+  "tuanBatDau": {
+   "$date": "2026-11-16T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-16T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-18T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-20T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-21T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-22T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-11-12T09:28:00Z"
+  }
+ },
+ {
+  "_id": "LR-000097",
+  "maNhanSu": "TG-001",
+  "tuanBatDau": {
+   "$date": "2026-08-31T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-08-31T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-02T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-05T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-01T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-03T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-08-25T00:03:00Z"
+  }
+ },
+ {
+  "_id": "LR-000098",
+  "maNhanSu": "TG-001",
+  "tuanBatDau": {
+   "$date": "2026-09-07T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-07T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-09T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-12T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-08T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-10T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-03T14:37:00Z"
+  }
+ },
+ {
+  "_id": "LR-000099",
+  "maNhanSu": "TG-001",
+  "tuanBatDau": {
+   "$date": "2026-09-14T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-14T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-16T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-19T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-15T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-17T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-08T00:34:00Z"
+  }
+ },
+ {
+  "_id": "LR-000100",
+  "maNhanSu": "TG-001",
+  "tuanBatDau": {
+   "$date": "2026-09-21T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-21T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-23T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-26T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-22T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-24T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-17T07:59:00Z"
+  }
+ },
+ {
+  "_id": "LR-000101",
+  "maNhanSu": "TG-001",
+  "tuanBatDau": {
+   "$date": "2026-09-28T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-28T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-30T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-03T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-29T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-01T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-22T14:49:00Z"
+  }
+ },
+ {
+  "_id": "LR-000102",
+  "maNhanSu": "TG-001",
+  "tuanBatDau": {
+   "$date": "2026-10-05T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-05T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-07T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-10T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-06T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-08T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-28T02:30:00Z"
+  }
+ },
+ {
+  "_id": "LR-000103",
+  "maNhanSu": "TG-001",
+  "tuanBatDau": {
+   "$date": "2026-10-12T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-12T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-14T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-17T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-13T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-15T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-05T13:48:00Z"
+  }
+ },
+ {
+  "_id": "LR-000104",
+  "maNhanSu": "TG-001",
+  "tuanBatDau": {
+   "$date": "2026-10-19T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-19T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-21T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-24T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-20T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-22T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-14T00:19:00Z"
+  }
+ },
+ {
+  "_id": "LR-000105",
+  "maNhanSu": "TG-001",
+  "tuanBatDau": {
+   "$date": "2026-10-26T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-26T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-28T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-31T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-27T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-29T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-22T02:15:00Z"
+  }
+ },
+ {
+  "_id": "LR-000106",
+  "maNhanSu": "TG-001",
+  "tuanBatDau": {
+   "$date": "2026-11-02T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-02T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-04T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-07T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-03T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-05T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-28T06:33:00Z"
+  }
+ },
+ {
+  "_id": "LR-000107",
+  "maNhanSu": "TG-001",
+  "tuanBatDau": {
+   "$date": "2026-11-09T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-09T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-11T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-14T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-10T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-12T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-11-02T05:47:00Z"
+  }
+ },
+ {
+  "_id": "LR-000108",
+  "maNhanSu": "TG-001",
+  "tuanBatDau": {
+   "$date": "2026-11-16T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-16T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-18T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-21T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-17T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-19T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-11-11T14:49:00Z"
+  }
+ },
+ {
+  "_id": "LR-000109",
+  "maNhanSu": "TG-002",
+  "tuanBatDau": {
+   "$date": "2026-08-31T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-01T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-03T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-04T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-08-31T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-02T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-08-27T08:04:00Z"
+  }
+ },
+ {
+  "_id": "LR-000110",
+  "maNhanSu": "TG-002",
+  "tuanBatDau": {
+   "$date": "2026-09-07T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-08T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-10T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-11T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-07T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-09T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-02T15:33:00Z"
+  }
+ },
+ {
+  "_id": "LR-000111",
+  "maNhanSu": "TG-002",
+  "tuanBatDau": {
+   "$date": "2026-09-14T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-15T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-17T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-18T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-14T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-16T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-10T06:44:00Z"
+  }
+ },
+ {
+  "_id": "LR-000112",
+  "maNhanSu": "TG-002",
+  "tuanBatDau": {
+   "$date": "2026-09-21T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-22T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-24T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-25T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-21T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-23T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-15T07:41:00Z"
+  }
+ },
+ {
+  "_id": "LR-000113",
+  "maNhanSu": "TG-002",
+  "tuanBatDau": {
+   "$date": "2026-09-28T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-29T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-01T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-02T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-28T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-30T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-23T05:42:00Z"
+  }
+ },
+ {
+  "_id": "LR-000114",
+  "maNhanSu": "TG-002",
+  "tuanBatDau": {
+   "$date": "2026-10-05T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-06T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-08T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-09T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-05T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-07T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-30T01:40:00Z"
+  }
+ },
+ {
+  "_id": "LR-000115",
+  "maNhanSu": "TG-002",
+  "tuanBatDau": {
+   "$date": "2026-10-12T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-13T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-15T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-16T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-12T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-14T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-07T05:45:00Z"
+  }
+ },
+ {
+  "_id": "LR-000116",
+  "maNhanSu": "TG-002",
+  "tuanBatDau": {
+   "$date": "2026-10-19T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-20T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-22T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-23T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-19T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-21T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-12T03:56:00Z"
+  }
+ },
+ {
+  "_id": "LR-000117",
+  "maNhanSu": "TG-002",
+  "tuanBatDau": {
+   "$date": "2026-10-26T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-27T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-29T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-30T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-26T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-28T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-19T13:25:00Z"
+  }
+ },
+ {
+  "_id": "LR-000118",
+  "maNhanSu": "TG-002",
+  "tuanBatDau": {
+   "$date": "2026-11-02T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-03T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-05T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-06T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-02T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-04T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-29T07:31:00Z"
+  }
+ },
+ {
+  "_id": "LR-000119",
+  "maNhanSu": "TG-002",
+  "tuanBatDau": {
+   "$date": "2026-11-09T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-10T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-12T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-13T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-09T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-11T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-11-05T14:01:00Z"
+  }
+ },
+ {
+  "_id": "LR-000120",
+  "maNhanSu": "TG-002",
+  "tuanBatDau": {
+   "$date": "2026-11-16T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-17T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-19T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-20T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-16T00:00:00Z"
+    },
+    "maCa": "CA1"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-18T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-11-11T10:39:00Z"
+  }
+ },
+ {
+  "_id": "LR-000121",
+  "maNhanSu": "TG-003",
+  "tuanBatDau": {
+   "$date": "2026-08-31T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-08-31T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-01T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-02T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-03T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-04T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-08-25T01:58:00Z"
+  }
+ },
+ {
+  "_id": "LR-000122",
+  "maNhanSu": "TG-003",
+  "tuanBatDau": {
+   "$date": "2026-09-07T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-07T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-08T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-09T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-10T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-11T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-02T14:37:00Z"
+  }
+ },
+ {
+  "_id": "LR-000123",
+  "maNhanSu": "TG-003",
+  "tuanBatDau": {
+   "$date": "2026-09-14T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-14T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-15T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-16T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-17T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-18T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-10T00:40:00Z"
+  }
+ },
+ {
+  "_id": "LR-000124",
+  "maNhanSu": "TG-003",
+  "tuanBatDau": {
+   "$date": "2026-09-21T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-21T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-22T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-23T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-24T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-25T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-16T04:54:00Z"
+  }
+ },
+ {
+  "_id": "LR-000125",
+  "maNhanSu": "TG-003",
+  "tuanBatDau": {
+   "$date": "2026-09-28T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-28T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-29T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-30T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-01T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-02T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-22T02:11:00Z"
+  }
+ },
+ {
+  "_id": "LR-000126",
+  "maNhanSu": "TG-003",
+  "tuanBatDau": {
+   "$date": "2026-10-05T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-05T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-06T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-07T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-08T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-09T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-30T05:37:00Z"
+  }
+ },
+ {
+  "_id": "LR-000127",
+  "maNhanSu": "TG-003",
+  "tuanBatDau": {
+   "$date": "2026-10-12T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-12T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-13T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-14T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-15T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-16T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-06T13:39:00Z"
+  }
+ },
+ {
+  "_id": "LR-000128",
+  "maNhanSu": "TG-003",
+  "tuanBatDau": {
+   "$date": "2026-10-19T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-19T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-20T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-21T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-22T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-23T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-13T15:06:00Z"
+  }
+ },
+ {
+  "_id": "LR-000129",
+  "maNhanSu": "TG-003",
+  "tuanBatDau": {
+   "$date": "2026-10-26T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-26T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-27T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-28T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-29T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-30T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-22T10:09:00Z"
+  }
+ },
+ {
+  "_id": "LR-000130",
+  "maNhanSu": "TG-003",
+  "tuanBatDau": {
+   "$date": "2026-11-02T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-02T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-03T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-04T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-05T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-06T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-26T06:26:00Z"
+  }
+ },
+ {
+  "_id": "LR-000131",
+  "maNhanSu": "TG-003",
+  "tuanBatDau": {
+   "$date": "2026-11-09T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-09T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-10T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-11T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-12T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-13T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-11-04T01:35:00Z"
+  }
+ },
+ {
+  "_id": "LR-000132",
+  "maNhanSu": "TG-003",
+  "tuanBatDau": {
+   "$date": "2026-11-16T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-16T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-17T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-18T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-19T00:00:00Z"
+    },
+    "maCa": "CA3"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-20T00:00:00Z"
+    },
+    "maCa": "CA3"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-11-11T04:29:00Z"
+  }
+ },
+ {
+  "_id": "LR-000133",
+  "maNhanSu": "TG-004",
+  "tuanBatDau": {
+   "$date": "2026-08-31T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-05T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-06T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-01T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-03T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-08-31T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-08-27T08:41:00Z"
+  }
+ },
+ {
+  "_id": "LR-000134",
+  "maNhanSu": "TG-004",
+  "tuanBatDau": {
+   "$date": "2026-09-07T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-12T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-13T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-08T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-10T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-07T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-02T03:46:00Z"
+  }
+ },
+ {
+  "_id": "LR-000135",
+  "maNhanSu": "TG-004",
+  "tuanBatDau": {
+   "$date": "2026-09-14T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-19T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-20T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-15T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-17T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-14T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-09T02:19:00Z"
+  }
+ },
+ {
+  "_id": "LR-000136",
+  "maNhanSu": "TG-004",
+  "tuanBatDau": {
+   "$date": "2026-09-21T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-09-26T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-27T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-22T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-24T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-21T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-17T03:16:00Z"
+  }
+ },
+ {
+  "_id": "LR-000137",
+  "maNhanSu": "TG-004",
+  "tuanBatDau": {
+   "$date": "2026-09-28T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-03T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-04T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-29T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-01T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-09-28T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-24T10:36:00Z"
+  }
+ },
+ {
+  "_id": "LR-000138",
+  "maNhanSu": "TG-004",
+  "tuanBatDau": {
+   "$date": "2026-10-05T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-10T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-11T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-06T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-08T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-05T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-09-29T04:09:00Z"
+  }
+ },
+ {
+  "_id": "LR-000139",
+  "maNhanSu": "TG-004",
+  "tuanBatDau": {
+   "$date": "2026-10-12T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-17T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-18T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-13T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-15T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-12T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-05T09:27:00Z"
+  }
+ },
+ {
+  "_id": "LR-000140",
+  "maNhanSu": "TG-004",
+  "tuanBatDau": {
+   "$date": "2026-10-19T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-24T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-25T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-20T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-22T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-19T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-13T04:39:00Z"
+  }
+ },
+ {
+  "_id": "LR-000141",
+  "maNhanSu": "TG-004",
+  "tuanBatDau": {
+   "$date": "2026-10-26T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-10-31T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-01T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-27T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-29T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-10-26T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-21T11:35:00Z"
+  }
+ },
+ {
+  "_id": "LR-000142",
+  "maNhanSu": "TG-004",
+  "tuanBatDau": {
+   "$date": "2026-11-02T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-07T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-08T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-03T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-05T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-02T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-10-27T10:48:00Z"
+  }
+ },
+ {
+  "_id": "LR-000143",
+  "maNhanSu": "TG-004",
+  "tuanBatDau": {
+   "$date": "2026-11-09T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-14T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-15T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-10T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-12T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-09T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-11-02T15:27:00Z"
+  }
+ },
+ {
+  "_id": "LR-000144",
+  "maNhanSu": "TG-004",
+  "tuanBatDau": {
+   "$date": "2026-11-16T00:00:00Z"
+  },
+  "cacRanh": [
+   {
+    "ngayRanh": {
+     "$date": "2026-11-21T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-22T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-17T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-19T00:00:00Z"
+    },
+    "maCa": "CA2"
+   },
+   {
+    "ngayRanh": {
+     "$date": "2026-11-16T00:00:00Z"
+    },
+    "maCa": "CA1"
+   }
+  ],
+  "thoiDiemCapNhat": {
+   "$date": "2026-11-11T03:09:00Z"
+  }
+ }
+]
