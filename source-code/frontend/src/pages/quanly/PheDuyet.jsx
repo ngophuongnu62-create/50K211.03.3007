@@ -30,7 +30,9 @@ export default function PheDuyet() {
   const [gui, setGui] = useState(null); // kết quả gửi thông báo lịch chính thức
 
   const tai = useCallback(() => api(`/quan-ly/quan-ly-lich/${maLop}/kiem-tra`, nhom ? { query: { trangThai: nhom } } : undefined)
-    .then((r) => setKt(r.data)).catch((e) => setLoi(e.message)), [maLop, nhom]);
+    .then((r) => { setLoi(null); setKt(r.data); })
+    // Nhóm buổi đã đổi trạng thái (VD vừa được phát hành) → mở nhóm hiện tại của lớp thay vì báo lỗi
+    .catch((e) => (nhom && e.status === 404 ? setNhom('') : setLoi(e.message))), [maLop, nhom]);
   useEffect(() => { tai(); }, [tai]);
 
   const pheDuyet = async () => {

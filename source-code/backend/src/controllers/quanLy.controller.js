@@ -73,7 +73,7 @@ module.exports = {
   }),
   guiLaiThongBaoPhatHanh: h(async (req, res) => traVe(res, await quanLyLich.guiLaiThongBaoPhatHanh(req.params.maLop, req.body), M.PH_HANH_THANH_CONG)),
   phanCongLai: h(async (req, res) => traVe(res, await quanLyLich.phanCongLai(req.params.maLop, req.user.ma))),
-  xuLyDeXuatThayDoi: h(async (req, res) => traVe(res, await quanLyLich.xuLyDeXuatThayDoi(req.params.maLichDay, req.params.maPhanHoiLichDay, req.body), M.PH_CAP_NHAT_THANH_CONG)),
+  xuLyDeXuatThayDoi: h(async (req, res) => traVe(res, await quanLyLich.xuLyDeXuatThayDoi(req.params.maLichDay, req.params.maPhanHoiLichDay, req.body, req.user.ma), M.PH_CAP_NHAT_THANH_CONG)),
 
   // Thông báo
   guiLaiThongBao: h(async (req, res) => traVe(res, { soThongBao: await thongBao.guiLai(req.body.dsMaThongBao) })),

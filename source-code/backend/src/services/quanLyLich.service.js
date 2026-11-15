@@ -13,7 +13,7 @@ const clock = require('../utils/clock');
 const { sinhNhieuMa } = require('../utils/sinhMa');
 const { trongGiaoDich, trongGiaoDichCoKhoa, khoa: khoaTN } = require('../utils/giaoDich');
 const { ghiNhatKy, anhBuoi } = require('../utils/nhatKy');
-const { LichDay, LopHoc, KhoaHoc, NguoiDung, NhanSuGiangDay, PhuHuynhHocVien, MonHoc } = require('../models');
+const { LichDay, LopHoc, KhoaHoc, NguoiDung, NhanSuGiangDay, PhuHuynhHocVien, MonHoc, PhanHoiGopY } = require('../models');
 const { layBanDo, layTenNguoiDung, moTaLichHoc, nhanCa, tomTatBuoi } = require('./danhMuc.service');
 const khaDung = require('./khaDung.service');
 const { guiThongBao } = require('./thongBao.service');
@@ -685,10 +685,19 @@ async function phanCongLai(maLop, maQuanLy) {
 }
 
 /** Quản lý xử lý đề xuất thay đổi của giáo viên (PhanHoiLichDay.trangThaiXuLy – Bảng 4.1: UC_6.4) */
-async function xuLyDeXuatThayDoi(maLichDay, maPhanHoiLichDay, { trangThaiXuLy }) {
+async function xuLyDeXuatThayDoi(maLichDay, maPhanHoiLichDay, { trangThaiXuLy, ghiChu } = {}, maQuanLy) {
   if (!['DaChapNhan', 'TuChoi'].includes(trangThaiXuLy)) throw new AppError(400, M.PH_CHUA_CHON_TRANG_THAI);
   const ma = String(maLichDay);
   const maPH = String(maPhanHoiLichDay);
+  // Đề xuất có phiếu trong Phản hồi & yêu cầu (UC_8 5a) → xử lý qua phiếu để lịch dạy, phiếu và thông báo luôn khớp nhau
+  const phieu = await PhanHoiGopY.findOne({ maLichDay: ma, maPhanHoiLichDay: maPH }, { _id: 1 }).lean();
+  if (phieu) {
+    const phanHoi = require('./phanHoi.service');
+    return phanHoi.capNhatTrangThai(phieu._id, {
+      trangThaiMoi: trangThaiXuLy === 'DaChapNhan' ? 'DaXuLy' : 'TuChoi',
+      ghiChu: ghiChu || (trangThaiXuLy === 'TuChoi' ? 'Quản lý từ chối đề xuất thay đổi ca dạy' : undefined),
+    }, maQuanLy);
+  }
   const ld = await LichDay.findOne({ _id: ma, 'phanCong.phanHoiLichDay.maPhanHoiLichDay': maPH }).lean();
   if (!ld) throw new AppError(404, M.KHONG_TIM_THAY_LICH);
   const pc = ld.phanCong.find((p) => p.phanHoiLichDay.some((x) => x.maPhanHoiLichDay === maPH));

@@ -22,6 +22,14 @@ export default function XacNhanCaHoc() {
 
   const tai = useCallback(() => api('/phu-huynh/lich-du-kien').then((r) => setD(r.data)).catch((e) => setLoi(e.message)), []);
   useEffect(() => { tai(); }, [tai]);
+  // PH-11-h (BR03): đang mở trang mà hết hạn 24 giờ → tải lại để khóa phản hồi, hiện "Đã quá thời hạn"
+  useEffect(() => {
+    if (!d?.hanChot || !d.soCaChuaPhanHoi) return undefined;
+    const conLai = new Date(d.hanChot).getTime() - Date.now();
+    if (conLai > 2147483647) return undefined;
+    const h = setTimeout(tai, Math.max(0, conLai) + 1000);
+    return () => clearTimeout(h);
+  }, [d?.hanChot, d?.soCaChuaPhanHoi, tai]);
 
   if (loi) return <Alert type="error">{loi}</Alert>;
   if (!d) return <Loading />;

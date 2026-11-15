@@ -92,4 +92,19 @@ describe('Đề xuất thay đổi ca dạy (UC_8 5a) và xử lý của Quản 
     assert.equal(ngay(sau.ngayDay), ngay(truoc.ngayDay));
     assert.equal(sau.maCa, truoc.maCa);
   });
+it('TC-DX-05 · Xử lý qua API đề xuất cũ (Từ chối) cũng cập nhật phiếu và giữ ca cũ – không lệch dữ liệu', async () => {
+    const lan = await t.nhanSu(TK.LAN);
+    const ma = await caLan(3);
+    const truoc = await models.LichDay.findById(ma).lean();
+    assert.equal((await t.goi('POST', `/giao-vien/ca-du-kien/${ma}/de-xuat-thay-doi`, { token: lan, body: { lyDoThayDoi: 'Ốm' } })).status, 200);
+    const ph = (await models.LichDay.findById(ma).lean()).phanCong.find((p) => p.maNhanSu === 'GV-001').phanHoiLichDay.at(-1);
+    const r = await t.goi('PATCH', `/quan-ly/quan-ly-lich/de-xuat-thay-doi/${ma}/${ph.maPhanHoiLichDay}`, { token: await t.nhanSu(TK.QL), body: { trangThaiXuLy: 'TuChoi' } });
+    assert.equal(r.status, 200);
+    const phieu = await models.PhanHoiGopY.findOne({ maLichDay: ma }).lean();
+    assert.equal(phieu.trangThaiXuLy, 'TuChoi');
+    const sau = await models.LichDay.findById(ma).lean();
+    assert.equal(sau.maCa, truoc.maCa);
+    assert.equal(sau.phanCong.find((p) => p.maNhanSu === 'GV-001').trangThaiPhanCong, 'DaXacNhan');
+  });
 });
+

@@ -77,8 +77,12 @@ describe('Kho tệp GridFS', () => {
 
   it('TC-TEP-04 · Đường dẫn không tồn tại / dò thư mục / tên lạ → 404', async () => {
     for (const p of ['/uploads/bangcap/1-khongco.png', '/uploads/../package.json', '/uploads/bangcap/..%2F..%2Fpackage.json', '/uploads/khac/a.png']) {
-      const r = await fetch(goc + p);
-      assert.equal(r.status, 404, p);
+      // Gửi nguyên văn đường dẫn: fetch() tự rút gọn "/uploads/../x" thành "/x" (giao diện SPA → 200), không thử được dò thư mục
+      const status = await new Promise((ok, loi) => {
+        const u = new URL(goc);
+        require('node:http').get({ host: u.hostname, port: u.port, path: p }, (res) => { res.resume(); ok(res.statusCode); }).on('error', loi);
+      });
+      assert.equal(status, 404, p);
     }
   });
 });
