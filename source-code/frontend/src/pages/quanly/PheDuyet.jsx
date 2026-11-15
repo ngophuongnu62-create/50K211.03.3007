@@ -5,7 +5,7 @@
  * Lịch "Đã phát hành" mở ở chế độ chỉ xem (MH19 – "Xem").
  */
 import { useCallback, useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { AlertTriangle, Check, CheckCircle2, RotateCw, Send } from 'lucide-react';
 import { api } from '../../api/client';
 import { useToast } from '../../components/Toast';
@@ -18,6 +18,9 @@ const sdtDep = (s = '') => s.replace(/^(\d{4})(\d{3})(\d{3})$/, '$1 $2 $3');
 
 export default function PheDuyet() {
   const { maLop } = useParams();
+  const [thamSo] = useSearchParams();
+  // Một lớp có thể có nhiều nhóm buổi (VD: lịch đã phát hành + buổi đổi ca đang chờ xác nhận) → mở đúng nhóm của dòng đã chọn
+  const [nhom, setNhom] = useState(thamSo.get('trangThai') || '');
   const nav = useNavigate();
   const toast = useToast();
   const [kt, setKt] = useState(null);
@@ -26,14 +29,15 @@ export default function PheDuyet() {
   const [hop, setHop] = useState(null); // { tone, title, text }
   const [gui, setGui] = useState(null); // kết quả gửi thông báo lịch chính thức
 
-  const tai = useCallback(() => api(`/quan-ly/quan-ly-lich/${maLop}/kiem-tra`).then((r) => setKt(r.data)).catch((e) => setLoi(e.message)), [maLop]);
+  const tai = useCallback(() => api(`/quan-ly/quan-ly-lich/${maLop}/kiem-tra`, nhom ? { query: { trangThai: nhom } } : undefined)
+    .then((r) => setKt(r.data)).catch((e) => setLoi(e.message)), [maLop, nhom]);
   useEffect(() => { tai(); }, [tai]);
 
   const pheDuyet = async () => {
     setDang('duyet');
     try {
       await api(`/quan-ly/quan-ly-lich/${maLop}/phe-duyet`, { method: 'POST' });
-      await tai();
+      if (nhom) setNhom('DaDuyet'); else await tai();
       setHop({ tone: 'success', width: 440, title: 'Phê duyệt lịch thành công!', text: 'Lịch chuyển sang “Đã duyệt” và đã ghi lịch sử phê duyệt.' });
     } catch (e) {
       if (e.status === 409) setHop({ tone: 'error', title: e.message, text: 'Lịch giữ trạng thái trước khi duyệt.' });
@@ -48,7 +52,7 @@ export default function PheDuyet() {
     try {
       const { data } = await api(`/quan-ly/quan-ly-lich/${maLop}/phat-hanh`, { method: 'POST' });
       setGui(data);
-      await tai();
+      if (nhom) setNhom('DaPhatHanh'); else await tai();
       if (!data.chuaGui?.length) setHop({ tone: 'success', width: 460, title: 'Phát hành lịch dạy thành công!', text: 'Lịch chính thức đã gửi tới giáo viên và phụ huynh có học viên thuộc lớp.' });
     } catch {
       setHop({ tone: 'x-circle', width: 460, title: 'Không phát hành được lịch. Vui lòng thử lại!', text: 'Lịch giữ trạng thái “Đã duyệt” để bạn bấm “Phát hành” lại.' }); // 10.a

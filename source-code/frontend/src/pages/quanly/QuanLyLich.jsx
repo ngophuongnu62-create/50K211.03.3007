@@ -35,7 +35,8 @@ export default function QuanLyLich() {
 
   const ds = kq ? kq.ds.filter((l) => !tab || l.trangThaiLich === tab) : [];
   const hanhDong = (l) => {
-    const den = (duong) => () => nav(`/quan-ly/quan-ly-lich/${l.maLop}/${duong}`);
+    // Truyền kèm trạng thái của dòng: một lớp có thể có nhiều nhóm buổi ở trạng thái khác nhau
+    const den = (duong) => () => nav(`/quan-ly/quan-ly-lich/${l.maLop}/${duong}${duong === 'phe-duyet' ? `?trangThai=${l.trangThaiLich}` : ''}`);
     switch (l.hanhDong) {
       case 'PhanCong': return <Button variant="outline" size="sm" onClick={den('phan-cong')}>Phân công lịch dạy</Button>;
       case 'PheDuyetVaPhatHanh': return <Button variant="outline" size="sm" onClick={den('phe-duyet')}>Phê duyệt và phát hành</Button>;
@@ -68,7 +69,7 @@ export default function QuanLyLich() {
             <thead><tr><th style={{ width: 272 }}>Lớp học</th><th style={{ width: 250 }}>Lịch học</th><th style={{ width: 190 }}>Giáo viên</th><th style={{ width: 200 }}>Trạng thái</th><th aria-label="Thao tác" /></tr></thead>
             <tbody>
               {ds.map((l) => (
-                <tr key={l.maLop}>
+                <tr key={`${l.maLop}|${l.trangThaiLich}`}>
                   <td className="cell-main">{l.tenLop}</td>
                   <td>{l.lichHoc}</td>
                   <td>{l.giaoVien === '–' ? '—' : l.giaoVien}</td>
