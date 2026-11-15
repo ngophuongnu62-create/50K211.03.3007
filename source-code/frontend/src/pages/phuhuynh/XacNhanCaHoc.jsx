@@ -7,7 +7,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { CalendarCheck, Clock, Send } from 'lucide-react';
 import { api } from '../../api/client';
 import { useToast } from '../../components/Toast';
-import { Alert, Badge, Button, Empty, Field, Loading, Modal, PageHeader, TextArea } from '../../components/ui';
+import { Alert, Badge, Button, Empty, Field, Loading, Modal, PageHeader, TextArea, ThongBaoModal } from '../../components/ui';
 import { congNgay, dauTuan, ddmm, ddmmyyyy, hanChot, thuCua } from '../../lib/format';
 
 const nhanNgayDu = (s) => `${thuCua(s)} ${ddmmyyyy(s)}`;
@@ -37,7 +37,7 @@ export default function XacNhanCaHoc() {
       const { message } = hoi.tatCa
         ? await api('/phu-huynh/lich-du-kien/xac-nhan-tat-ca', { method: 'POST' })
         : await api(`/phu-huynh/lich-du-kien/${hoi.ca.maLichDay}/xac-nhan`, { method: 'POST' });
-      toast({ title: message, text: 'Kết quả đã chuyển về Quản lý. Nút phản hồi của ca đã xác nhận được ẩn.' });
+      toast({ title: message, text: hoi.tatCa ? 'Kết quả đã chuyển về Quản lý. Các nút phản hồi được ẩn.' : 'Kết quả đã chuyển về Quản lý. Nút phản hồi của ca này được ẩn.' });
       setHoi(null);
       tai();
     } catch (e) {
@@ -53,34 +53,43 @@ export default function XacNhanCaHoc() {
     <>
       <PageHeader crumbs={[{ label: 'Xác nhận ca học' }]} title="Xác nhận ca học dự kiến"
         sub={tuanDau ? `Lịch dự kiến tuần ${ddmm(tuanDau)} – ${ddmmyyyy(tuanCuoi)} do trung tâm gửi. Mỗi ca chỉ phản hồi một lần.` : 'Mỗi ca chỉ phản hồi một lần.'} />
-      {daKhoa ? (
+      {daKhoa ? (<>
+        {/* PH-11-h (Figma): hàng hạn chót chỉ còn nút "Xác nhận tất cả" bị khóa */}
+        <div className="row" style={{ justifyContent: 'flex-end', marginBottom: 24 }}>
+          <Button disabled style={{ background: '#e9ecef', color: 'var(--ink-300)' }}>Xác nhận tất cả</Button>
+        </div>
         <div style={{ marginBottom: 24 }}>
           <Alert type="error" title="Đã quá thời hạn phản hồi lịch học">Tính năng phản hồi đã bị khóa. Hãy liên hệ trung tâm để được giải quyết thắc mắc.</Alert>
         </div>
-      ) : chuaPhanHoi.length > 0 && (
+      </>) : chuaPhanHoi.length > 0 && (
         <div className="row between" style={{ marginBottom: 24 }}>
           <div className="row gap-12">
             <span className="badge" style={{ background: 'var(--gray-100)', color: 'var(--ink-700)' }}><Clock size={13} />Còn {d.conLaiGio} giờ để phản hồi</span>
             <span className="t-13 c-muted">Hạn chót {hanChot(d.hanChot)}</span>
           </div>
-          <Button onClick={() => setHoi({ tatCa: true })}>Xác nhận tất cả ({chuaPhanHoi.length} ca)</Button>
+          <Button onClick={() => setHoi({ tatCa: true })}>Xác nhận tất cả ({chuaPhanHoi.length} ca{chuaPhanHoi.length < ds.length ? ' còn lại' : ''})</Button>
         </div>
       )}
-      {!ds.length && <section className="card" style={{ padding: '48px 0' }}><Empty cream icon={CalendarCheck} title="Không có ca học nào cần xác nhận." /></section>}
+      {!ds.length && <section className="card" style={{ padding: 0 }}><Empty cream icon={CalendarCheck} title="Không có ca học nào cần xác nhận." /></section>}
       <div className="col gap-24">
         {ds.map((c) => (
-          <section key={c.maLichDay} className="card row" style={{ padding: '18px 24px', alignItems: 'center' }}>
-            <div style={{ width: 324 }}>
-              <div className="t-16 w-600">{c.tenLop}</div>
-              <div className="t-13 c-muted mt-4">Giáo viên {c.tenGiaoVien || '—'}</div>
+          <section key={c.maLichDay} className="card row" style={{ padding: '20px 24px', alignItems: 'center', gap: 24 }}>
+            <div style={{ width: 300, flex: 'none' }}>
+              <div className="t-16 w-600" style={{ lineHeight: '19px' }}>{c.tenLop}</div>
+              <div className="t-13 c-muted mt-4" style={{ lineHeight: '16px' }}>Giáo viên {c.tenGiaoVien || '—'}</div>
             </div>
-            <div style={{ width: 154 }}><div className="pa-lbl">Ngày học</div><div className="pa-val">{nhanNgayDu(c.ngayDay)}</div></div>
-            <div style={{ width: 154 }}><div className="pa-lbl">Ca học</div><div className="pa-val">{c.gioHoc}</div></div>
-            <div className="grow"><div className="pa-lbl">Phòng</div><div className="pa-val">{c.tenPhong}</div></div>
+            {/* Figma PH-11: 3 cột chia đều phần còn lại bên cạnh nút/nhãn */}
+            <div style={{ flex: '1 1 0', minWidth: 0, whiteSpace: 'nowrap' }}><div className="pa-lbl">Ngày học</div><div className="pa-val">{nhanNgayDu(c.ngayDay)}</div></div>
+            <div style={{ flex: '1 1 0', minWidth: 0, whiteSpace: 'nowrap' }}><div className="pa-lbl">Ca học</div><div className="pa-val">{c.gioHoc}</div></div>
+            <div style={{ flex: '1 1 0', minWidth: 0, whiteSpace: 'nowrap' }}><div className="pa-lbl">Phòng</div><div className="pa-val">{c.tenPhong}</div></div>
             <div className="row gap-8">
               {c.ketQua === 'XacNhan' ? <Badge tone="green">Đã xác nhận ca học</Badge>
                 : c.ketQua === 'TuChoi' ? <Badge tone="red">Từ chối xác nhận</Badge>
-                  : c.daKhoa ? <Badge tone="gray">Quá hạn phản hồi</Badge> : <>
+                  : c.daKhoa ? <>
+                    {/* PH-11-h (Figma): nút phản hồi hiển thị nhưng bị khóa */}
+                    <Button disabled>Từ chối ca học</Button>
+                    <Button disabled>Xác nhận ca học</Button>
+                  </> : <>
                     <Button variant="outline" onClick={() => setTuChoi(c)}>Từ chối ca học</Button>
                     <Button onClick={() => setHoi({ tatCa: false, ca: c })}>Xác nhận ca học</Button>
                   </>}
@@ -89,18 +98,19 @@ export default function XacNhanCaHoc() {
         ))}
       </div>
 
-      <Modal open={!!hoi} onClose={() => setHoi(null)}
+      {/* PH-11-b / PH-11-i (Figma): hộp thoại 480px, biểu tượng lịch trong vòng tròn hồng */}
+      <ThongBaoModal open={!!hoi} tone="pink" onClose={() => setHoi(null)}
         title={hoi?.tatCa ? `Bạn xác nhận tham gia tất cả ${chuaPhanHoi.length} ca học trong tuần?` : 'Bạn xác nhận tham gia ca học này?'}
-        sub={hoi && !hoi.tatCa ? `${hoi.ca.tenLop} · ${nhanNgayDu(hoi.ca.ngayDay)} · ${hoi.ca.tenCa}` : undefined}
+        text={hoi && !hoi.tatCa ? `${hoi.ca.tenLop} · ${nhanNgayDu(hoi.ca.ngayDay)} · ${hoi.ca.tenCa} (${hoi.ca.gioHoc.split(' · ')[1] || hoi.ca.gioHoc}) · ${hoi.ca.tenPhong}` : undefined}
         footer={<><Button variant="outline" onClick={() => setHoi(null)}>Hủy</Button><Button loading={dang} onClick={dongY}>Đồng ý</Button></>}>
         {hoi?.tatCa && (
-          <ul className="col gap-8" style={{ listStyle: 'none', padding: 0, margin: 0, maxHeight: 260, overflow: 'auto' }}>
-            {chuaPhanHoi.map((c) => <li key={c.maLichDay} className="t-13">{c.tenLop} · {nhanNgayDu(c.ngayDay)} · {c.tenCa}</li>)}
+          <ul className="tb-text" style={{ listStyle: 'none', padding: 0, margin: '6px 0 0', maxHeight: 260, overflow: 'auto' }}>
+            {chuaPhanHoi.map((c) => <li key={c.maLichDay}>{c.tenLop} · {thuCua(c.ngayDay)} {ddmm(c.ngayDay)} · {c.tenCa}</li>)}
           </ul>
         )}
-      </Modal>
+      </ThongBaoModal>
       {tuChoi && <TuChoi ca={tuChoi} onClose={() => setTuChoi(null)} onXong={(msg) => {
-        toast({ title: msg, text: 'Quản lý sẽ điều chỉnh lại lịch học dự kiến và thông báo cho bạn.' });
+        toast({ title: msg, text: 'Quản lý sẽ điều chỉnh lại lịch học dự kiến.' });
         setTuChoi(null);
         tai();
       }} />}
@@ -116,6 +126,8 @@ function TuChoi({ ca, onClose, onXong }) {
   const gui = async () => {
     setLoi(null);
     if (!lyDo.trim()) { setLoi('Vui lòng nhập lý do từ chối xác nhận lịch học'); return; }
+    // PH-11-f (Figma): cho nhập quá 500 ký tự để báo lỗi "509 / 500" thay vì chặn cứng
+    if (lyDo.length > 500) { setLoi('Lý do từ chối không được vượt quá 500 ký tự'); return; }
     setDang(true);
     try {
       const { message } = await api(`/phu-huynh/lich-du-kien/${ca.maLichDay}/tu-choi`, { method: 'POST', body: { lyDoTuChoi: lyDo } });
@@ -130,7 +142,7 @@ function TuChoi({ ca, onClose, onXong }) {
     <Modal open onClose={onClose} title="Từ chối ca học" sub={`${ca.tenLop} · ${nhanNgayDu(ca.ngayDay)} · ${ca.tenCa}`}
       footer={<><Button variant="outline" onClick={onClose}>Hủy</Button><Button icon={Send} loading={dang} onClick={gui}>Gửi phản hồi từ chối</Button></>}>
       <Field label="Lý do từ chối" required error={loi}>
-        <TextArea value={lyDo} onChange={(e) => { setLyDo(e.target.value); setLoi(null); }} error={loi} rows={4} placeholder="Nhập lý do từ chối" />
+        <TextArea value={lyDo} onChange={(e) => { setLyDo(e.target.value); setLoi(null); }} error={loi} rows={4} maxLength={undefined} style={{ height: 94 }} placeholder="Nhập lý do (tối đa 500 ký tự)" />
       </Field>
     </Modal>
   );

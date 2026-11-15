@@ -38,8 +38,8 @@ export default function TraCuuPhieu() {
   return (
     <>
       <PageHeader crumbs={[{ label: 'Tra cứu phiếu' }]} title="Tra cứu tiến độ phản hồi"
-        sub={<>Nhập mã phiếu hoặc xem trong “<Link to="/phu-huynh/lich-su-phan-hoi" className="c-brand w-600">Lịch sử phản hồi</Link>”.</>} />
-      <form className="row gap-12" style={{ maxWidth: 560 }} onSubmit={(e) => { e.preventDefault(); traCuu(ma); }}>
+        sub={<>Nhập mã phiếu hoặc xem trong “<Link to="/phu-huynh/lich-su-phan-hoi" style={{ color: 'inherit' }}>Lịch sử phản hồi</Link>”.</>} />
+      <form className="row gap-12" onSubmit={(e) => { e.preventDefault(); traCuu(ma); }}>
         <div className="grow"><TextInput icon={Ticket} value={ma} onChange={(e) => setMa(e.target.value)} placeholder="VD: PH-2611-0042" /></div>
         <Button type="submit" icon={Search} loading={dang}>Tra cứu</Button>
       </form>
@@ -68,7 +68,7 @@ export default function TraCuuPhieu() {
               );
             })}
           </div>
-          <hr className="divider" style={{ margin: '22px 0' }} />
+          <hr className="divider" style={{ margin: '20px 0' }} />
           <div className="t-14 w-600">Câu trả lời chính thức</div>
           {p.cauTraLoiChinhThuc ? (
             <div style={{ marginTop: 10, background: 'var(--cream-50)', borderRadius: 10, padding: 16 }}>

@@ -41,11 +41,17 @@ async function tinhTrangTheoNgay(ngay, banDo) {
 }
 
 /** UC_2.1 bước 2, 4–7: danh sách phòng trống theo tiêu chí tên phòng, ngày, trạng thái */
-async function danhSachPhongTrong({ ngay, tenPhong, trangThai }) {
-  const ngayXem = ngay ? clock.parseNgay(ngay) : clock.homNay();
-  if (!ngayXem || (trangThai && !E.TRANG_THAI_PHONG.includes(trangThai))) {
+async function danhSachPhongTrong({ ngay, tuNgay, denNgay, tenPhong, trangThai }) {
+  // Thời gian sử dụng: một ngày (ngay) hoặc khoảng tuNgay → denNgay (Figma QL-2.1-c)
+  const ngayXem = (tuNgay || ngay) ? clock.parseNgay(tuNgay || ngay) : clock.homNay();
+  const ngayCuoi = denNgay ? clock.parseNgay(denNgay) : ngayXem;
+  if (!ngayXem || !ngayCuoi || (trangThai && !E.TRANG_THAI_PHONG.includes(trangThai))) {
     throw new AppError(400, M.PHONG_TIM_KIEM_KHONG_HOP_LE); // luồng 6.a
   }
+  if (ngayCuoi < ngayXem) {
+    throw new AppError(400, M.PHONG_TIM_KIEM_KHONG_HOP_LE, { data: { lyDo: M.PHONG_NGAY_KET_THUC_TRUOC } }); // luồng 6.a
+  }
+  if (clock.congNgay(ngayXem, 92) < ngayCuoi) throw new AppError(400, M.PHONG_TIM_KIEM_KHONG_HOP_LE); // [BO SUNG] tối đa ~3 tháng
   let banDo;
   try {
     banDo = await layBanDo();
@@ -53,12 +59,22 @@ async function danhSachPhongTrong({ ngay, tenPhong, trangThai }) {
     throw new AppError(500, M.PHONG_KHONG_TAI_DUOC); // ngoại lệ 2.a
   }
   let ds = await tinhTrangTheoNgay(ngayXem, banDo);
+  // Khoảng nhiều ngày: một ca chỉ "còn trống" khi trống ở mọi ngày; có ca bận ở bất kỳ ngày nào → Đang sử dụng
+  for (let d = clock.congNgay(ngayXem, 1); d <= ngayCuoi; d = clock.congNgay(d, 1)) {
+    const theoNgay = new Map((await tinhTrangTheoNgay(d, banDo)).map((p) => [p.maPhong, p]));
+    ds = ds.map((p) => {
+      const q = theoNgay.get(p.maPhong);
+      const theoCa = p.theoCa.map((c, i) => ({ ...c, trong: c.trong && q.theoCa[i].trong }));
+      const conTrong = theoCa.filter((c) => c.trong);
+      return { ...p, theoCa, caConTrong: conTrong.map((c) => c.tenCa), trangThai: conTrong.length === theoCa.length ? 'ChuaSuDung' : 'DangSuDung' };
+    });
+  }
   if (tenPhong) {
     const tu = String(tenPhong).trim().toLowerCase();
     ds = ds.filter((p) => p.tenPhong.toLowerCase().includes(tu) || p.maPhong.toLowerCase() === tu);
   }
   if (trangThai) ds = ds.filter((p) => p.trangThai === trangThai);
-  return { ngay: clock.dinhDangNgay(ngayXem), nhanNgay: clock.nhanNgayDayDu(ngayXem), dsPhong: ds };
+  return { ngay: clock.dinhDangNgay(ngayXem), denNgay: clock.dinhDangNgay(ngayCuoi), nhanNgay: clock.nhanNgayDayDu(ngayXem), dsPhong: ds };
 }
 
 /** UC_2.1 bước 3, 7: chi tiết phòng (tên, sức chứa, thời gian sử dụng, giảng viên phụ trách, trạng thái) */

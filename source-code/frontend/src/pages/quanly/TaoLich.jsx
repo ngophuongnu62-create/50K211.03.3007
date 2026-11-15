@@ -130,6 +130,12 @@ export default function TaoLich() {
             <Field label="Lớp học" required error={loi.maLop}>
               <Select value={f.maLop} onChange={chonLop} placeholder="Chọn lớp học" error={loi.maLop}
                 options={(dsLop || []).map((l) => ({ value: l.maLop, label: l.tenLop }))} />
+              {/* Bổ sung ngoài Figma: giải thích khi mọi lớp đều đã có lịch (UC_6.1 chỉ áp dụng cho lớp chưa có lịch) */}
+              {dsLop?.length === 0 && (
+                <div className="c-muted" style={{ fontSize: 13, marginTop: 6 }}>
+                  Tất cả lớp đều đã có lịch. Để lập lịch cho tuần tới, dùng “Tạo lịch tuần mới”.
+                </div>
+              )}
             </Field>
             <Field label="Khóa học">
               <TextInput value={lop?.khoaHoc.tenKhoaHoc || ''} placeholder="Tự động theo lớp" readOnly size="readonly" tabIndex={-1} />
@@ -152,13 +158,13 @@ export default function TaoLich() {
 
         <section className="card grow" style={{ padding: 24, minHeight: dsPA ? undefined : 408 }}>
           {!dsPA ? (
-            <div style={{ paddingTop: 72 }}>
+            <div style={{ paddingTop: 56 }}>
               <Empty cream icon={Calendar} title="Chưa có phương án" text="Điền thông tin lớp và bấm “Đề xuất lịch”." />
             </div>
           ) : (
             <>
               <div className="card-title">Phương án đề xuất</div>
-              <div className="t-13 c-muted mt-4">Chọn một phương án rồi bấm “Lưu”</div>
+              <div className="t-13 c-muted" style={{ marginTop: 3, lineHeight: '16px' }}>Chọn một phương án rồi bấm “Lưu”</div>
               <div className="col gap-16" style={{ marginTop: 16 }} role="radiogroup" aria-label="Phương án đề xuất">
                 {dsPA.map((pa, i) => {
                   const sua = dangSua && i === chon;
@@ -168,11 +174,11 @@ export default function TaoLich() {
                       className={`pa-card ${i === chon ? 'on' : ''} ${trung?.index === i ? 'trung' : ''}`}
                       onClick={() => { if (i !== chon) { setChon(i); setDangSua(false); setTrung(null); } }}>
                       <span className="pa-radio" />
-                      <div style={{ width: 146 }}>
+                      <div style={{ width: 130 }}>
                         <div className="t-14 w-600">Phương án {pa.soThuTu}</div>
                         <div className="t-12 c-muted mt-2">{pa.soTuan} tuần · {pa.tongSoTiet} tiết</div>
                       </div>
-                      <div style={{ width: 149 }}>
+                      <div style={{ width: 133 }}>
                         <div className="pa-lbl">Ngày học</div>
                         {sua ? (
                           <div className="row gap-4 wrap" style={{ marginTop: 4 }} onClick={(e) => e.stopPropagation()}>
@@ -183,7 +189,7 @@ export default function TaoLich() {
                           </div>
                         ) : <div className="pa-val">{pa.nhanThu}{ds.thu ? ' (đã sửa)' : ''}</div>}
                       </div>
-                      <div style={{ width: 149 }}>
+                      <div style={{ width: 133 }}>
                         <div className="pa-lbl">Giờ học</div>
                         {sua ? (
                           <div onClick={(e) => e.stopPropagation()} style={{ marginTop: 4 }}>
@@ -213,8 +219,8 @@ export default function TaoLich() {
                   </Alert>
                 </div>
               )}
-              <div className="row between" style={{ marginTop: 16, background: 'var(--cream-100)', borderRadius: 10, padding: '12px 16px' }}>
-                <span className="t-13 c-ink-600">Muốn sửa phương án?</span>
+              <div className="row between" style={{ marginTop: 16, background: 'var(--cream-100)', borderRadius: 10, padding: '14px 16px' }}>
+                <span className="t-13 c-ink-600 w-500">Muốn sửa phương án?</span>
                 <div className="row gap-8">
                   <Button variant="outline" size="sm" icon={Pencil} onClick={batDauSua} disabled={dangSua}>Sửa ngày / giờ / phòng</Button>
                   <Button variant="outline" size="sm" icon={RotateCw} loading={dang === 'kiemTra'} onClick={kiemTraLai}>Kiểm tra lại</Button>
@@ -232,7 +238,7 @@ export default function TaoLich() {
       <ThongBaoModal open={hop === 'khongCo'} tone="error" onClose={() => setHop(null)}
         title="Không có thời gian và phòng học phù hợp với lớp đã chọn!" text="Lớp đã chọn được giữ nguyên để bạn chọn lại lớp khác."
         footer={<Button onClick={() => setHop(null)}>OK</Button>} />
-      <ThongBaoModal open={hop === 'loiLuu'} tone="error" onClose={() => setHop(null)}
+      <ThongBaoModal open={hop === 'loiLuu'} tone="x-circle" onClose={() => setHop(null)}
         title="Không lưu được lịch dạy. Vui lòng thử lại!" text="Phương án đã chọn được giữ nguyên để bấm “Lưu” lại."
         footer={<Button onClick={() => setHop(null)}>OK</Button>} />
       <ThongBaoModal open={hop === 'thanhCong'} tone="success" onClose={() => nav('/quan-ly/quan-ly-lich')}

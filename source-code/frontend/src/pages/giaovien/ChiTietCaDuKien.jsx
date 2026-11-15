@@ -4,7 +4,7 @@
  */
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import { Check, Clock, Lock, Send } from 'lucide-react';
+import { Clock } from 'lucide-react';
 import { api } from '../../api/client';
 import { useToast } from '../../components/Toast';
 import { Alert, Badge, Button, Field, Loading, PageHeader, Select, TextArea } from '../../components/ui';
@@ -65,7 +65,7 @@ export default function ChiTietCaDuKien() {
     setDang('gui');
     try {
       const { message } = await api(`/giao-vien/ca-du-kien/${maLichDay}/de-xuat-thay-doi`, { method: 'POST', body: { lyDoThayDoi: lyDo, ngayDeXuat, maCaDeXuat } });
-      veDanhSach('DeXuatThayDoi', { title: t(message), text: t('Phản hồi được lưu ở trạng thái “Chờ xử lý” và đã gửi tới Quản lý.') });
+      veDanhSach('DeXuatThayDoi', { title: t(message), text: t('Phản hồi được lưu ở trạng thái “Chờ xử lý” và đã thông báo cho Quản lý.') });
     } catch (e) {
       if (Object.keys(e.fieldErrors).length) setLoi(e.fieldErrors);
       else toast({ type: 'error', title: e.message }); // nội dung đã nhập được giữ nguyên
@@ -81,11 +81,12 @@ export default function ChiTietCaDuKien() {
         title={t('Chi tiết ca dạy và gửi phản hồi')} sub={b.tenLop} />
       <div className="row gap-20" style={{ alignItems: 'flex-start' }}>
         <section className="card" style={{ width: 420, flex: 'none', padding: 24 }}>
-          <div className="row between" style={{ paddingBottom: 16, borderBottom: '1px solid var(--line)' }}>
+          <div className="row between">
             <div className="card-title">{t('Thông tin ca dạy')}</div>
             <Badge tone="blue">{t('Chờ GV xác nhận')}</Badge>
           </div>
-          <dl className="kv" style={{ gridTemplateColumns: '86px 1fr', marginTop: 16, rowGap: 14 }}>
+          <div style={{ height: 1, background: 'var(--line)', margin: '16px 0' }} />
+          <dl className="kv kv-figma" style={{ gridTemplateColumns: '90px 1fr', columnGap: 12, rowGap: 16 }}>
             <dt>{t('Lớp')}</dt><dd>{b.tenLop}</dd>
             <dt>{t('Ca dạy')}</dt><dd>{b.gioHoc}</dd>
             <dt>{t('Ngày')}</dt><dd>{nhanNgay(b.ngayDay)} · {t('Tuần')} {b.tuan}</dd>
@@ -93,39 +94,39 @@ export default function ChiTietCaDuKien() {
           </dl>
           <div style={{ marginTop: 16 }}>
             {quaHan ? <Badge tone="red" icon={Clock}>{t('Quá hạn')}</Badge>
-              : daPhanHoi ? <Badge tone={b.trangThaiPhanCong === 'DaXacNhan' ? 'green' : 'amber'}>{t(b.trangThaiPhanCong === 'DaXacNhan' ? 'Đã xác nhận' : 'Chờ xử lý')}</Badge>
+              : daPhanHoi ? <Badge tone={b.trangThaiPhanCong === 'DaXacNhan' ? 'green' : 'gray'}>{t(b.trangThaiPhanCong === 'DaXacNhan' ? 'Đã xác nhận' : 'Chờ xử lý')}</Badge>
                 : <span className="badge" style={{ background: 'var(--gray-100)', color: 'var(--ink-700)' }}><Clock size={13} />{t('Còn')} {b.conLaiGio} {t('giờ')} {t('để phản hồi')}</span>}
           </div>
         </section>
 
         <section className="card grow" style={{ padding: 24 }}>
-          <div className="card-title">{t('Đồng ý với lịch này?')}</div>
+          {!quaHan && <div className="card-title">{t('Đồng ý với lịch này?')}</div>}
           {quaHan && (
-            <div style={{ marginTop: 16 }}>
+            <div>
               <Alert type="error" title={t('Đã quá thời hạn gửi phản hồi')}>{t('Tính năng phản hồi của ca dạy này đã bị khóa. Vui lòng liên hệ Quản lý nếu cần thay đổi.')}</Alert>
             </div>
           )}
-          {daPhanHoi && !quaHan && <div style={{ marginTop: 16 }}><Alert type="info">{t('Bạn đã phản hồi ca dạy này.')}</Alert></div>}
-          <Button block size="lg" icon={khoa ? Lock : Check} loading={dang === 'xacNhan'} disabled={khoa} onClick={xacNhan} style={{ marginTop: 16 }}>
+          {daPhanHoi && !quaHan && <div style={{ marginTop: 18 }}><Alert type="info">{t('Bạn đã phản hồi ca dạy này.')}</Alert></div>}
+          <Button block size={quaHan ? undefined : 'lg'} loading={dang === 'xacNhan'} disabled={khoa} onClick={xacNhan} style={{ marginTop: 18 }}>
             {t('Xác nhận duyệt lịch dạy')}
           </Button>
           {!khoa && (
             <>
               <div className="hoac"><span>{t('hoặc đề xuất thay đổi')}</span></div>
               <Field label={t('Lý do thay đổi')} required error={loi.lyDoThayDoi && t(loi.lyDoThayDoi)}>
-                <TextArea id="ly-do-thay-doi" value={lyDo} error={loi.lyDoThayDoi} placeholder={t('Nhập lý do (10 – 500 ký tự)')} rows={4}
+                <TextArea id="ly-do-thay-doi" value={lyDo} error={loi.lyDoThayDoi} placeholder={t('Nhập lý do (tối đa 500 ký tự)')} rows={4}
                   onChange={(e) => { setLyDo(e.target.value); setLoi((l) => ({ ...l, lyDoThayDoi: undefined })); }} />
               </Field>
-              <div style={{ marginTop: 16 }}>
-                <Field label={<>{t('Ca dạy đề xuất thay thế')} <span className="c-muted w-500 t-12">{t('(không bắt buộc)')}</span></>} error={loi.maCaDeXuat}>
+              <div style={{ marginTop: 18 }}>
+                <Field label={<>{t('Ca dạy đề xuất thay thế')} <span className="c-muted t-12" style={{ fontWeight: 400 }}>{t('(không bắt buộc)')}</span></>} error={loi.maCaDeXuat}>
                   <Select value={caThayThe} onChange={(v) => { setCaThayThe(v); setLoi((l) => ({ ...l, maCaDeXuat: undefined })); }}
                     placeholder={t('Chọn ca dạy thay thế')} error={loi.maCaDeXuat} options={dsCa} />
                 </Field>
               </div>
-              <Button block variant="outline" icon={Send} loading={dang === 'gui'} onClick={guiDeXuat} style={{ marginTop: 18 }}>{t('Gửi phản hồi')}</Button>
+              <Button block variant="outline" loading={dang === 'gui'} onClick={guiDeXuat} style={{ marginTop: 18 }}>{t('Gửi phản hồi')}</Button>
             </>
           )}
-          {khoa && quaHan && <Button block variant="outline" icon={Lock} disabled style={{ marginTop: 14 }}>{t('Gửi phản hồi')}</Button>}
+          {khoa && quaHan && <Button block disabled style={{ marginTop: 18 }}>{t('Gửi phản hồi')}</Button>}
         </section>
       </div>
     </>

@@ -18,10 +18,11 @@ export function TheThongTinLich({ ttLop, trangThaiLich }) {
   return (
     <section className="card row between" style={{ padding: '20px 20px' }}>
       <div className="row" style={{ gap: 32 }}>
-        <div><div className="pa-lbl">Lớp</div><div className="pa-val">{ttLop.tenLop}</div></div>
-        <div><div className="pa-lbl">Lịch học</div><div className="pa-val">{ttLop.lichHoc}</div></div>
-        <div><div className="pa-lbl">Phòng</div><div className="pa-val">{ttLop.phong}</div></div>
-        <div><div className="pa-lbl">Bắt đầu</div><div className="pa-val">{ddmmyyyy(ttLop.batDau)}</div></div>
+        {/* Figma QL-6.3-a: giá trị đậm 600 */}
+        <div><div className="pa-lbl">Lớp</div><div className="pa-val w-600">{ttLop.tenLop}</div></div>
+        <div><div className="pa-lbl">Lịch học</div><div className="pa-val w-600">{ttLop.lichHoc}</div></div>
+        <div><div className="pa-lbl">Phòng</div><div className="pa-val w-600">{ttLop.phong}</div></div>
+        <div><div className="pa-lbl">Bắt đầu</div><div className="pa-val w-600">{ddmmyyyy(ttLop.batDau)}</div></div>
       </div>
       <Badge tone={MAU_TRANG_THAI_LICH[trangThaiLich]}>{NHAN_TRANG_THAI_LICH[trangThaiLich]}</Badge>
     </section>
@@ -114,7 +115,7 @@ export default function PhanCong() {
         {daLuu ? (
           <>
             <div className="card-title">Giáo viên được phân công</div>
-            <div className="gv-card" style={{ marginTop: 14 }}>
+            <div className="gv-card" style={{ marginTop: 14, gap: 14 }}>
               <span className="avatar gray" style={{ width: 40, height: 40 }}>{vietTat(daLuu.gv.hoTen)}</span>
               <div className="grow"><div className="gv-ten">{daLuu.gv.hoTen}</div><div className="gv-mota">{moTaGV(daLuu.gv, true)}</div></div>
               {daLuu.gui === 'daGui' ? <Badge tone="green">Đã gửi</Badge> : daLuu.gui === 'chuaGui' ? <Badge tone="red">Chưa gửi</Badge> : <Badge tone="blue">Chờ GV xác nhận</Badge>}
@@ -125,7 +126,7 @@ export default function PhanCong() {
                   Đã lưu phân công nhưng chưa gửi được thông báo cho giáo viên!
                 </Alert>
               ) : (
-                <div className="alert" style={{ background: 'var(--cream-100)', border: '1px solid var(--cream-200)', color: 'var(--ink-700)' }}>
+                <div className="alert alert-info">
                   <Info size={20} /><div className="grow">Đã lưu phân công. Bấm “Gửi thông báo cho giáo viên” để gửi lịch dự kiến.</div>
                 </div>
               )}
@@ -134,7 +135,7 @@ export default function PhanCong() {
         ) : ngoai ? (
           <>
             <div className="card-title">Giáo viên được chọn ngoài đề xuất</div>
-            <div className="t-13 c-muted mt-4">Hệ thống kiểm tra chuyên môn, lịch dạy và lịch rảnh</div>
+            <div className="t-13 c-muted" style={{ marginTop: 3, lineHeight: '16px' }}>Hệ thống kiểm tra chuyên môn, lịch dạy và lịch rảnh</div>
             <div className={`gv-card on ${ketQuaKT && !ketQuaKT.ok ? 'trung' : ''}`} style={{ marginTop: 14 }}>
               <span className="pa-radio" />
               <span className="avatar gray" style={{ width: 40, height: 40 }}>{vietTat(ngoai.hoTen)}</span>
@@ -145,7 +146,6 @@ export default function PhanCong() {
               <div style={{ marginTop: 14 }}>
                 <Alert type={ketQuaKT.ok ? 'success' : 'error'}>
                   {ketQuaKT.text}
-                  {!ketQuaKT.ok && ketQuaKT.lyDo?.length > 0 && <div className="t-12 mt-4" style={{ opacity: 0.85 }}>{ketQuaKT.lyDo.slice(0, 3).join(' · ')}</div>}
                 </Alert>
               </div>
             )}
@@ -153,12 +153,12 @@ export default function PhanCong() {
         ) : (
           <>
             <div className="card-title">Giáo viên được đề xuất</div>
-            <div className="t-13 c-muted mt-4">Đúng chuyên môn, có lịch rảnh, không trùng lịch · ưu tiên kinh nghiệm và phản hồi tốt</div>
+            <div className="t-13 c-muted" style={{ marginTop: 3, lineHeight: '16px' }}>Đúng chuyên môn, có lịch rảnh, không trùng lịch · ưu tiên kinh nghiệm và phản hồi tốt</div>
             {ds.deXuat.length === 0 ? (
-              <div className="empty" style={{ padding: '36px 0 20px' }}>
-                <div className="empty-icon cream"><Users size={24} /></div>
+              <div className="empty" style={{ padding: '56px 24px', marginTop: 14 }}>
+                <div className="empty-icon cream"><Users size={28} /></div>
                 <div className="empty-title">Không có giáo viên phù hợp với lịch đã chọn!</div>
-                <div className="mt-8">Bấm “Danh sách giáo viên” để tự chọn giáo viên ngoài đề xuất.</div>
+                <div className="empty-text">Bấm “Danh sách giáo viên” để tự chọn giáo viên.</div>
               </div>
             ) : (
               <div className="col gap-14" style={{ marginTop: 14 }} role="radiogroup" aria-label="Giáo viên được đề xuất">
@@ -168,7 +168,7 @@ export default function PhanCong() {
                     <span className="pa-radio" />
                     <span className="avatar gray" style={{ width: 40, height: 40 }}>{vietTat(g.hoTen)}</span>
                     <div className="grow"><div className="gv-ten">{g.hoTen}</div><div className="gv-mota">{moTaGV(g)}</div></div>
-                    {g.daDayLopNay && <span className="badge" style={{ background: 'var(--white)', border: '1px solid var(--border)', color: 'var(--ink-700)', fontWeight: 500 }}>Đã dạy lớp này</span>}
+                    {g.daDayLopNay && <span className="badge" style={{ background: 'var(--white)', border: '1px solid var(--border)', borderRadius: 6, padding: '3px 10px', color: 'var(--ink-600)', fontWeight: 500 }}>Đã dạy lớp này</span>}
                   </div>
                 ))}
               </div>
@@ -178,9 +178,9 @@ export default function PhanCong() {
       </section>
 
       {moDS && <DanhSachGiaoVien onClose={() => setMoDS(false)} onChon={(g) => { setNgoai(g); setKetQuaKT(null); setMoDS(false); }} />}
-      <ThongBaoModal open={thanhCong} tone="success" onClose={() => nav('/quan-ly/quan-ly-lich', { state: { tab: 'ChoGVXacNhan' } })}
+      <ThongBaoModal open={thanhCong} tone="success" width={460} onClose={() => nav('/quan-ly/quan-ly-lich', { state: { tab: 'ChoGVXacNhan' } })}
         title="Gửi phân công lịch dạy thành công!"
-        text={`${daLuu?.gv.hoTen} nhận được thông báo lịch dự kiến và cần phản hồi trong 24 giờ.`}
+        text={`${daLuu?.gv.hoTen} nhận được thông báo lịch dự kiến và có 24 giờ để phản hồi.`}
         footer={<Button onClick={() => nav('/quan-ly/quan-ly-lich', { state: { tab: 'ChoGVXacNhan' } })}>OK</Button>} />
     </>
   );

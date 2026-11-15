@@ -128,23 +128,24 @@ export default function StaffLayout({ vaiTro }) {
               <ChevronDown size={16} color="var(--ink-500)" />
             </button>
             {moMenu && (
-              <div className="select-pop" role="menu" style={{ left: 'auto', right: 0, width: 280, top: 48 }}>
-                <div style={{ padding: '10px 12px 12px', borderBottom: '1px solid var(--line)', marginBottom: 6 }}>
-                  <div className="t-14 w-600">{nd.hoTen}</div>
-                  <div className="t-12 c-muted mt-4">{vaiTroNhan}</div>
-                  {nd.email && <div className="t-12 c-muted mt-4">{nd.email}</div>}
+              <div className="select-pop menu-tk" role="menu" style={{ left: 'auto', right: 0, width: 280, top: 48 }}>
+                <div style={{ padding: '10px 12px' }}>
+                  <div className="t-14 w-600" style={{ lineHeight: '17px' }}>{nd.hoTen}</div>
+                  <div className="t-12 c-muted" style={{ marginTop: 2, lineHeight: '15px' }}>{vaiTroNhan}</div>
+                  {nd.email && <div className="t-12 c-muted" style={{ marginTop: 2, lineHeight: '15px' }}>{nd.email}</div>}
                 </div>
+                <div style={{ height: 1, background: 'var(--line)', margin: '4px 0' }} />
                 <div className="select-opt" role="menuitem" onClick={() => { setMoTaiKhoan(true); setMoMenu(false); }}>
-                  <span className="row gap-12"><User size={16} />{t('Thông tin tài khoản')}</span>
+                  <span className="row" style={{ gap: 10 }}><User size={18} />{t('Thông tin tài khoản')}</span>
                 </div>
                 {laGV && (
                   <div className="select-opt" role="menuitem" onClick={() => setLang(lang === 'vi' ? 'en' : 'vi')}>
-                    <span className="row gap-12"><Globe size={16} />{t('Ngôn ngữ')}</span>
-                    <span className="t-13 c-muted">{lang === 'vi' ? 'Tiếng Việt' : 'English'}</span>
+                    <span className="row" style={{ gap: 10 }}><Globe size={18} />{t('Ngôn ngữ')}</span>
+                    <span className="t-13 c-muted w-500">{lang === 'vi' ? 'Tiếng Việt' : 'English'}</span>
                   </div>
                 )}
-                <div className="select-opt" role="menuitem" onClick={thoat}>
-                  <span className="row gap-12"><LogOut size={16} />{t('Đăng xuất')}</span>
+                <div className="select-opt" role="menuitem" onClick={thoat} style={{ color: 'var(--brand-700)' }}>
+                  <span className="row" style={{ gap: 10 }}><LogOut size={18} />{t('Đăng xuất')}</span>
                 </div>
               </div>
             )}

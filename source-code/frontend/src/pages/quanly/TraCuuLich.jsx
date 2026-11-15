@@ -9,8 +9,7 @@ import { Alert, Badge, Button, DateRangePicker, Empty, Field, Loading, Modal, Pa
 import { congNgay, dauTuan, homNay } from '../../lib/format';
 
 export const NHAN_THUC_HIEN = { DangThucHien: 'Đang thực hiện', ChuaHoanThanh: 'Chưa hoàn thành', DaXong: 'Đã xong' };
-const XAM_THUC_HIEN = { DangThucHien: 'g1', ChuaHoanThanh: 'g2', DaXong: 'g3' };
-const MAU_THUC_HIEN = { DangThucHien: 'blue', ChuaHoanThanh: 'amber', DaXong: 'green' };
+const MAU_THUC_HIEN = { DangThucHien: 'blue', ChuaHoanThanh: 'gray', DaXong: 'green' };
 
 const macDinh = () => {
   const t = dauTuan(homNay());
@@ -71,13 +70,13 @@ export default function TraCuuLich() {
       <PageHeader crumbs={[{ label: 'Trang chủ', to: '/quan-ly' }, { label: 'Tra cứu lịch dạy' }]}
         title="Tra cứu tất cả lịch dạy" sub="Chỉ xem — thao tác tra cứu không thay đổi dữ liệu lịch dạy." />
       <form className="card" style={{ padding: 20 }} onSubmit={(e) => { e.preventDefault(); traCuu(); }}>
-        <div className="grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '18px 12px' }}>
+        <div className="grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px 12px' }}>
           <Field label="Loại lớp học"><Select value={loc.loaiLop} onChange={(v) => setLoc((l) => ({ ...l, loaiLop: v, maLop: '' }))} options={opt.loai} /></Field>
           <Field label="Tên lớp"><Select value={loc.maLop} onChange={doi('maLop')} options={opt.lop} /></Field>
           <Field label="Giáo viên phụ trách"><Select value={loc.maGiaoVien} onChange={doi('maGiaoVien')} options={opt.gv} /></Field>
           <Field label="Trợ giảng"><Select value={loc.maTroGiang} onChange={doi('maTroGiang')} options={opt.tg} /></Field>
         </div>
-        <div className="row gap-12" style={{ marginTop: 18, alignItems: 'flex-start' }}>
+        <div className="row gap-12" style={{ marginTop: 16, alignItems: 'flex-start' }}>
           <div style={{ flex: 1 }}><Field label="Phòng học"><Select value={loc.maPhong} onChange={doi('maPhong')} options={opt.phong} /></Field></div>
           <div style={{ flex: 1 }}>
             <Field label="Thời gian dạy" error={loiNgay}>
@@ -96,22 +95,22 @@ export default function TraCuuLich() {
       <div className="card flush" style={{ marginTop: 24 }}>
         {!kq && !loi && <Loading />}
         {kq && kq.ds.length === 0 && (
-          <div style={{ padding: '40px 0 40px' }}>
+          <div>
             <Empty cream icon={Search} title="Không tìm thấy lịch dạy phù hợp với điều kiện lọc!" text="Thay đổi điều kiện lọc và tra cứu lại."
               action={<Button variant="outline" onClick={datLai}>Đặt lại bộ lọc</Button>} />
           </div>
         )}
         {kq && kq.ds.length > 0 && (
           <table className="table gray-head">
-            <thead><tr><th>Tên lớp</th><th>Giáo viên phụ trách</th><th>Phòng học</th><th>Thời gian dạy</th><th>Trạng thái</th></tr></thead>
+            <thead><tr><th style={{ width: 293 }}>Tên lớp</th><th style={{ width: 220 }}>Giáo viên phụ trách</th><th style={{ width: 130 }}>Phòng học</th><th style={{ width: 284 }}>Thời gian dạy</th><th>Trạng thái</th></tr></thead>
             <tbody>
               {kq.ds.map((l) => (
-                <tr key={l.maLop} className={`clickable ${chon?.maLop === l.maLop ? 'selected' : ''}`} onClick={() => setChon(l)}>
+                <tr key={l.maLop} className={`clickable ${chon?.maLop === l.maLop ? 'selected' : ''}`} style={{ height: 58 }} onClick={() => setChon(l)}>
                   <td className="cell-main">{l.tenLop}</td>
                   <td>{l.giaoVienPhuTrach || '—'}</td>
                   <td>{l.phongHoc}</td>
                   <td>{l.thoiGianDay}</td>
-                  <td><span className={`badge badge-${XAM_THUC_HIEN[l.trangThaiXacNhan]}`}>{NHAN_THUC_HIEN[l.trangThaiXacNhan]}</span></td>
+                  <td><span className={`badge badge-${MAU_THUC_HIEN[l.trangThaiXacNhan] || 'gray'}`}>{NHAN_THUC_HIEN[l.trangThaiXacNhan]}</span></td>
                 </tr>
               ))}
             </tbody>
@@ -121,7 +120,7 @@ export default function TraCuuLich() {
       {chon && (
         <Modal open onClose={() => setChon(null)} title={chon.tenLop} sub="Chi tiết lịch dạy"
           footer={<Button variant="outline" onClick={() => setChon(null)}>Quay lại</Button>}>
-          <dl className="kv" style={{ gridTemplateColumns: '182px 1fr', rowGap: 16 }}>
+          <dl className="kv kv-figma" style={{ gridTemplateColumns: '182px 1fr', rowGap: 16, columnGap: 0 }}>
             <dt>Loại lớp học</dt><dd>{chon.loaiLop}</dd>
             <dt>Tên lớp</dt><dd>{chon.tenLop}</dd>
             <dt>Giáo viên phụ trách</dt><dd>{chon.giaoVienPhuTrach || '—'}</dd>

@@ -27,7 +27,9 @@ export default function HoSoDanhSach() {
   }, []);
 
   // Hồ sơ vừa thêm hiển thị đầu danh sách (QL-3.2-e)
-  const sapXep = ds ? [...ds].sort((a, b) => (b.maNhanSu === moiNhat) - (a.maNhanSu === moiNhat)) : [];
+  // QL-3.3-d: hồ sơ vừa sửa được tô tại chỗ; chỉ hồ sơ thêm mới đưa lên đầu
+  const [themMoi] = useState(Boolean(loc.state?.themMoi));
+  const sapXep = ds ? (themMoi ? [...ds].sort((a, b) => (b.maNhanSu === moiNhat) - (a.maNhanSu === moiNhat)) : ds) : [];
 
   return (
     <>
@@ -53,13 +55,13 @@ export default function HoSoDanhSach() {
         {!ds && !loi && <Loading />}
         {ds && (
           <table className="table gray-head">
-            <thead><tr><th>Giáo viên</th><th>Loại</th><th>Chuyên môn</th><th>Số điện thoại</th><th aria-label="Thao tác" /></tr></thead>
+            <thead><tr><th style={{ width: 352 }}>Giáo viên</th><th style={{ width: 180 }}>Loại</th><th style={{ width: 220 }}>Chuyên môn</th><th style={{ width: 254 }}>Số điện thoại</th><th aria-label="Thao tác" /></tr></thead>
             <tbody>
               {sapXep.map((g) => (
-                <tr key={g.maNhanSu} className={g.maNhanSu === moiNhat ? 'selected' : ''}>
+                <tr key={g.maNhanSu} className={g.maNhanSu === moiNhat ? 'moi' : ''} style={{ height: 64 }}>
                   <td>
                     <div className="row gap-12">
-                      <span className="avatar gray">{vietTat(g.hoTen)}</span>
+                      <span className="avatar" style={{ fontSize: 13 }}>{vietTat(g.hoTen)}</span>
                       <div><div className="cell-main">{g.hoTen}</div><div className="cell-sub">{g.maNhanSu}</div></div>
                     </div>
                   </td>
@@ -67,9 +69,9 @@ export default function HoSoDanhSach() {
                   <td>{g.chuyenMon.join(', ') || '—'}</td>
                   <td>{sdtDep(g.soDienThoai)}</td>
                   <td className="t-right">
-                    <div className="row gap-8" style={{ justifyContent: 'flex-end' }}>
-                      <button className="icon-btn" style={{ borderRadius: 8, borderColor: 'var(--border-strong)' }} aria-label={`Xem hồ sơ ${g.hoTen}`} onClick={() => nav(`/quan-ly/ho-so-giao-vien/${g.maNhanSu}`)}><Eye size={17} /></button>
-                      <button className="icon-btn" style={{ borderRadius: 8, borderColor: 'var(--border-strong)' }} aria-label={`Chỉnh sửa hồ sơ ${g.hoTen}`} onClick={() => nav(`/quan-ly/ho-so-giao-vien/${g.maNhanSu}/sua`)}><Pencil size={16} /></button>
+                    <div className="row" style={{ justifyContent: 'flex-end', gap: 6 }}>
+                      <button className="icon-btn" style={{ borderRadius: 8, borderColor: 'var(--border)' }} aria-label={`Xem hồ sơ ${g.hoTen}`} onClick={() => nav(`/quan-ly/ho-so-giao-vien/${g.maNhanSu}`)}><Eye size={17} /></button>
+                      <button className="icon-btn" style={{ borderRadius: 8, borderColor: 'var(--border)' }} aria-label={`Chỉnh sửa hồ sơ ${g.hoTen}`} onClick={() => nav(`/quan-ly/ho-so-giao-vien/${g.maNhanSu}/sua`)}><Pencil size={16} /></button>
                     </div>
                   </td>
                 </tr>

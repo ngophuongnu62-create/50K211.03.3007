@@ -17,9 +17,9 @@ export default function ChonLop() {
       <div className="grid-2" style={{ gap: 20 }}>
         {ds.map((l) => (
           <section key={l.maLop} className="card" style={{ padding: 28 }}>
-            <div style={{ fontSize: 20, fontWeight: 700 }}>{l.tenLop}</div>
-            <div className="t-14 c-muted" style={{ marginTop: 12 }}>{l.lichHoc || 'Chưa có lịch học chính thức'}</div>
-            <div className="t-14 c-muted" style={{ marginTop: 12 }}>{l.giaoVien ? `GV ${l.giaoVien}` : '—'}</div>
+            <div style={{ fontSize: 20, lineHeight: '24px', fontWeight: 700, color: 'var(--ink-900)' }}>{l.tenLop}</div>
+            <div className="t-14 c-ink-600" style={{ marginTop: 16, lineHeight: '17px' }}>{l.lichHoc || 'Chưa có lịch học chính thức'}</div>
+            <div className="t-14 c-muted" style={{ marginTop: 16, lineHeight: '17px' }}>{l.giaoVien ? `GV ${l.giaoVien}` : '—'}</div>
             <Button block variant="outline" iconRight={ArrowRight} style={{ marginTop: 16 }} onClick={() => nav(`/phu-huynh/lich-hoc?lop=${l.maLop}`)}>Xem thời khóa biểu</Button>
           </section>
         ))}

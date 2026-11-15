@@ -37,27 +37,27 @@ export default function CaDuKien() {
       {loi && <Alert type="error">{loi}</Alert>}
       <div className="card flush">
         {!ds && !loi && <Loading />}
-        {ds && !hang.length && <div style={{ padding: '56px 0' }}><Empty cream icon={CalendarCheck} title={t('Không có ca dạy dự kiến nào cần phản hồi.')} /></div>}
+        {ds && !hang.length && <div><Empty cream icon={CalendarCheck} title={t('Không có ca dạy dự kiến nào cần phản hồi.')} /></div>}
         {hang.length > 0 && (
           <table className="table gray-head">
-            <thead><tr><th>{t('Ca dạy')}</th><th>{t('Lớp')}</th><th>{t('Phòng')}</th><th>{t('Thời hạn')}</th><th aria-label="Thao tác" /></tr></thead>
+            <thead><tr><th style={{ width: 272 }}>{t('Ca dạy')}</th><th style={{ width: 240 }}>{t('Lớp')}</th><th style={{ width: 110 }}>{t('Phòng')}</th><th style={{ width: 180 }}>{t('Thời hạn')}</th><th aria-label="Thao tác" /></tr></thead>
             <tbody>
               {hang.map((b) => (
-                <tr key={b.maLichDay} className={vuaPhanHoi?.buoi.maLichDay === b.maLichDay ? 'selected' : ''}>
+                <tr key={b.maLichDay} style={{ height: 64 }}>{/* Figma GV-8-c/d: dòng vừa phản hồi không tô nền */}
                   <td>
                     <div className="cell-main">{b.tenCa} · {b.gioBatDau} – {b.gioKetThuc}</div>
                     <div className="cell-sub">{thuCua(b.ngayDay)} {ddmm(b.ngayDay)} · {t('Tuần')} {b.tuan}</div>
                   </td>
-                  <td>{b.tenLop}</td>
+                  <td style={{ color: 'var(--ink-900)', fontWeight: 500 }}>{b.tenLop}</td>
                   <td>{b.tenPhong}</td>
                   <td>
                     {b.daPhanHoi === 'DaXacNhan' ? <Badge tone="green">{t('Đã xác nhận')}</Badge>
-                      : b.daPhanHoi === 'DeXuatThayDoi' ? <Badge tone="amber">{t('Chờ xử lý')}</Badge>
+                      : b.daPhanHoi === 'DeXuatThayDoi' ? <Badge tone="gray">{t('Chờ xử lý')}</Badge>
                         : <NhanConLai b={b} />}
                   </td>
                   <td className="t-right">
                     {b.daPhanHoi
-                      ? <Button variant="outline" size="sm" onClick={() => nav(`/giao-vien/phan-hoi-lich-day/${b.maLichDay}`)}>{t('Xem')}</Button>
+                      ? <Button variant="ghost" size="sm" style={{ padding: '0 12px', color: 'var(--ink-600)' }} onClick={() => nav(`/giao-vien/phan-hoi-lich-day/${b.maLichDay}`)}>{t('Xem')}</Button>
                       : <Button variant="outline" size="sm" onClick={() => nav(`/giao-vien/phan-hoi-lich-day/${b.maLichDay}`)}>{t('Gửi phản hồi lịch dạy')}</Button>}
                   </td>
                 </tr>

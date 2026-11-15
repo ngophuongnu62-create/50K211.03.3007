@@ -6,14 +6,14 @@
  */
 import { useCallback, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { AlertTriangle, Check, CheckCircle2, RotateCw } from 'lucide-react';
+import { AlertTriangle, Check, CheckCircle2, RotateCw, Send } from 'lucide-react';
 import { api } from '../../api/client';
 import { useToast } from '../../components/Toast';
 import { Alert, Badge, Button, Loading, PageHeader, ThongBaoModal } from '../../components/ui';
 import { MAU_TRANG_THAI_LICH, NHAN_HINH_THUC, NHAN_TRANG_THAI_LICH, vietTat } from '../../lib/format';
 
 const NHAN_PHAN_HOI_GV = { DaXacNhan: 'Đã xác nhận', ChoXacNhan: 'Chờ phản hồi', DeXuatThayDoi: 'Đề xuất thay đổi', HetHan: 'Quá hạn phản hồi' };
-const MAU_PHAN_HOI_GV = { DaXacNhan: 'green', ChoXacNhan: 'amber', DeXuatThayDoi: 'blue', HetHan: 'red' };
+const MAU_PHAN_HOI_GV = { DaXacNhan: 'green', ChoXacNhan: 'gray', DeXuatThayDoi: 'blue', HetHan: 'red' };
 const sdtDep = (s = '') => s.replace(/^(\d{4})(\d{3})(\d{3})$/, '$1 $2 $3');
 
 export default function PheDuyet() {
@@ -34,10 +34,10 @@ export default function PheDuyet() {
     try {
       await api(`/quan-ly/quan-ly-lich/${maLop}/phe-duyet`, { method: 'POST' });
       await tai();
-      setHop({ tone: 'success', title: 'Phê duyệt lịch thành công!', text: 'Lịch chuyển sang “Đã duyệt” và đã ghi lịch sử phê duyệt. Bấm “Phát hành” để công bố lịch chính thức.' });
+      setHop({ tone: 'success', width: 440, title: 'Phê duyệt lịch thành công!', text: 'Lịch chuyển sang “Đã duyệt” và đã ghi lịch sử phê duyệt.' });
     } catch (e) {
       if (e.status === 409) setHop({ tone: 'error', title: e.message, text: 'Lịch giữ trạng thái trước khi duyệt.' });
-      else setHop({ tone: 'error', title: 'Không phê duyệt được lịch. Vui lòng thử lại!', text: 'Lịch giữ trạng thái trước khi duyệt để bạn thử lại.' }); // 6.a
+      else setHop({ tone: 'x-circle', width: 460, title: 'Không phê duyệt được lịch. Vui lòng thử lại!', text: 'Lịch giữ trạng thái trước khi duyệt để bạn bấm “Phê duyệt” lại.' }); // 6.a
     } finally {
       setDang('');
     }
@@ -49,9 +49,9 @@ export default function PheDuyet() {
       const { data } = await api(`/quan-ly/quan-ly-lich/${maLop}/phat-hanh`, { method: 'POST' });
       setGui(data);
       await tai();
-      if (!data.chuaGui?.length) setHop({ tone: 'success', title: 'Phát hành lịch dạy thành công!', text: 'Lịch chính thức đã gửi tới giáo viên và phụ huynh / học viên của lớp.' });
+      if (!data.chuaGui?.length) setHop({ tone: 'success', width: 460, title: 'Phát hành lịch dạy thành công!', text: 'Lịch chính thức đã gửi tới giáo viên và phụ huynh có học viên thuộc lớp.' });
     } catch {
-      setHop({ tone: 'error', title: 'Không phát hành được lịch. Vui lòng thử lại!', text: 'Lịch giữ trạng thái “Đã duyệt” để bạn bấm “Phát hành” lại.' }); // 10.a
+      setHop({ tone: 'x-circle', width: 460, title: 'Không phát hành được lịch. Vui lòng thử lại!', text: 'Lịch giữ trạng thái “Đã duyệt” để bạn bấm “Phát hành” lại.' }); // 10.a
     } finally {
       setDang('');
     }
@@ -100,7 +100,7 @@ export default function PheDuyet() {
           <Button icon={Check} loading={dang === 'duyet'} onClick={pheDuyet}>Phê duyệt</Button>
         </> : tt === 'DaDuyet' ? <>
           <Button variant="outline" onClick={() => nav('/quan-ly/quan-ly-lich')}>Đóng</Button>
-          <Button loading={dang === 'phatHanh'} onClick={phatHanh}>Phát hành</Button>
+          <Button icon={Send} loading={dang === 'phatHanh'} onClick={phatHanh}>Phát hành</Button>
         </> : <Button variant="outline" onClick={() => nav('/quan-ly/quan-ly-lich')}>Đóng</Button>}
       />
       {tt === 'ChoGVXacNhan' && !kt.coThePheDuyet && (
@@ -128,7 +128,7 @@ export default function PheDuyet() {
           <div className="card-title">Phản hồi phụ huynh / học viên</div>
           <div className="row" style={{ gap: 32, marginTop: 14 }}>
             {[['Đã xác nhận', kt.phuHuynh.daXacNhan], ['Từ chối', kt.phuHuynh.tuChoi], ['Chưa phản hồi', kt.phuHuynh.chuaPhanHoi]].map(([n, v]) => (
-              <div key={n}><div style={{ fontSize: 22, fontWeight: 700, lineHeight: '28px' }}>{v}</div><div className="t-12 c-muted">{n}</div></div>
+              <div key={n}><div style={{ fontSize: 22, fontWeight: 700, lineHeight: '27px' }}>{v}</div><div className="t-12 c-muted" style={{ marginTop: 2, lineHeight: '15px' }}>{n}</div></div>
             ))}
           </div>
           {kt.phuHuynh.dsTuChoi.length > 0 && (
@@ -139,16 +139,17 @@ export default function PheDuyet() {
         </section>
       </div>
 
-      <section className="card" style={{ marginTop: 24, padding: '24px 24px 8px' }}>
+      <section className="card" style={{ marginTop: 24, padding: 24 }}>
         <div className="card-title">Kết quả kiểm tra trùng lịch</div>
-        <div style={{ marginTop: 6 }}>
+        {/* Figma QL-6.4-a: dòng cao 30px, cách 14px – đường kẻ – 14px; kết quả 13/16 500 #177a3c */}
+        <div style={{ marginTop: 14 }}>
           {mucKT.map(([ten, ds], i) => (
-            <div key={ten} className="row between" style={{ padding: '16px 0', borderTop: i ? '1px solid var(--line)' : 'none' }}>
+            <div key={ten} className="row between" style={i ? { borderTop: '1px solid var(--line)', marginTop: 14, padding: '20px 0 6px' } : { padding: '6px 0' }}>
               <div className="row gap-12">
-                {ds.length ? <AlertTriangle size={20} color="var(--brand)" /> : <CheckCircle2 size={20} color="#21a559" />}
-                <span className="t-14">{ten}</span>
+                {ds.length ? <AlertTriangle size={18} color="var(--brand)" /> : <CheckCircle2 size={18} color="#22a55a" />}
+                <span className="t-14" style={{ lineHeight: '17px', color: 'var(--ink-900)' }}>{ten}</span>
               </div>
-              <span className="t-13 w-600" style={{ color: ds.length ? 'var(--brand)' : 'var(--green-800)' }}>
+              <span className="t-13 w-500" style={{ lineHeight: '16px', color: ds.length ? 'var(--brand)' : 'var(--green-700)' }}>
                 {ds.length ? `${ds.length} buổi` : 'Không có'}
               </span>
             </div>
@@ -159,7 +160,7 @@ export default function PheDuyet() {
       {gui && (
         <section className="card" style={{ marginTop: 24, padding: 24 }}>
           <div className="card-title">Gửi thông báo lịch chính thức</div>
-          <div className="t-13 c-muted mt-4">Giáo viên được phân công và phụ huynh có học viên thuộc lớp</div>
+          <div className="t-13 c-muted" style={{ marginTop: 3, lineHeight: '16px' }}>Giáo viên được phân công và phụ huynh có học viên thuộc lớp</div>
           {gui.chuaGui?.length ? (
             <>
               <div style={{ marginTop: 14 }}>
@@ -168,10 +169,10 @@ export default function PheDuyet() {
                 </Alert>
               </div>
               <table className="table" style={{ marginTop: 14 }}>
-                <thead><tr><th>Người nhận</th><th>Số điện thoại</th><th>Trạng thái</th></tr></thead>
+                <thead><tr><th style={{ width: 332 }}>Người nhận</th><th style={{ width: 566 }}>Số điện thoại</th><th>Trạng thái</th></tr></thead>
                 <tbody>
                   {gui.chuaGui.map((n) => (
-                    <tr key={n.maNguoiNhan || n.maPHHV}>
+                    <tr key={n.maNguoiNhan || n.maPHHV} style={{ height: 52 }}>
                       <td>{n.maPHHV ? `PH ${n.hoTen}` : n.hoTen}</td>
                       <td>{n.soDienThoai ? sdtDep(n.soDienThoai) : '—'}</td>
                       <td><Badge tone="red">Chưa gửi</Badge></td>
@@ -181,15 +182,15 @@ export default function PheDuyet() {
               </table>
             </>
           ) : (
-            <div className="row" style={{ gap: 48, marginTop: 14 }}>
-              <div><div style={{ fontSize: 22, fontWeight: 700 }}>{gui.daGuiNhanSu} / {gui.soNhanSu}</div><div className="t-12 c-muted">Giáo viên đã nhận</div></div>
-              <div><div style={{ fontSize: 22, fontWeight: 700 }}>{gui.daGuiPhuHuynh} / {gui.soPhuHuynh}</div><div className="t-12 c-muted">Phụ huynh đã nhận</div></div>
+            <div className="row" style={{ gap: 32, marginTop: 14 }}>
+              <div><div style={{ fontSize: 20, lineHeight: '24px', fontWeight: 700 }}>{gui.daGuiNhanSu} / {gui.soNhanSu}</div><div className="t-12 c-muted" style={{ marginTop: 2, lineHeight: '15px' }}>Giáo viên đã nhận</div></div>
+              <div><div style={{ fontSize: 20, lineHeight: '24px', fontWeight: 700 }}>{gui.daGuiPhuHuynh} / {gui.soPhuHuynh}</div><div className="t-12 c-muted" style={{ marginTop: 2, lineHeight: '15px' }}>Phụ huynh đã nhận</div></div>
             </div>
           )}
         </section>
       )}
 
-      <ThongBaoModal open={!!hop} tone={hop?.tone} onClose={() => setHop(null)} title={hop?.title} text={hop?.text}
+      <ThongBaoModal open={!!hop} tone={hop?.tone} width={hop?.width} onClose={() => setHop(null)} title={hop?.title} text={hop?.text}
         footer={<Button onClick={() => setHop(null)}>OK</Button>} />
     </>
   );

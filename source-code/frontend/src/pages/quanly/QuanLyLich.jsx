@@ -5,12 +5,11 @@ import { ArrowRight, Plus, RotateCw } from 'lucide-react';
 import { api } from '../../api/client';
 import { useToastChuyenTrang } from '../../components/Toast';
 import { Alert, Button, Loading, PageHeader, Seg } from '../../components/ui';
-import { NHAN_TRANG_THAI_LICH } from '../../lib/format';
+import { MAU_TRANG_THAI_LICH, NHAN_TRANG_THAI_LICH } from '../../lib/format';
 
 /** Nhãn trạng thái lịch dạng thang xám như màn hình QL-6-0 */
-const XAM_LICH = { Nhap: 'g2', ChoGVXacNhan: 'g1', DaDuyet: 'g1', DaPhatHanh: 'g3' };
 export function NhanLich({ trangThai }) {
-  return <span className={`badge badge-${XAM_LICH[trangThai] || 'g2'}`}>{NHAN_TRANG_THAI_LICH[trangThai]}</span>;
+  return <span className={`badge badge-${MAU_TRANG_THAI_LICH[trangThai] || 'gray'}`}>{NHAN_TRANG_THAI_LICH[trangThai]}</span>;
 }
 
 const TABS = [
@@ -41,7 +40,7 @@ export default function QuanLyLich() {
       case 'PhanCong': return <Button variant="outline" size="sm" onClick={den('phan-cong')}>Phân công lịch dạy</Button>;
       case 'PheDuyetVaPhatHanh': return <Button variant="outline" size="sm" onClick={den('phe-duyet')}>Phê duyệt và phát hành</Button>;
       case 'PhatHanh': return <Button variant="outline" size="sm" onClick={den('phe-duyet')}>Phát hành</Button>;
-      default: return <Button variant="ghost" size="sm" style={{ color: 'var(--ink-500)' }} onClick={den('phe-duyet')}>Xem</Button>;
+      default: return <Button variant="ghost" size="sm" style={{ padding: '0 12px', color: 'var(--ink-600)' }} onClick={den('phe-duyet')}>Xem</Button>; // Figma QL-6-0: 52px, #5f6b76
     }
   };
 
@@ -66,7 +65,7 @@ export default function QuanLyLich() {
         {!kq && !loi && <Loading />}
         {kq && (
           <table className="table gray-head">
-            <thead><tr><th>Lớp học</th><th>Lịch học</th><th>Giáo viên</th><th>Trạng thái</th><th aria-label="Thao tác" /></tr></thead>
+            <thead><tr><th style={{ width: 272 }}>Lớp học</th><th style={{ width: 250 }}>Lịch học</th><th style={{ width: 190 }}>Giáo viên</th><th style={{ width: 200 }}>Trạng thái</th><th aria-label="Thao tác" /></tr></thead>
             <tbody>
               {ds.map((l) => (
                 <tr key={l.maLop}>

@@ -9,7 +9,7 @@ import { useSearchParams } from 'react-router-dom';
 import { AlertTriangle, RefreshCw, Search, Trash2 } from 'lucide-react';
 import { api } from '../../api/client';
 import { useToast } from '../../components/Toast';
-import { Alert, Badge, Button, DatePicker, Empty, Field, Loading, Modal, PageHeader, Select, Seg } from '../../components/ui';
+import { Alert, Badge, Button, DatePicker, DateRangePicker, Empty, Field, Loading, PageHeader, Select, Seg, ThongBaoModal } from '../../components/ui';
 import { ddmmyyyy, homNay, nhanNgay } from '../../lib/format';
 
 const TABS = [
@@ -40,7 +40,7 @@ export default function PhongHoc() {
 
 /* ------------------------------------------------ MH05, MH06 */
 function LichPhongTrong({ onDangKy }) {
-  const [boLoc, setBoLoc] = useState({ tenPhong: '', ngay: homNay(), trangThai: '' });
+  const [boLoc, setBoLoc] = useState({ tenPhong: '', tuNgay: homNay(), denNgay: '', trangThai: '' });
   const [ketQua, setKetQua] = useState(null);
   const [dangTai, setDangTai] = useState(true);
   const [loiTai, setLoiTai] = useState(null);
@@ -49,32 +49,43 @@ function LichPhongTrong({ onDangKy }) {
   const [chiTiet, setChiTiet] = useState(null);
   const [dsPhong, setDsPhong] = useState([]);
 
-  const tai = useCallback(async (loc) => {
+  const tai = useCallback(async (loc, tuTimKiem = false) => {
     setDangTai(true);
     setLoiTai(null);
     try {
       const { data } = await api('/quan-ly/phong-hoc/trong', { query: loc });
+      // Không có phòng khớp tiêu chí → hộp thoại 6.a, giữ nguyên danh sách hiện tại (theo yêu cầu chủ dự án)
+      if (tuTimKiem && !data.dsPhong.length) {
+        setLoiTim({ tieuDe: 'Thông tin tìm kiếm không hợp lệ' });
+        return;
+      }
       setKetQua(data);
       if (!dsPhong.length && !loc.tenPhong && !loc.trangThai) setDsPhong(data.dsPhong);
     } catch (e) {
-      if (e.status === 400) setLoiTim(e.message); // 6.a
-      else setLoiTai(e.message); // 2.a
+      if (e.status === 400) setLoiTim({ tieuDe: e.message, lyDo: e.data?.lyDo }); // 6.a
+      else setLoiTai(true); // 2.a
     } finally {
       setDangTai(false);
     }
   }, [dsPhong.length]);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => { tai({ ngay: boLoc.ngay }); }, []);
+  useEffect(() => { tai({ tuNgay: boLoc.tuNgay }); }, []);
 
   useEffect(() => {
     if (!chon) { setChiTiet(null); return; }
-    api(`/quan-ly/phong-hoc/${chon}`, { query: { ngay: ketQua?.ngay } }).then((r) => setChiTiet(r.data)).catch((e) => setLoiTai(e.message));
+    api(`/quan-ly/phong-hoc/${chon}`, { query: { ngay: ketQua?.ngay } }).then((r) => setChiTiet(r.data)).catch(() => setLoiTai(true));
   }, [chon, ketQua?.ngay]);
 
+  const thoiGian = () => ({ tuNgay: boLoc.tuNgay, denNgay: boLoc.denNgay || boLoc.tuNgay });
   const timKiem = () => {
     setChon(null);
-    tai({ ngay: boLoc.ngay, trangThai: boLoc.trangThai, tenPhong: boLoc.tenPhong });
+    // 6.a (Figma QL-2.1-c): ngày kết thúc trước ngày bắt đầu
+    if (boLoc.tuNgay && boLoc.denNgay && boLoc.denNgay < boLoc.tuNgay) {
+      setLoiTim({ tieuDe: 'Thông tin tìm kiếm không hợp lệ', lyDo: 'Ngày kết thúc đang trước ngày bắt đầu.' });
+      return;
+    }
+    tai({ ...thoiGian(), trangThai: boLoc.trangThai, tenPhong: boLoc.tenPhong }, true);
   };
 
   return (
@@ -86,7 +97,8 @@ function LichPhongTrong({ onDangKy }) {
               options={[{ value: '', label: 'Tất cả phòng' }, ...dsPhong.map((p) => ({ value: p.tenPhong, label: p.tenPhong }))]} />
           </Field></div>
           <div className="grow"><Field label="Thời gian sử dụng">
-            <DatePicker value={boLoc.ngay} onChange={(v) => setBoLoc((b) => ({ ...b, ngay: v }))} />
+            <DateRangePicker motNgay tuNgay={boLoc.tuNgay} denNgay={boLoc.denNgay} error={!!loiTim?.lyDo}
+              onChange={({ tuNgay, denNgay }) => setBoLoc((b) => ({ ...b, tuNgay, denNgay }))} />
           </Field></div>
           <div className="grow"><Field label="Trạng thái">
             <Select value={boLoc.trangThai} onChange={(v) => setBoLoc((b) => ({ ...b, trangThai: v }))}
@@ -100,13 +112,14 @@ function LichPhongTrong({ onDangKy }) {
         <div className="card flush grow">
           {dangTai && <Loading />}
           {!dangTai && loiTai && (
-            <Empty icon={AlertTriangle} title={loiTai} text="Bạn có thể thử tải lại danh sách."
-              action={<Button variant="outline" icon={RefreshCw} onClick={() => tai({ ngay: boLoc.ngay })}>Tải lại</Button>} />
+            // 2.a (Figma QL-2.1-d): mọi lỗi tải (mất mạng, máy chủ chậm…) đều hiển thị cùng một thông báo
+            <div style={{ minHeight: 362, display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Empty cream icon={AlertTriangle} title="Không thể tải danh sách phòng trống." text="Use case kết thúc. Bạn có thể thử tải lại sau."
+              action={<Button variant="outline" icon={RefreshCw} onClick={() => tai(thoiGian())}>Tải lại</Button>} /></div>
           )}
           {!dangTai && !loiTai && ketQua && (
             <table className="table gray-head">
               <thead>
-                <tr><th>Phòng</th><th>Ca còn trống</th>{!chon && <th>Trạng thái</th>}{!chon && <th aria-label="Thao tác" />}</tr>
+                <tr><th style={{ width: chon ? undefined : 272 }}>Phòng</th><th style={{ width: chon ? undefined : 280 }}>Ca còn trống</th>{!chon && <th style={{ width: 200 }}>Trạng thái</th>}{!chon && <th aria-label="Thao tác" />}</tr>
               </thead>
               <tbody>
                 {ketQua.dsPhong.map((p) => (
@@ -114,10 +127,9 @@ function LichPhongTrong({ onDangKy }) {
                     <td><div className="cell-main">{p.tenPhong}</div><div className="cell-sub">{p.moTa}</div></td>
                     <td className="c-ink-700">{p.caConTrong.length ? p.caConTrong.join(' · ') : '—'}</td>
                     {!chon && <td><Badge tone={MAU_PHONG[p.trangThai]}>{NHAN_PHONG[p.trangThai]}</Badge></td>}
-                    {!chon && <td className="t-right"><button className="btn-dark-link">Xem chi tiết</button></td>}
+                    {!chon && <td className="t-right"><button className="btn-link">Xem chi tiết</button></td>}
                   </tr>
                 ))}
-                {!ketQua.dsPhong.length && <tr><td colSpan={4} className="c-muted">Không có phòng phù hợp tiêu chí tìm kiếm.</td></tr>}
               </tbody>
             </table>
           )}
@@ -160,12 +172,11 @@ function LichPhongTrong({ onDangKy }) {
       </div>
 
       {/* 6.a: tiêu chí không hợp lệ – hỏi có nhập lại hay không */}
-      <Modal open={!!loiTim} onClose={() => setLoiTim(null)}
-        icon={<div className="modal-icon" style={{ background: 'var(--amber-bg)' }}><AlertTriangle size={24} color="var(--amber-900)" /></div>}
-        title={loiTim} sub="Bạn có muốn nhập lại thông tin tìm kiếm không?"
+      <ThongBaoModal open={!!loiTim} tone="error" onClose={() => setLoiTim(null)}
+        title={loiTim?.tieuDe} text={`${loiTim?.lyDo ? `${loiTim.lyDo} ` : ''}Bạn có muốn nhập lại thông tin tìm kiếm không?`}
         footer={<>
           <Button variant="outline" onClick={() => setLoiTim(null)}>Không</Button>
-          <Button onClick={() => { setLoiTim(null); setBoLoc({ tenPhong: '', ngay: homNay(), trangThai: '' }); }}>Nhập lại</Button>
+          <Button onClick={() => { setLoiTim(null); setBoLoc({ tenPhong: '', tuNgay: homNay(), denNgay: '', trangThai: '' }); }}>Nhập lại</Button>
         </>} />
     </>
   );
@@ -174,7 +185,10 @@ function LichPhongTrong({ onDangKy }) {
 /* ------------------------------------------------ MH07 */
 function DangKyPhong({ macDinh }) {
   const toast = useToast();
-  const [form, setForm] = useState({ maPhong: macDinh?.maPhong || '', ngaySuDung: macDinh?.ngaySuDung || homNay(), maCa: '' });
+  const [form, setForm] = useState(() => {
+    const ngay = macDinh?.ngaySuDung && macDinh.ngaySuDung > homNay() ? macDinh.ngaySuDung : homNay();
+    return { maPhong: macDinh?.maPhong || '', ngaySuDung: ngay, maCa: '' };
+  });
   const [bang, setBang] = useState(null);
   const [dsCa, setDsCa] = useState([]);
   const [kiemTra, setKiemTra] = useState(null); // { ok, tieuDe, text }
@@ -190,6 +204,13 @@ function DangKyPhong({ macDinh }) {
   const doi = (k, v) => { setForm((f) => ({ ...f, [k]: v })); setKiemTra(null); setThieu((t) => ({ ...t, [k]: false })); };
   const phongChon = bang?.dsPhong.find((p) => p.maPhong === form.maPhong);
   const caChon = dsCa.find((c) => c._id === form.maCa);
+  // Ca đã kết thúc của hôm nay không đăng ký được (BR3) → không cho chọn, tránh báo "phải cung cấp đầy đủ và hợp lệ" khi đã chọn đủ
+  const gioHienTai = new Date().toTimeString().slice(0, 5);
+  const caDaQua = (c) => form.ngaySuDung === homNay() && c.gioKetThuc <= gioHienTai;
+  useEffect(() => {
+    if (caChon && caDaQua(caChon)) setForm((f) => ({ ...f, maCa: '' }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [form.ngaySuDung, caChon]);
 
   const kiemTraPhong = async () => {
     const t = { maPhong: !form.maPhong, ngaySuDung: !form.ngaySuDung, maCa: !form.maCa };
@@ -197,7 +218,7 @@ function DangKyPhong({ macDinh }) {
     if (t.maPhong || t.ngaySuDung || t.maCa) return;
     try {
       await api('/quan-ly/phong-hoc/kiem-tra', { method: 'POST', body: form });
-      setKiemTra({ ok: true, tieuDe: 'Phòng còn trống', text: `${phongChon?.tenPhong} trống vào ${caChon?.tenCa}, ${nhanNgay(form.ngaySuDung).replace(',', '')}` });
+      setKiemTra({ ok: true, tieuDe: 'Phòng còn trống', text: `${phongChon?.tenPhong} trống vào ${caChon?.tenCa}, ${nhanNgay(form.ngaySuDung).replace(',', '')}.` });
     } catch (e) {
       setKiemTra({ ok: false, text: e.message }); // 5.a
     }
@@ -232,7 +253,7 @@ function DangKyPhong({ macDinh }) {
           </Field>
           <Field label="Ca học" required error={thieu.maCa && 'Vui lòng chọn ca học'}>
             <Select value={form.maCa} onChange={(v) => doi('maCa', v)} placeholder="Chọn ca học" error={thieu.maCa}
-              options={dsCa.map((c) => ({ value: c._id, label: `${c.tenCa} · ${c.gioBatDau} – ${c.gioKetThuc}` }))} />
+              options={dsCa.filter((c) => !caDaQua(c)).map((c) => ({ value: c._id, label: `${c.tenCa} · ${c.gioBatDau} – ${c.gioKetThuc}` }))} />
           </Field>
           {kiemTra?.ok && <Alert type="success" title={kiemTra.tieuDe}>{kiemTra.text}</Alert>}
           {kiemTra && !kiemTra.ok && <Alert type="error">{kiemTra.text}</Alert>}
@@ -244,7 +265,7 @@ function DangKyPhong({ macDinh }) {
         <div className="card-title">Danh sách phòng học</div>
         <div className="card-sub">{nhanNgay(form.ngaySuDung)}</div>
         <table className="table" style={{ marginTop: 16 }}>
-          <thead><tr><th>Tên phòng</th>{dsCa.map((c) => <th key={c._id}>{c.tenCa}</th>)}</tr></thead>
+          <thead><tr><th style={{ width: 162 }}>Tên phòng</th>{dsCa.map((c, i) => <th key={c._id} style={{ width: i < dsCa.length - 1 ? 152 : undefined }}>{c.tenCa}</th>)}</tr></thead>
           <tbody>
             {(bang?.dsPhong || []).map((p) => (
               <tr key={p.maPhong}>
@@ -252,7 +273,10 @@ function DangKyPhong({ macDinh }) {
                 {p.theoCa.map((c) => (
                   <td key={c.maCa}>
                     {c.trong && (
-                      <button className="btn-link" style={{ color: 'var(--green-900)', fontSize: 14 }}
+                      // Figma QL-2.2-b: ô phòng + ca đang chọn tô nền vàng, viền vàng
+                      <button className={`btn-link ${form.maPhong === p.maPhong && form.maCa === c.maCa ? 'o-phong-chon' : ''}`}
+                        style={{ color: 'var(--green-900)', fontSize: 14 }}
+                        disabled={caDaQua(dsCa.find((x) => x._id === c.maCa) || {})}
                         onClick={() => { doi('maPhong', p.maPhong); doi('maCa', c.maCa); }}>Trống</button>
                     )}
                     {!c.trong && c.loaiChiemDung === 'DangKyPhong' && <Badge tone="green">Đã đăng ký phòng</Badge>}
@@ -277,11 +301,12 @@ function PhongDaDangKy() {
   const [khongThe, setKhongThe] = useState(null);
   const [dangGui, setDangGui] = useState(false);
 
-  const tai = useCallback(() => api('/quan-ly/dang-ky-phong').then((r) => setDs(r.data)), []);
+  // Figma QL-2.3-a: luôn có một dòng được chọn và khung chi tiết bên phải
+  const tai = useCallback(() => api('/quan-ly/dang-ky-phong').then((r) => { setDs(r.data); setChon((c) => c || r.data[0]?.maDangKy || null); }), []);
   useEffect(() => { tai(); }, [tai]);
   const dk = useMemo(() => ds?.find((d) => d.maDangKy === chon), [ds, chon]);
   const thoiGianNgan = (d) => `${nhanNgay(d.ngaySuDung).split(',')[0]} ${ddmmyyyy(d.ngaySuDung).slice(0, 5)} · ${d.thoiGian.split(' · ')[1]}`;
-  const nhanTT = (d) => (d.trangThaiDangKy === 'DaHuy' ? ['red', 'Đã hủy'] : [MAU_PHONG[d.trangThaiPhong], NHAN_PHONG[d.trangThaiPhong]]);
+  const nhanTT = (d) => (d.trangThaiDangKy === 'DaHuy' ? ['gray', 'Đã hủy'] : [MAU_PHONG[d.trangThaiPhong], NHAN_PHONG[d.trangThaiPhong]]);
 
   const huy = async () => {
     setDangGui(true);
@@ -302,9 +327,9 @@ function PhongDaDangKy() {
   if (!ds) return <Loading />;
   return (
     <div className="row gap-20" style={{ alignItems: 'flex-start' }}>
-      <div className="card flush grow">
+      <div className="card flush" style={{ width: 700, flex: 'none' }}>
         <table className="table gray-head">
-          <thead><tr><th>Tên phòng</th><th>Thời gian</th><th>Trạng thái</th></tr></thead>
+          <thead><tr><th style={{ width: 152 }}>Tên phòng</th><th style={{ width: 364 }}>Thời gian</th><th>Trạng thái</th></tr></thead>
           <tbody>
             {ds.map((d) => {
               const [mau, nhan] = nhanTT(d);
@@ -325,24 +350,25 @@ function PhongDaDangKy() {
           <div className="card-title">Phòng {dk.tenPhong}</div>
           <div className="card-sub">Đăng ký bởi {dk.nguoiDangKy}</div>
           <hr className="divider" style={{ margin: '16px 0' }} />
-          <dl className="kv" style={{ gridTemplateColumns: '130px 1fr' }}>
+          <dl className="kv kv-figma" style={{ gridTemplateColumns: '120px 1fr', columnGap: 12, rowGap: 16 }}>
             <dt>Tên phòng</dt><dd>{dk.tenPhong}</dd>
             <dt>Thời gian</dt><dd>{thoiGianNgan(dk)}</dd>
             <dt>Trạng thái</dt><dd><Badge tone={nhanTT(dk)[0]}>{nhanTT(dk)[1]}</Badge></dd>
           </dl>
           {dk.trangThaiDangKy === 'DaHuy'
             ? <div className="t-12 c-muted" style={{ marginTop: 16 }}>Thông tin hủy đã được lưu vào lịch sử sử dụng phòng.</div>
-            : <Button variant="danger-outline" block icon={Trash2} style={{ marginTop: 20 }} onClick={() => setHoi(true)}>Hủy phòng</Button>}
+            : <Button variant="danger-outline" block icon={Trash2} style={{ marginTop: 16 }} onClick={() => setHoi(true)}>Hủy phòng</Button>}
         </div>
       )}
-      <Modal open={hoi} onClose={() => setHoi(false)}
-        icon={<div className="modal-icon" style={{ background: 'var(--amber-bg)', width: 44, height: 44 }}><AlertTriangle size={20} color="var(--amber-900)" /></div>}
+      {/* QL-2.3-b (Figma): biểu tượng cảnh báo bên trái, nút "Xác nhận hủy" đỏ #dc2626 */}
+      <ThongBaoModal open={hoi} tone="warning" onClose={() => setHoi(false)}
         title="Bạn có chắc chắn muốn hủy đăng ký phòng này không?"
-        sub={dk && `${dk.tenPhong} · ${nhanNgay(dk.ngaySuDung).replace(',', '')} · ${dk.thoiGian.split(' · ')[1]}`}
-        footer={<><Button variant="outline" onClick={() => setHoi(false)}>Không hủy</Button><Button loading={dangGui} onClick={huy}>Xác nhận hủy</Button></>} />
-      <Modal open={!!khongThe} onClose={() => setKhongThe(null)} title={khongThe}
-        sub="Phòng đang trong thời gian sử dụng hoặc đăng ký không còn hiệu lực nên không thể hủy."
-        footer={<Button onClick={() => setKhongThe(null)}>Đóng</Button>} />
+        text={dk && `${dk.tenPhong} · ${nhanNgay(dk.ngaySuDung).replace(',', '')} · ${dk.thoiGian.split(' · ')[1]}`}
+        footer={<><Button variant="outline" onClick={() => setHoi(false)}>Không hủy</Button><Button variant="danger" loading={dangGui} onClick={huy}>Xác nhận hủy</Button></>} />
+      {/* QL-2.3-d (Figma): hộp thoại 460px, biểu tượng x-circle, nút "Đóng" viền */}
+      <ThongBaoModal open={!!khongThe} tone="x-circle" width={460} onClose={() => setKhongThe(null)} title={khongThe}
+        text="Phòng đang trong thời gian sử dụng nên không đủ điều kiện hủy."
+        footer={<Button variant="outline" onClick={() => setKhongThe(null)}>Đóng</Button>} />
     </div>
   );
 }

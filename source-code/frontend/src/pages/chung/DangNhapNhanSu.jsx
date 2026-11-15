@@ -11,7 +11,7 @@ import LoginPanel from './LoginPanel';
 
 const TIEU_DE = {
   'quan-ly': { tieuDe: 'Đăng nhập Quản lý', phu: 'Dành cho Quản lý trung tâm Broadway.' },
-  'giao-vien': { tieuDe: 'Đăng nhập Giáo viên / Trợ giảng', phu: 'Dành cho giáo viên, trợ giảng toàn thời gian và bán thời gian.' },
+  'giao-vien': { tieuDe: 'Đăng nhập Giáo viên / Trợ giảng', phu: 'Dành cho giáo viên, trợ giảng toàn thời gian và bán thời gian.', nho: true }, // Figma C-05: tiêu đề 26/31, một dòng
 };
 const THIEU = 'Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu.';
 
@@ -58,8 +58,8 @@ export default function DangNhapNhanSu() {
       <div className="login-form-wrap">
         <form className="login-form" onSubmit={gui} noValidate>
           <Link to="/" className="back-link"><ArrowLeft size={16} />Chọn lại đối tượng</Link>
-          <h2 className="t-32" style={{ marginTop: 24 }}>{td.tieuDe}</h2>
-          <p className="t-15 c-muted" style={{ marginTop: 8 }}>{td.phu}</p>
+          <h2 className={td.nho ? '' : 't-32'} style={td.nho ? { marginTop: 24, fontSize: 26, lineHeight: '31px', fontWeight: 700, whiteSpace: 'nowrap' } : { marginTop: 24, lineHeight: '39px' }}>{td.tieuDe}</h2>
+          <p className="t-15 c-muted" style={{ marginTop: 8, lineHeight: '18px', whiteSpace: 'nowrap' }}>{td.phu}</p>
           {loi && <div style={{ marginTop: 24 }}><Alert type="error">{loi}</Alert></div>}
           {!loi && lyDoKetThuc && <div style={{ marginTop: 24 }}><Alert type="warning">{lyDoKetThuc}</Alert></div>}
           <div className="col gap-24" style={{ marginTop: 24 }}>
@@ -79,7 +79,7 @@ export default function DangNhapNhanSu() {
             </Field>
           </div>
           <Button type="submit" size="lg" block loading={dangGui} style={{ marginTop: 24 }}>Đăng nhập</Button>
-          <p className="t-13 c-ink-600" style={{ marginTop: 24 }}>
+          <p className="t-13 c-muted" style={{ marginTop: 24, lineHeight: '16px' }}>
             Phụ huynh / Học viên? <Link to="/phu-huynh/dang-nhap">Đăng nhập tại đây</Link>
           </p>
         </form>

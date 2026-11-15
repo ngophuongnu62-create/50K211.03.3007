@@ -2,12 +2,13 @@
  * Sinh mã nghiệp vụ tuần tự bằng collection `boDem` (nguyên tử với $inc).
  * Định dạng: <TIỀN TỐ>-<số thứ tự đệm 0>, ví dụ LD-000123, GV-007.
  * Mã phiếu phản hồi (Ticket ID): PH-<YYMM>-<NNNN>, ví dụ PH-2611-0042 (theo màn hình Figma PH-14).
+ * Mã yêu cầu của giáo viên / trợ giảng: YC-<NNNN>, ví dụ YC-0153 (theo màn hình Figma GV-10).
  */
 const { BoDem } = require('../models');
 const clock = require('./clock');
 
 const DO_DAI = {
-  QL: 3, GV: 3, TG: 3, HV: 4, LD: 6, PC: 6, PL: 6, LS: 6, XN: 6, NH: 6, DK: 5, LR: 6, TB: 7, BC: 5, TP: 6, XL: 6,
+  QL: 3, GV: 3, TG: 3, HV: 4, LD: 6, PC: 6, PL: 6, LS: 6, XN: 6, NH: 6, DK: 5, LR: 6, TB: 7, BC: 5, TP: 6, XL: 6, YC: 4,
 };
 
 async function tangBoDem(khoa, soLuong = 1, session) {

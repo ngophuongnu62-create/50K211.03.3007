@@ -5,12 +5,11 @@ import { Search } from 'lucide-react';
 import { api } from '../../api/client';
 import { useToastChuyenTrang } from '../../components/Toast';
 import { Alert, Loading, PageHeader, Seg, Select, TextInput } from '../../components/ui';
-import { gioNgay, NHAN_LOAI_NHAN_SU, NHAN_LOAI_PHAN_HOI, NHAN_XU_LY } from '../../lib/format';
+import { gioNgay, NHAN_LOAI_NHAN_SU, NHAN_LOAI_PHAN_HOI, NHAN_XU_LY, MAU_XU_LY } from '../../lib/format';
 
 /** Nhãn trạng thái phản hồi dạng thang xám (theo màn hình QL-4.1-a) */
-const THANG_XAM = { ChoXuLy: 'g2', DangXuLy: 'g1', DaXuLy: 'g3', TuChoi: 'g3' };
 export function NhanXuLy({ trangThai }) {
-  return <span className={`badge badge-${THANG_XAM[trangThai]}`}>{NHAN_XU_LY[trangThai]}</span>;
+  return <span className={`badge badge-${MAU_XU_LY[trangThai] || 'gray'}`}>{NHAN_XU_LY[trangThai]}</span>;
 }
 
 export const tenNguoiGui = (n) => (n?.loai === 'NhanSu' ? `${n.hoTen} · ${NHAN_LOAI_NHAN_SU[n.vaiTro] || 'Nhân sự'}` : `PH ${n?.hoTen || ''}`);
@@ -58,11 +57,11 @@ export default function PhanHoiDanhSach() {
         {!kq && !loi && <Loading />}
         {kq && (
           <table className="table gray-head">
-            <thead><tr><th>Mã</th><th>Tiêu đề</th><th>Người gửi</th><th>Thời gian gửi</th><th>Trạng thái</th></tr></thead>
+            <thead><tr><th style={{ width: 122 }}>Mã</th><th style={{ width: 434 }}>Tiêu đề</th><th style={{ width: 250 }}>Người gửi</th><th style={{ width: 150 }}>Thời gian gửi</th><th>Trạng thái</th></tr></thead>
             <tbody>
               {kq.ds.map((p) => (
-                <tr key={p.maPhanHoi} className="clickable" onClick={() => nav(`/quan-ly/phan-hoi/${p.maPhanHoi}`)}>
-                  <td className="c-gray">{p.maPhanHoi}</td>
+                <tr key={p.maPhanHoi} className="clickable" style={{ height: 64 }} onClick={() => nav(`/quan-ly/phan-hoi/${p.maPhanHoi}`)}>
+                  <td style={{ fontSize: 13, lineHeight: '16px', fontWeight: 500, color: 'var(--ink-500)' }}>{p.maPhanHoi}</td>
                   <td><div className="cell-main">{p.tieuDe}</div><div className="cell-sub">{NHAN_LOAI_PHAN_HOI[p.loaiPhanHoi]}</div></td>
                   <td>{tenNguoiGui(p.nguoiGui)}</td>
                   <td>{gioNgay(p.thoiGianGui).replace(' ', ' · ')}</td>

@@ -178,7 +178,8 @@ async function traLoiNguoiGui(maPhanHoi, { noiDung }, maQuanLy) {
 /** Tạo phiếu – dùng chung cho UC_10 và UC_14 */
 async function taoPhieu({ maNhanSu, maPHHV, loaiPhanHoi, tieuDe, noiDung, tepDinhKem = [] }) {
   return trongGiaoDich(async (session) => {
-    const ma = await sinhMaPhieu(session);
+    // Figma GV-10: yêu cầu của giáo viên mang mã YC-NNNN; phiếu của phụ huynh giữ PH-YYMM-NNNN (PH-14)
+    const ma = maNhanSu ? await sinhMa('YC', session) : await sinhMaPhieu(session);
     const dsTep = [];
     for (const t of tepDinhKem) dsTep.push({ maTep: await sinhMa('TP', session), ...t });
     const doc = { _id: ma, loaiPhanHoi, tieuDe, noiDung, thoiGianGui: clock.now(), trangThaiXuLy: 'ChoXuLy', tepDinhKem: dsTep };

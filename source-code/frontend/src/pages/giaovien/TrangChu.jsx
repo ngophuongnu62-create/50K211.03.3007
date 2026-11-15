@@ -29,7 +29,7 @@ export default function TrangChu() {
   return (
     <>
       <PageHeader crumbs={[{ label: t('Trang chủ') }]} title={`${t('Xin chào')}, ${phien.nguoiDung.hoTen}`} sub={d.homNay} />
-      <div className="grid-3" style={{ gap: 16, alignItems: 'start' }}>
+      <div className="grid-3" style={{ gap: 16, alignItems: 'start', marginTop: 28 - 24 }}>
         <StatCard label={t('Ca dạy tuần này')} value={d.caDayTuanNay} icon={Calendar} />
         <StatCard label={t('Ca dạy chờ bạn xác nhận')} value={d.caChoXacNhan} icon={Clock}>
           <div className="t-12 c-muted" style={{ marginTop: 8 }}>{t('Lịch dự kiến Quản lý vừa gửi · phản hồi trong 24 giờ')}</div>
@@ -48,7 +48,7 @@ export default function TrangChu() {
 
       <div className="row gap-16" style={{ marginTop: 28, alignItems: 'stretch' }}>
         <section className="card" style={{ flex: 1, padding: 24 }}>
-          <div className="row between">
+          <div className="row between" style={{ minHeight: 32 }}>
             <div className="card-title">{t('Lịch dạy hôm nay')}</div>
             <Button variant="link" onClick={() => nav('/giao-vien/lich-day')}>{t('Xem tất cả')}</Button>
           </div>
@@ -59,14 +59,14 @@ export default function TrangChu() {
                   <div className="t-14 w-600">{b.tenCa} · {b.gioBatDau} – {b.gioKetThuc}</div>
                   <div className="t-13 c-muted mt-2">{b.tenLop} · {b.tenPhong}</div>
                 </div>
-                {b.loaiLich === 'ChinhThuc' ? <Badge tone="green">{t('Chính thức')}</Badge> : <Badge tone="blue">{t('Dự kiến')}</Badge>}
+                {b.loaiLich === 'ChinhThuc' ? <Badge tone="green">{t('Chính thức')}</Badge> : <Badge tone="gray">{t('Dự kiến')}</Badge>}
               </div>
             ))}
             {!d.lichDayHomNay.length && <div className="c-muted t-13" style={{ padding: '14px 0' }}>{t('Hôm nay không có ca dạy.')}</div>}
           </div>
         </section>
         <section className="card" style={{ flex: 1, padding: 24 }}>
-          <div className="row between">
+          <div className="row between" style={{ minHeight: 32 }}>
             <div className="card-title">{t('Ca dạy chờ xác nhận')}</div>
             <Button variant="link" onClick={() => nav('/giao-vien/phan-hoi-lich-day')}>{t('Phản hồi')}</Button>
           </div>

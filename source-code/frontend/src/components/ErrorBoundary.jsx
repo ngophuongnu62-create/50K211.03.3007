@@ -27,9 +27,9 @@ export default class ErrorBoundary extends Component {
   render() {
     if (!this.state.loi) return this.props.children;
     return (
-      <div className="loading" role="alert" style={{ minHeight: '60vh', justifyContent: 'center' }}>
+      <div className="loading" role="alert" style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
         <AlertTriangle size={40} color="var(--amber-icon)" />
-        <div className="t-20 w-700" style={{ marginTop: 16 }}>Màn hình gặp sự cố khi hiển thị</div>
+        <div className="w-700" style={{ marginTop: 16, fontSize: 20, color: 'var(--ink-900)' }}>Màn hình gặp sự cố khi hiển thị</div>
         <p className="t-15 c-muted" style={{ marginTop: 8, maxWidth: 460, textAlign: 'center' }}>
           Dữ liệu của bạn không bị ảnh hưởng. Vui lòng tải lại trang; nếu vẫn gặp lỗi, hãy liên hệ Quản lý trung tâm.
         </p>

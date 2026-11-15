@@ -44,15 +44,15 @@ export default function PhanHoiChiTiet() {
       <div className="row gap-20" style={{ alignItems: 'flex-start' }}>
         <div className="grow col gap-20">
           <section className="card" style={{ padding: 28 }}>
-            <dl className="kv">
+            <dl className="kv kv-figma" style={{ gridTemplateColumns: '150px 1fr', columnGap: 12, rowGap: 18 }}>
               <dt>Loại phản hồi</dt><dd>{NHAN_LOAI_PHAN_HOI[p.loaiPhanHoi]}</dd>
               <dt>Người gửi</dt><dd>{tenNguoiGui(p.nguoiGui)}</dd>
               <dt>Thời gian gửi</dt><dd>{gioNgayDayDu(p.thoiGianGui)}</dd>
               <dt>Trạng thái</dt><dd><NhanXuLy trangThai={p.trangThaiXuLy} /></dd>
             </dl>
-            <hr className="divider" />
-            <div className="t-14 c-muted">Nội dung chi tiết</div>
-            <p className="t-16" style={{ marginTop: 14, lineHeight: 1.6, whiteSpace: 'pre-wrap' }}>{p.noiDung}</p>
+            <hr className="divider" style={{ margin: '18px 0' }} />
+            <div className="t-13 c-muted w-500" style={{ lineHeight: '16px' }}>Nội dung chi tiết</div>
+            <p style={{ margin: '18px 0 0', fontSize: 15, lineHeight: '24px', color: 'var(--ink-900)', whiteSpace: 'pre-wrap' }}>{p.noiDung}</p>
             {p.tepDinhKem.length > 0 && (
               <div className="row gap-12 wrap" style={{ marginTop: 16 }}>
                 {p.tepDinhKem.map((t) => (
@@ -89,8 +89,8 @@ export default function PhanHoiChiTiet() {
 function MocLichSu({ tieuDe, phu }) {
   return (
     <li className="row gap-12" style={{ alignItems: 'flex-start' }}>
-      <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--brand)', marginTop: 6, flex: 'none' }} />
-      <div><div className="t-13 w-500">{tieuDe}</div><div className="t-12 c-muted mt-4">{phu}</div></div>
+      <span style={{ width: 10, height: 10, borderRadius: '50%', background: 'var(--brand)', marginTop: 3, flex: 'none' }} />
+      <div><div className="t-13 w-500" style={{ lineHeight: '16px', color: 'var(--ink-900)' }}>{tieuDe}</div><div className="t-12 c-muted" style={{ marginTop: 2, lineHeight: '15px' }}>{phu}</div></div>
     </li>
   );
 }
@@ -116,14 +116,14 @@ function CapNhatTrangThai({ p, onClose, onXong }) {
   return (
     <Modal open onClose={onClose} title="Cập nhật trạng thái xử lý" sub={`${p.maPhanHoi} · ${p.tieuDe}`}
       footer={<><Button variant="outline" onClick={onClose}>Hủy</Button><Button loading={dangGui} onClick={luu}>Lưu</Button></>}>
-      <div className="col gap-20">
+      <div className="col gap-16">
         {loi.chung && <Alert type="error">{loi.chung}</Alert>}
         <Field label="Trạng thái mới" required error={loi.trangThaiMoi}>
           <Select value={tt} onChange={(v) => { setTt(v); setLoi({}); }} placeholder="Chọn trạng thái" error={loi.trangThaiMoi}
             options={[{ value: 'DangXuLy', label: 'Đang xử lý' }, { value: 'DaXuLy', label: 'Đã xử lý' }, { value: 'TuChoi', label: 'Từ chối' }]} />
         </Field>
-        <Field label={tt === 'TuChoi' ? 'Ghi chú / lý do từ chối' : 'Ghi chú xử lý'} required={tt === 'TuChoi'} error={loi.ghiChu}>
-          <TextArea value={ghiChu} onChange={(e) => { setGhiChu(e.target.value); setLoi({}); }} error={loi.ghiChu} placeholder="Nhập ghi chú xử lý" />
+        <Field label="Ghi chú xử lý" required={tt === 'TuChoi'} error={loi.ghiChu}>
+          <TextArea value={ghiChu} onChange={(e) => { setGhiChu(e.target.value); setLoi({}); }} error={loi.ghiChu} placeholder={tt === 'TuChoi' ? 'Nhập lý do từ chối' : 'Nhập ghi chú'} />
         </Field>
       </div>
     </Modal>
@@ -151,20 +151,20 @@ function SoanPhanHoi({ p, onClose, onXong }) {
     }
   };
   return (
-    <Modal open wide onClose={onClose} title="Phản hồi lại người gửi"
+    <Modal open wide onClose={onClose} title="Phản hồi lại người gửi" style={{ width: 600 }}
       footer={<><Button variant="outline" onClick={onClose}>Hủy</Button><Button icon={Send} loading={dangGui} onClick={gui}>Gửi</Button></>}>
-      <dl className="kv" style={{ background: 'var(--cream-100)', borderRadius: 10, padding: '16px 16px', gridTemplateColumns: '140px 1fr', rowGap: 10, fontSize: 14 }}>
+      <dl className="kv kv-figma" style={{ background: 'var(--cream-100)', borderRadius: 10, padding: 16, gridTemplateColumns: '130px 1fr', columnGap: 12, rowGap: 10 }}>
         <dt>Mã yêu cầu</dt><dd>{p.maPhanHoi}</dd>
         <dt>Người gửi</dt><dd>{tenNguoiGui(p.nguoiGui)}</dd>
         <dt>Thời gian gửi</dt><dd>{gioNgayDayDu(p.thoiGianGui)}</dd>
         <dt>Nội dung</dt><dd>{p.tieuDe}</dd>
       </dl>
-      <div style={{ marginTop: 20 }}>
+      <div style={{ marginTop: 16 }}>
         <Field label="Nội dung phản hồi" required error={loi}>
           <TextArea value={noiDung} onChange={(e) => { setNoiDung(e.target.value); setLoi(null); }} error={loi} placeholder="Nhập nội dung phản hồi cho người gửi" rows={5} />
         </Field>
       </div>
-      {loiChung && <div style={{ marginTop: 12 }}><Alert type="error">{loiChung} Nội dung đã nhập được giữ nguyên, vui lòng thử lại.</Alert></div>}
+      {loiChung && <div style={{ marginTop: 16 }}><Alert type="error">{loiChung} Vui lòng gửi lại.</Alert></div>}
     </Modal>
   );
 }

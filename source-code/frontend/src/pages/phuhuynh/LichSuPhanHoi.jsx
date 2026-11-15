@@ -14,14 +14,14 @@ export default function LichSuPhanHoi() {
   return (
     <>
       <PageHeader crumbs={[{ label: 'Tra cứu phiếu', to: '/phu-huynh/tra-cuu-phieu' }, { label: 'Lịch sử phản hồi' }]}
-        title="Lịch sử phản hồi" sub={`Các phiếu đã gửi bằng thông tin học viên ${phien.hocVien.tenHocVien}`} />
+        title="Lịch sử phản hồi" sub={`Các phiếu đã gửi bằng thông tin học viên ${phien.hocVien.tenHocVien}.`} />
       {error && <Alert type="error">{error.message}</Alert>}
       <div className="card flush">
         {!ds && !error && <Loading />}
-        {ds && !ds.length && <div style={{ padding: '48px 0' }}><Empty cream icon={MessageSquare} title="Chưa có phiếu phản hồi nào." /></div>}
+        {ds && !ds.length && <div><Empty cream icon={MessageSquare} title="Chưa có phiếu phản hồi nào." /></div>}
         {ds?.length > 0 && (
           <table className="table">
-            <thead><tr><th>Mã phiếu</th><th>Tiêu đề</th><th>Phân loại</th><th>Ngày gửi</th><th>Tiến độ</th></tr></thead>
+            <thead><tr><th style={{ width: 183 }}>Mã phiếu</th><th style={{ width: 424 }}>Tiêu đề</th><th style={{ width: 200 }}>Phân loại</th><th style={{ width: 140 }}>Ngày gửi</th><th>Tiến độ</th></tr></thead>
             <tbody>
               {ds.map((p) => (
                 <tr key={p.maPhieu} className="clickable" onClick={() => nav(`/phu-huynh/tra-cuu-phieu?ma=${p.maPhieu}`)}>

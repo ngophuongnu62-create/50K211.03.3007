@@ -5,7 +5,7 @@
  */
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Calendar, Info } from 'lucide-react';
+import { AlertTriangle, Calendar, Info } from 'lucide-react';
 import { api } from '../../api/client';
 import { useToast } from '../../components/Toast';
 import { Badge, Button, Empty, Loading, Modal, PageHeader, Seg, Select } from '../../components/ui';
@@ -40,7 +40,7 @@ export default function LichDay() {
       setChiTiet(data);
     } catch (e) {
       if (e.status === 404 || e.status === 403) {
-        toast({ type: 'error', title: t('Lịch dạy không còn khả dụng!'), text: t('Lịch đã bị hủy hoặc không còn thuộc phân công của bạn.') });
+        toast({ type: 'error', title: t('Lịch dạy không còn khả dụng!'), text: t('Lịch đã bị hủy hoặc không còn thuộc phân công của bạn. Danh sách đã được tải lại.') });
         tai();
       } else toast({ type: 'error', title: t('Không tải được chi tiết lịch. Vui lòng thử lại!'), text: t('Danh sách hiện tại được giữ nguyên.') });
     }
@@ -59,26 +59,26 @@ export default function LichDay() {
       </div>
       <div className="card flush" style={{ marginTop: 24 }}>
         {loi ? (
-          <div style={{ padding: '56px 0' }}>
-            <Empty cream icon={Calendar} title={t('Không tải được danh sách lịch. Vui lòng thử lại!')} action={<Button variant="outline" onClick={tai}>{t('Tải lại')}</Button>} />
+          <div style={{ padding: '32px 0' }}>
+            <Empty cream icon={AlertTriangle} title={t('Không tải được danh sách lịch. Vui lòng thử lại!')} action={<Button onClick={tai}>{t('Tải lại')}</Button>} />
           </div>
         ) : !ds ? <Loading /> : !loc.length ? (
-          <div style={{ padding: '72px 0' }}>
+          <div style={{ padding: '32px 0' }}>
             <Empty cream icon={Calendar} title={t('Bạn chưa có lịch dạy được phân công!')} text={<span style={{ display: 'inline-block', maxWidth: 420 }}>{t('Lịch sẽ xuất hiện khi Quản lý gửi lịch dự kiến hoặc phát hành lịch chính thức.')}</span>} />
           </div>
         ) : (
           <table className="table gray-head">
-            <thead><tr><th>{t('Lớp học')}</th><th>{t('Môn học')}</th><th>{t('Ngày học')}</th><th>{t('Giờ học')}</th><th>{t('Phòng')}</th><th>{t('Trạng thái')}</th><th aria-label="Thao tác" /></tr></thead>
+            <thead><tr><th style={{ width: 252 }}>{t('Lớp học')}</th><th style={{ width: 130 }}>{t('Môn học')}</th><th style={{ width: 150 }}>{t('Ngày học')}</th><th style={{ width: 150 }}>{t('Giờ học')}</th><th style={{ width: 100 }}>{t('Phòng')}</th><th>{t('Trạng thái')}</th><th aria-label="Thao tác" /></tr></thead>
             <tbody>
               {loc.map((b) => (
-                <tr key={b.maLichDay}>
+                <tr key={b.maLichDay} style={{ height: 58 }}>
                   <td className="cell-main">{b.tenLop}</td>
                   <td>{b.monHoc}</td>
                   <td>{thuNgan(b.ngayDay)}, {ddmm(b.ngayDay)}</td>
                   <td>{b.gioBatDau} – {b.gioKetThuc}</td>
                   <td>{b.tenPhong}</td>
-                  <td><span className={`badge badge-${b.loaiLich === 'ChinhThuc' ? 'g3' : 'g2'}`}>{t(b.loaiLich === 'ChinhThuc' ? 'Chính thức' : 'Dự kiến')}</span></td>
-                  <td className="t-right"><Button variant="ghost" size="sm" onClick={() => xem(b)}>{t('Xem chi tiết')}</Button></td>
+                  <td><span className={`badge badge-${b.loaiLich === 'ChinhThuc' ? 'green' : 'gray'}`}>{t(b.loaiLich === 'ChinhThuc' ? 'Chính thức' : 'Dự kiến')}</span></td>
+                  <td className="t-right"><button type="button" className="btn-link" onClick={() => xem(b)}>{t('Xem chi tiết')}</button></td>
                 </tr>
               ))}
             </tbody>
@@ -86,23 +86,23 @@ export default function LichDay() {
         )}
       </div>
       {chiTiet && (
-        <Modal open onClose={() => setChiTiet(null)} title={chiTiet.tenLop} sub={t('Chi tiết lịch dạy')}
+        <Modal open style={{ width: 500 }} onClose={() => setChiTiet(null)} title={chiTiet.tenLop} sub={t('Chi tiết lịch dạy')}
           footer={chiTiet.loaiLich === 'DuKien' && chiTiet.coThePhanHoi ? <>
             <Button variant="outline" onClick={() => setChiTiet(null)}>{t('Đóng')}</Button>
             <Button variant="outline" onClick={() => nav(`/giao-vien/phan-hoi-lich-day/${chiTiet.maLichDay}`, { state: { cheDo: 'deXuat' } })}>{t('Đề xuất thay đổi')}</Button>
             <Button onClick={() => nav(`/giao-vien/phan-hoi-lich-day/${chiTiet.maLichDay}`)}>{t('Xác nhận lịch dạy')}</Button>
           </> : <Button variant="outline" onClick={() => setChiTiet(null)}>{t('Đóng')}</Button>}>
-          <dl className="kv" style={{ gridTemplateColumns: '166px 1fr', rowGap: 16 }}>
+          <dl className="kv kv-figma" style={{ gridTemplateColumns: '130px 1fr', columnGap: 12, rowGap: 16 }}>
             <dt>{t('Lớp học')}</dt><dd>{chiTiet.tenLop}</dd>
             <dt>{t('Môn học')}</dt><dd>{chiTiet.monHoc}</dd>
             <dt>{t('Ngày học')}</dt><dd>{nhanNgay(chiTiet.ngayDay)}</dd>
             <dt>{t('Giờ học')}</dt><dd>{chiTiet.tenCa} · {chiTiet.gioBatDau} – {chiTiet.gioKetThuc}</dd>
             <dt>{t('Phòng học')}</dt><dd>{chiTiet.tenPhong}</dd>
-            <dt>{t('Trạng thái')}</dt><dd>{chiTiet.loaiLich === 'ChinhThuc' ? <Badge tone="green">{t('Chính thức')}</Badge> : <Badge tone="blue">{t('Dự kiến')}</Badge>}</dd>
+            <dt>{t('Trạng thái')}</dt><dd>{chiTiet.loaiLich === 'ChinhThuc' ? <Badge tone="green">{t('Chính thức')}</Badge> : <Badge tone="gray">{t('Dự kiến')}</Badge>}</dd>
           </dl>
           {chiTiet.loaiLich === 'DuKien' && (
-            <div className="alert alert-info" style={{ marginTop: 20 }}>
-              <Info size={18} /><div className="grow t-13">{t('Lịch dự kiến cần phản hồi trong 24 giờ. Bấm “Xác nhận lịch dạy” hoặc “Đề xuất thay đổi” để chuyển sang màn hình Phản hồi lịch dạy.')}</div>
+            <div className="alert" style={{ marginTop: 16, background: 'var(--cream-100)', borderColor: 'var(--border)', color: 'var(--ink-700)' }}>
+              <Info size={20} color="var(--ink-400)" /><div className="grow t-13" style={{ lineHeight: '19px' }}>{t('Lịch dự kiến cần phản hồi trong 24 giờ. Bấm “Xác nhận lịch dạy” hoặc “Đề xuất thay đổi” để chuyển sang màn hình Phản hồi lịch dạy.')}</div>
             </div>
           )}
         </Modal>

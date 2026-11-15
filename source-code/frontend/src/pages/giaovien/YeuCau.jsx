@@ -69,7 +69,7 @@ export default function YeuCau() {
       <PageHeader crumbs={[{ label: t('Trang chủ'), to: '/giao-vien' }, { label: t('Phản hồi / yêu cầu') }]}
         title={t('Gửi phản hồi / yêu cầu')} sub={t('Gửi tới Ban quản lý ngay sau khi bấm Gửi.')} />
       <div className="row gap-20" style={{ alignItems: 'flex-start' }}>
-        <section className="card grow" style={{ padding: 28 }}>
+        <section className="card grow form-yc" style={{ padding: 28 }}>
           {xem ? (
             <>
               <div className="row between" style={{ alignItems: 'flex-start' }}>
@@ -103,32 +103,32 @@ export default function YeuCau() {
                   ))}
                 </div>
               </Field>
-              <div style={{ marginTop: 16 }}>
+              <div style={{ marginTop: 18 }}>
                 <Field label={t('Tiêu đề')} required error={loi.tieuDe && t(loi.tieuDe)}>
                   <TextInput value={f.tieuDe} onChange={doi('tieuDe')} placeholder={t('Nhập tiêu đề')} error={loi.tieuDe} maxLength={200} />
                 </Field>
               </div>
-              <div style={{ marginTop: 16 }}>
+              <div style={{ marginTop: 18 }}>
                 <Field label={t('Nội dung chi tiết')} required error={loi.noiDung && t(loi.noiDung)}>
-                  <TextArea value={f.noiDung} onChange={doi('noiDung')} placeholder={t('Mô tả chi tiết yêu cầu')} error={loi.noiDung} rows={6} />
+                  <TextArea value={f.noiDung} onChange={doi('noiDung')} placeholder={t('Mô tả chi tiết yêu cầu')} error={loi.noiDung} rows={6} style={{ height: 124 }} />
                 </Field>
               </div>
-              {loiGui && <div style={{ marginTop: 12 }}><Alert type="error" title={t('Gửi phản hồi/yêu cầu không thành công!')}>{t('Nội dung đã nhập được giữ nguyên, vui lòng thử lại.')}</Alert></div>}
-              <div className="row" style={{ justifyContent: 'flex-end', marginTop: 16 }}>
+              {loiGui && <div style={{ marginTop: 18 }}><Alert type="error">{t('Gửi phản hồi/yêu cầu không thành công! Vui lòng gửi lại.')}</Alert></div>}
+              <div className="row" style={{ justifyContent: 'flex-end', marginTop: 18 }}>
                 <Button icon={Send} loading={dangGui} onClick={gui}>{t('Gửi')}</Button>
               </div>
             </>
           )}
         </section>
         <section className="card" style={{ width: 380, flex: 'none', padding: 24 }}>
-          <div className="card-title" style={{ paddingBottom: 12, borderBottom: '1px solid var(--line)' }}>{t('Yêu cầu của tôi')}</div>
+          <div className="card-title" style={{ paddingBottom: 4, borderBottom: '1px solid var(--line)' }}>{t('Yêu cầu của tôi')}</div>
           {!ds && <Loading />}
           {ds && !ds.length && <div className="c-muted t-13" style={{ paddingTop: 14 }}>{t('Chưa có yêu cầu nào.')}</div>}
           {ds?.map((y, i) => (
-            <button key={y.maPhieu} type="button" className="row between list-btn" style={{ borderTop: i ? '1px solid var(--line)' : 'none', padding: '16px 0' }} onClick={() => setXem(y)}>
+            <button key={y.maPhieu} type="button" className="row between list-btn" style={{ borderTop: i ? '1px solid var(--line)' : 'none', marginTop: 4, padding: i ? '16px 0 12px' : '12px 0', gap: 12 }} onClick={() => setXem(y)}>
               <div style={{ textAlign: 'left' }}>
-                <div className="t-14 w-500">{y.tieuDe}</div>
-                <div className="t-12 c-muted mt-2">{y.maPhieu} · {t(NHAN_LOAI_PHAN_HOI[y.loaiPhanHoi])}</div>
+                <div className="t-14 w-500" style={{ lineHeight: '17px', color: 'var(--ink-900)' }}>{y.tieuDe}</div>
+                <div className="t-12 c-muted" style={{ marginTop: 2, lineHeight: '15px' }}>{y.maPhieu} · {t(NHAN_LOAI_PHAN_HOI[y.loaiPhanHoi])}</div>
               </div>
               <Badge tone={MAU_XU_LY[y.trangThaiXuLy]}>{t(NHAN_XU_LY[y.trangThaiXuLy])}</Badge>
             </button>

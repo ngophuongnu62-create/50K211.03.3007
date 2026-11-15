@@ -1,7 +1,7 @@
 /** Thành phần giao diện dùng chung – theo mẫu Figma. */
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AlertCircle, AlertTriangle, CalendarDays, Check, CheckCircle2, ChevronDown, ChevronLeft, ChevronRight, Info, Loader2, X } from 'lucide-react';
+import { AlertCircle, AlertTriangle, CalendarDays, Check, CheckCircle2, ChevronDown, ChevronLeft, ChevronRight, Info, Loader2, Lock, X, XCircle, CalendarCheck } from 'lucide-react';
 import { congNgay, dauTuan, ddmm, ddmmyyyy, homNay, nhanNgay } from '../lib/format';
 
 /* ---------- Tiêu đề trang ---------- */
@@ -84,7 +84,7 @@ export function Field({ label, required, error, hint, counter, children, strong 
       )}
       {children}
       {error && (
-        <div className="field-error"><AlertCircle size={13} />{error}</div>
+        <div className="field-error"><AlertCircle size={14} />{error}</div>
       )}
       {!error && hint && <div className="hint">{hint}</div>}
       {counter}
@@ -211,7 +211,8 @@ export function DatePicker({ value, onChange, error, size, min, placeholder = 'C
 }
 
 /** Chọn khoảng ngày "09/11 → 15/11/2026" (Figma QL-5-a): lần bấm 1 = từ ngày, lần bấm 2 = đến ngày */
-export function DateRangePicker({ tuNgay, denNgay, onChange, error, size, placeholder = 'Chọn khoảng thời gian' }) {
+/** motNgay: ô "Thời gian sử dụng" (Figma QL-2.1-a/c) – một ngày hiển thị "Thứ Ba, 10/11/2026", chân lịch "Đã chọn: …" + "Hôm nay" */
+export function DateRangePicker({ tuNgay, denNgay, onChange, error, size, motNgay, placeholder = 'Chọn khoảng thời gian' }) {
   const [mo, setMo] = useState(false);
   const [buoc, setBuoc] = useState(0);
   const [thang, setThang] = useState(() => (tuNgay || homNay()).slice(0, 7));
@@ -225,8 +226,9 @@ export function DateRangePicker({ tuNgay, denNgay, onChange, error, size, placeh
   const chon = (d) => {
     if (buoc === 0) { onChange({ tuNgay: d, denNgay: '' }); setBuoc(1); } else { onChange({ tuNgay, denNgay: d }); setBuoc(0); setMo(false); }
   };
-  const ngan = tuNgay && denNgay && tuNgay <= denNgay && tuNgay.slice(0, 4) === denNgay.slice(0, 4);
-  const nhan = !tuNgay ? '' : `${ngan ? ddmm(tuNgay) : ddmmyyyy(tuNgay)} → ${denNgay ? ddmmyyyy(denNgay) : '…'}`;
+  const ngan = tuNgay && denNgay && tuNgay.slice(0, 4) === denNgay.slice(0, 4); // Figma QL-2.1-c: "12/11 → 09/11/2026"
+  const mot = motNgay && tuNgay && (!denNgay || denNgay === tuNgay);
+  const nhan = !tuNgay ? '' : mot ? nhanNgay(tuNgay) : `${ngan ? ddmm(tuNgay) : ddmmyyyy(tuNgay)} → ${denNgay ? ddmmyyyy(denNgay) : '…'}`;
   const [a, b] = tuNgay && denNgay && tuNgay > denNgay ? [denNgay, tuNgay] : [tuNgay, denNgay];
   const today = homNay();
   return (
@@ -251,10 +253,15 @@ export function DateRangePicker({ tuNgay, denNgay, onChange, error, size, placeh
               </button>
             ) : <span key={`x${i}`} />))}
           </div>
-          <div className="cal-foot">
+          {motNgay ? (
+            <div className="cal-foot">
+              <span>{nhan ? `Đã chọn: ${nhan}` : ''}</span>
+              <button type="button" onClick={() => { onChange({ tuNgay: today, denNgay: today }); setThang(today.slice(0, 7)); setBuoc(0); setMo(false); }}>Hôm nay</button>
+            </div>
+          ) : <div className="cal-foot">
             <span>{buoc === 1 ? 'Chọn ngày kết thúc' : 'Chọn ngày bắt đầu'}</span>
             <button type="button" onClick={() => { const t = dauTuan(today); onChange({ tuNgay: t, denNgay: congNgay(t, 6) }); setThang(t.slice(0, 7)); setBuoc(0); setMo(false); }}>Tuần này</button>
-          </div>
+          </div>}
         </div>
       )}
     </div>
@@ -266,11 +273,11 @@ const ICON_ALERT = { error: AlertCircle, warning: AlertTriangle, success: CheckC
 export function Alert({ type = 'error', title, children, action }) {
   const Icon = ICON_ALERT[type];
   return (
-    <div className={`alert alert-${type}`} role={type === 'error' ? 'alert' : 'status'}>
+    <div className={`alert alert-${type}${action ? ' co-nut' : ''}`} role={type === 'error' ? 'alert' : 'status'}>
       <Icon size={20} />
       <div className="grow">
         {title && <div className="alert-title">{title}</div>}
-        {children && <div className={title ? 'mt-4' : ''}>{children}</div>}
+        {children && <div>{children}</div>}
       </div>
       {action}
     </div>
@@ -296,7 +303,7 @@ export function Seg({ items, value, onChange, cream }) {
 }
 
 /* ---------- Hộp thoại ---------- */
-export function Modal({ open, onClose, title, sub, children, footer, wide, icon }) {
+export function Modal({ open, onClose, title, sub, children, footer, wide, icon, style }) {
   useEffect(() => {
     if (!open) return undefined;
     const h = (e) => e.key === 'Escape' && onClose?.();
@@ -306,7 +313,7 @@ export function Modal({ open, onClose, title, sub, children, footer, wide, icon 
   if (!open) return null;
   return (
     <div className="overlay" onMouseDown={(e) => e.target === e.currentTarget && onClose?.()}>
-      <div className={`modal ${wide ? 'wide' : ''}`} role="dialog" aria-modal="true" aria-label={title}>
+      <div className={`modal ${wide ? 'wide' : ''}`} role="dialog" aria-modal="true" aria-label={title} style={style}>
         {icon}
         {(title || onClose) && (
           <div className="modal-head">
@@ -326,8 +333,8 @@ export function Modal({ open, onClose, title, sub, children, footer, wide, icon 
 
 /* ---------- Trạng thái trống / đang tải ---------- */
 /** Hộp thoại kết quả có biểu tượng bên trái (Figma QL-6.1-e/f/g): tone = success | error | warning */
-const ICON_KQ = { success: CheckCircle2, error: AlertCircle, warning: AlertTriangle, 'warning-red': AlertTriangle, info: Info };
-export function ThongBaoModal({ open, onClose, tone = 'success', title, text, children, footer }) {
+const ICON_KQ = { success: CheckCircle2, error: AlertCircle, warning: AlertTriangle, 'warning-red': AlertTriangle, info: Info, lock: Lock, 'x-circle': XCircle, pink: CalendarCheck };
+export function ThongBaoModal({ open, onClose, tone = 'success', icon, width, title, text, children, footer }) {
   useEffect(() => {
     if (!open) return undefined;
     const h = (e) => e.key === 'Escape' && onClose?.();
@@ -335,10 +342,10 @@ export function ThongBaoModal({ open, onClose, tone = 'success', title, text, ch
     return () => window.removeEventListener('keydown', h);
   }, [open, onClose]);
   if (!open) return null;
-  const Icon = ICON_KQ[tone];
+  const Icon = icon || ICON_KQ[tone];
   return (
     <div className="overlay" onMouseDown={(e) => e.target === e.currentTarget && onClose?.()}>
-      <div className="modal tb-modal" role="alertdialog" aria-modal="true" aria-label={title}>
+      <div className="modal tb-modal" role="alertdialog" aria-modal="true" aria-label={title} style={width ? { width } : undefined}>
         <div className="row gap-14" style={{ alignItems: 'flex-start' }}>
           <span className={`tb-icon ${tone}`}><Icon size={22} /></span>
           <div className="grow">
@@ -357,10 +364,10 @@ export function ThongBaoModal({ open, onClose, tone = 'success', title, text, ch
 export function Empty({ icon: Icon = Info, title, text, action, cream }) {
   return (
     <div className="empty">
-      <div className={`empty-icon ${cream ? 'cream' : ''}`}><Icon size={24} /></div>
+      <div className={`empty-icon ${cream ? 'cream' : ''}`}><Icon size={28} /></div>
       {title && <div className="empty-title">{title}</div>}
-      {text && <div className="mt-8">{text}</div>}
-      {action && <div className="mt-16">{action}</div>}
+      {text && <div className="empty-text">{text}</div>}
+      {action && <div>{action}</div>}
     </div>
   );
 }

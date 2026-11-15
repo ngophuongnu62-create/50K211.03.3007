@@ -46,7 +46,7 @@ export default function LichRanh() {
     setDangLuu(true);
     try {
       const { message } = await api('/giao-vien/lich-ranh', { method: 'PUT', body: { cacRanh } });
-      toast({ title: t(message), text: `${t('Đã lưu')} ${cacRanh.length} ${t('ca rảnh cho tuần')} ${ddmm(d.tuan.tuNgay)} – ${ddmm(d.tuan.denNgay)}.` });
+      toast({ title: t(message), text: `${t('Đã lưu')} ${cacRanh.length} ${t('ca rảnh cho tuần')} ${ddmm(d.tuan.tuNgay)} – ${ddmm(d.tuan.denNgay)} ${t('(ghi đè dữ liệu cũ).')}` });
     } catch (e) {
       if (e.status === 403) setDong(true); // 4b
       else if (e.status === 400) setLoi(e.message); // 5a, 5a.3
@@ -68,12 +68,12 @@ export default function LichRanh() {
         </>}
       />
       <div className="row gap-12" style={{ alignItems: 'center' }}>
-        <div className="alert grow" style={{ background: 'var(--cream-50)', border: '1px solid var(--cream-200)', color: 'var(--ink-700)', alignItems: 'center' }}>
-          <Info size={18} /><div className="grow t-13">{t('Cổng mở 08:00 Thứ Hai và đóng 23:59 Thứ Năm hằng tuần. Giáo viên / trợ giảng đăng ký tối thiểu 5 ca rảnh mỗi tuần.')}</div>
+        <div className="alert alert-info grow" style={{ alignItems: 'center' }}>
+          <Info size={20} /><div className="grow t-13" style={{ lineHeight: '19px' }}>{t('Cổng mở 08:00 Thứ Hai và đóng 23:59 Thứ Năm hằng tuần. Giáo viên / trợ giảng đăng ký tối thiểu 5 ca rảnh mỗi tuần.')}</div>
         </div>
-        <div className="card" style={{ padding: '10px 18px', textAlign: 'right', flex: 'none' }}>
-          <div style={{ fontSize: 20, fontWeight: 700, color: du ? 'var(--green-900)' : 'var(--brand-700)' }}>{chon.size} / {toiThieu} {t('ca')}</div>
-          <div className="t-12 c-muted">{t('đã chọn / tối thiểu')}</div>
+        <div className="card" style={{ padding: '10px 18px', borderRadius: 10, textAlign: 'right', flex: 'none' }}>
+          <div style={{ fontSize: 20, lineHeight: '24px', fontWeight: 700, color: du ? 'var(--green-900)' : 'var(--danger-900)' }}>{chon.size} / {toiThieu} {t('ca')}</div>
+          <div className="t-12 c-muted" style={{ marginTop: 2, lineHeight: '15px' }}>{t('đã chọn / tối thiểu')}</div>
         </div>
       </div>
       {loi && <div style={{ marginTop: 24 }}><Alert type="error">{loi}</Alert></div>}
@@ -100,9 +100,10 @@ export default function LichRanh() {
           ))}
         </div>
       </section>
-      <ThongBaoModal open={dong} tone="warning-red" onClose={() => nav('/giao-vien')}
+      {/* GV-9-e theo Figma: biểu tượng ổ khóa, nội dung "Dữ liệu không được lưu, bạn sẽ được chuyển về trang chủ." */}
+      <ThongBaoModal open={dong} tone="lock" width={500} onClose={() => nav('/giao-vien')}
         title={t('Hệ thống đã đóng cổng đăng ký lịch rảnh cho tuần tiếp theo')}
-        text={`${t('Cổng đã đóng lúc')} ${gioNgay(d.cong.dongLuc).split(' ')[1]} ${thuCua(ngayDong)} ${ddmmyyyy(ngayDong)}. ${t('Lịch rảnh đã lưu được giữ nguyên.')}`}
+        text={`${t('Cổng đã đóng lúc')} ${gioNgay(d.cong.dongLuc).split(' ')[1]} ${thuCua(ngayDong)} ${ddmmyyyy(ngayDong)}. ${t('Dữ liệu không được lưu, bạn sẽ được chuyển về trang chủ.')}`}
         footer={<Button onClick={() => nav('/giao-vien')}>{t('Về trang chủ')}</Button>} />
     </>
   );

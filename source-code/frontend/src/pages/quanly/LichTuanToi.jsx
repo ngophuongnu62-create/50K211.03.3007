@@ -5,7 +5,7 @@
  */
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeftRight, Calendar, CalendarPlus, CalendarX2, Check, MoreHorizontal } from 'lucide-react';
+import { ArrowLeftRight, CalendarPlus, CalendarX2, Check, MoreHorizontal } from 'lucide-react';
 import { api } from '../../api/client';
 import { useToast } from '../../components/Toast';
 import { Alert, Badge, Button, DatePicker, Field, Loading, Modal, PageHeader, Select, StatCard, ThongBaoModal } from '../../components/ui';
@@ -27,6 +27,7 @@ export default function LichTuanToi() {
   const [xungDot, setXungDot] = useState(null);
   const [khongDoi, setKhongDoi] = useState(false);
   const [dangGui, setDangGui] = useState(false);
+  const [daTao, setDaTao] = useState(false); // QL-6.2-e: đã tạo lịch tuần → ở lại trang, khóa nút xác nhận
 
   useEffect(() => {
     Promise.all([
@@ -78,7 +79,7 @@ export default function LichTuanToi() {
     try {
       const { data, message } = await api('/quan-ly/quan-ly-lich/tuan-toi/xac-nhan', { method: 'POST', body: { thayDoi, buoiBu } });
       toast({ title: message, text: `Lịch tuần ${ddmm(data.tuan.tuNgay)} – ${ddmm(data.tuan.denNgay)} chờ giáo viên xác nhận. Đã thông báo cho ${data.soNhanSuDuocThongBao} giáo viên có thay đổi.`, thoiGian: 8000 });
-      nav('/quan-ly/quan-ly-lich', { state: { tab: 'ChoGVXacNhan' } });
+      setDaTao(true); // Figma QL-6.2-e: ở lại trang "Tạo lịch tuần mới" kèm thông báo
     } catch (e) {
       if (e.code === 'DU_LIEU_KHONG_HOP_LE' && !e.data) setKhongDoi(true);
       else setXungDot({ tieuDe: e.message, chiTiet: e.data?.chiTiet || e.data?.loi || [] }); // 10a
@@ -96,22 +97,22 @@ export default function LichTuanToi() {
         sub={`Tuần ${nhanTuan} · Chỉ thay đổi các buổi bị ảnh hưởng, các buổi khác giữ lịch cố định.`}
         actions={<>
           <Button variant="outline" onClick={() => nav('/quan-ly/quan-ly-lich')}>Hủy tạo lịch tuần</Button>
-          <Button icon={Check} loading={dangGui} onClick={xacNhan} disabled={!kq?.buoiBiAnhHuong.length && !buoiBu.length}>Xác nhận lịch tuần</Button>
+          <Button icon={Check} loading={dangGui} onClick={xacNhan} disabled={daTao || (!kq?.buoiBiAnhHuong.length && !buoiBu.length)}>Xác nhận lịch tuần</Button>
         </>}
       />
       {loi && <Alert type="error">{loi}</Alert>}
       {kq && (
         <>
           <div className="grid-3" style={{ gap: 16 }}>
-            <StatCard label="Buổi bị ảnh hưởng" value={kq.buoiBiAnhHuong.length} icon={Calendar} />
-            <StatCard label="Giữ lịch cố định" value={kq.soBuoiGiuCoDinh} icon={Calendar} />
-            <StatCard label="Thay đổi các tuần sau (đã lưu)" value={kq.soThayDoiTuanSau} icon={Calendar} />
+            <StatCard label="Buổi bị ảnh hưởng" value={kq.buoiBiAnhHuong.length} />
+            <StatCard label="Giữ lịch cố định" value={kq.soBuoiGiuCoDinh} />
+            <StatCard label="Thay đổi các tuần sau (đã lưu)" value={kq.soThayDoiTuanSau} />
           </div>
           <section className="card" style={{ marginTop: 24, padding: 24 }}>
             <div className="card-title">Các buổi bị ảnh hưởng</div>
-            <div className="t-13 c-muted mt-4">Hệ thống đề xuất giáo viên thay thế và phòng trống — Quản lý quyết định</div>
+            <div className="t-13 c-muted" style={{ marginTop: 3, lineHeight: '16px' }}>Hệ thống đề xuất giáo viên thay thế và phòng trống — Quản lý quyết định</div>
             <table className="table" style={{ marginTop: 14 }}>
-              <thead><tr><th style={{ width: 220 }}>Buổi dạy</th><th style={{ width: 200 }}>Lý do</th><th style={{ width: 210 }}>Giáo viên</th><th style={{ width: 210 }}>Phòng</th><th aria-label="Tình trạng" /></tr></thead>
+              <thead><tr><th style={{ width: 232 }}>Buổi dạy</th><th style={{ width: 200 }}>Lý do</th><th style={{ width: 210 }}>Giáo viên</th><th style={{ width: 210 }}>Phòng</th><th aria-label="Tình trạng" /></tr></thead>
               <tbody>
                 {kq.buoiBiAnhHuong.map((b) => {
                   const c = chon[b.maLichDay] || {};
@@ -125,12 +126,12 @@ export default function LichTuanToi() {
                     : b.deXuat.phong ? dm.phong.filter((p) => p._id !== b.phongHienTai.maPhong).map((p) => ({ value: p._id, label: p.tenPhong }))
                       : [{ value: b.phongHienTai.maPhong, label: b.phongHienTai.tenPhong }];
                   return (
-                    <tr key={b.maLichDay} className={menu === b.maLichDay ? 'hl' : ''} style={c.huyBuoi ? { opacity: 0.55 } : undefined}>
+                    <tr key={b.maLichDay} className={menu === b.maLichDay ? 'hl' : ''} style={c.huyBuoi ? { opacity: 0.55, height: 64 } : { height: 64 }}>
                       <td>
                         <div className="cell-main">{b.tenLop}</div>
                         <div className="cell-sub">{thuNgan(c.ngayDay)} {ddmm(c.ngayDay)} · {tenCa}{c.huyBuoi ? ' · Hủy buổi' : ''}</div>
                       </td>
-                      <td className="c-ink-600">{b.lyDo.join('; ')}</td>
+                      <td className="c-ink-600" style={{ fontSize: 13, lineHeight: '16px' }}>{b.lyDo.join('; ')}</td>
                       <td><Select size="md" value={c.maGiaoVien} onChange={(v) => doi(b.maLichDay, 'maGiaoVien', v)} placeholder="Chọn giáo viên" options={optGV} disabled={c.huyBuoi} /></td>
                       <td><Select size="md" value={c.maPhong} onChange={(v) => doi(b.maLichDay, 'maPhong', v)} placeholder="Chọn phòng" options={optPhong} disabled={c.huyBuoi} /></td>
                       <td className="t-right">
@@ -182,11 +183,11 @@ export default function LichTuanToi() {
           onLuu={(bu) => { setBuoiBu((x) => [...x, bu]); setHop(null); }} />
       )}
 
-      <ThongBaoModal open={khongDoi} tone="info" onClose={() => nav('/quan-ly/quan-ly-lich')}
+      <ThongBaoModal open={khongDoi} tone="info" width={460} onClose={() => nav('/quan-ly/quan-ly-lich')}
         title="Tuần tới không có thay đổi!"
         text={`Không có buổi dạy nào của tuần ${ddmm(tuan?.tuNgay)} – ${ddmm(tuan?.denNgay)} bị ảnh hưởng bởi lịch bận giáo viên hoặc lịch phòng.`}
         footer={<Button onClick={() => nav('/quan-ly/quan-ly-lich')}>Đóng</Button>} />
-      <ThongBaoModal open={!!xungDot} tone="warning-red" onClose={() => setXungDot(null)}
+      <ThongBaoModal open={!!xungDot} tone="warning-red" width={500} onClose={() => setXungDot(null)}
         title={xungDot?.tieuDe}
         text={xungDot && `${xungDot.chiTiet.slice(0, 2).join('. ')}${xungDot.chiTiet.length ? '. ' : ''}Không thể xác nhận lịch tuần khi còn xung đột.`}
         footer={<>
@@ -209,7 +210,7 @@ function MenuDacBiet({ mo, onMo, onDong, onChon, daHuy }) {
   return (
     <div ref={ref} style={{ position: 'relative' }}>
       <button type="button" className="icon-btn" style={{ borderRadius: 8, width: 32, height: 32 }} aria-label="Chỉnh sửa đặc biệt" aria-expanded={mo} onClick={onMo}>
-        <MoreHorizontal size={16} />
+        <MoreHorizontal size={18} />
       </button>
       {mo && (
         <div className="menu-pop" role="menu">

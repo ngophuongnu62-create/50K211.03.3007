@@ -5,7 +5,7 @@ import { ArrowLeft, Pencil } from 'lucide-react';
 import { api } from '../../api/client';
 import { useToast } from '../../components/Toast';
 import { Button, Loading, PageHeader, useTai } from '../../components/ui';
-import { NHAN_HINH_THUC, NHAN_LOAI_NHAN_SU } from '../../lib/format';
+import { NHAN_LOAI_NHAN_SU } from '../../lib/format';
 import { TheBangCap } from './HoSoForm';
 
 const sdtDep = (s = '') => s.replace(/^(\d{4})(\d{3})(\d{3})$/, '$1 $2 $3');
@@ -38,13 +38,11 @@ export default function HoSoChiTiet() {
       />
       <section className="card" style={{ padding: 28 }}>
         <div className="card-title">Thông tin cá nhân</div>
-        <dl className="kv" style={{ marginTop: 16, gridTemplateColumns: '172px 1fr' }}>
+        <dl className="kv kv-figma" style={{ marginTop: 16, gridTemplateColumns: '160px 1fr', columnGap: 12, rowGap: 16 }}>
           <dt>Họ và tên</dt><dd>{hs.hoTen}</dd>
           <dt>Số điện thoại</dt><dd>{sdtDep(hs.soDienThoai)}</dd>
           <dt>Email</dt><dd>{hs.email}</dd>
           <dt>Địa chỉ</dt><dd>{hs.diaChi || '—'}</dd>
-          <dt>Hình thức làm việc</dt><dd>{NHAN_HINH_THUC[hs.hinhThucLamViec]}</dd>
-          <dt>Chuyên môn</dt><dd>{hs.chuyenMon.map((c) => c.tenMonHoc).join(', ') || '—'}</dd>
         </dl>
       </section>
       <section className="card" style={{ padding: 28, marginTop: 24 }}>

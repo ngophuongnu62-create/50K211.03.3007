@@ -51,8 +51,8 @@ export default function DangNhapPhuHuynh() {
       <div className="login-form-wrap">
         <form className="login-form" onSubmit={gui} noValidate>
           <Link to="/" className="back-link"><ArrowLeft size={16} />Chọn lại đối tượng</Link>
-          <h2 className="t-32" style={{ marginTop: 24 }}>Đăng nhập Phụ huynh / Học viên</h2>
-          <p className="t-15 c-muted" style={{ marginTop: 8 }}>Dùng họ tên học viên và số điện thoại đã đăng ký. Không cần mật khẩu.</p>
+          <h2 style={{ marginTop: 24, fontSize: 26, lineHeight: '31px', fontWeight: 700, whiteSpace: 'nowrap' }}>Đăng nhập Phụ huynh / Học viên</h2>
+          <p className="t-15 c-muted" style={{ marginTop: 8, lineHeight: '18px', whiteSpace: 'nowrap' }}>Dùng họ tên học viên và số điện thoại đã đăng ký. Không cần mật khẩu.</p>
           {loi && <div style={{ marginTop: 24 }}><Alert type="error">{loi}</Alert></div>}
           {!loi && lyDoKetThuc && <div style={{ marginTop: 24 }}><Alert type="warning">{lyDoKetThuc}</Alert></div>}
           <div className="col gap-24" style={{ marginTop: 24 }}>
@@ -64,8 +64,8 @@ export default function DangNhapPhuHuynh() {
             </Field>
           </div>
           <Button type="submit" size="lg" block loading={dangGui} style={{ marginTop: 24 }}>Đăng nhập</Button>
-          <p className="t-13 c-ink-600" style={{ marginTop: 24 }}>
-            Nhân sự Broadway? <Link to="/dang-nhap/quan-ly" className="c-brand w-600">Đăng nhập tại đây</Link>
+          <p className="t-13 c-muted" style={{ marginTop: 24, lineHeight: '16px' }}>
+            Nhân sự Broadway? <Link to="/dang-nhap/quan-ly" style={{ color: 'inherit' }}>Đăng nhập tại đây</Link>
           </p>
         </form>
       </div>

@@ -1,7 +1,7 @@
 /** Thông báo nổi góc phải (thành công / lỗi / cảnh báo) – theo mẫu Figma QL-2.2-d, QL-3.2-e… */
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { AlertCircle, AlertTriangle, CheckCircle2, X } from 'lucide-react';
+import { AlertTriangle, CheckCircle2, X, XCircle } from 'lucide-react';
 
 const ToastContext = createContext(null);
 let dem = 0;
@@ -21,7 +21,7 @@ export function ToastProvider({ children }) {
         {ds.map((t) => (
           <div key={t.id} className={`toast ${t.type}`}>
             {t.type === 'success' && <CheckCircle2 size={22} color="var(--green-500)" />}
-            {t.type === 'error' && <AlertCircle size={22} color="var(--brand)" />}
+            {t.type === 'error' && <XCircle size={22} color="var(--danger)" />}
             {t.type === 'warning' && <AlertTriangle size={22} color="var(--amber-icon)" />}
             <div className="grow">
               <div className="toast-title">{t.title}</div>

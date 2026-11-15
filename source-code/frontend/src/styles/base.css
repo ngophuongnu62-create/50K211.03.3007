@@ -90,3 +90,7 @@ p {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
 }
+
+/* Ẩn nút hiện mật khẩu / xóa nhanh mà Edge tự thêm vào ô nhập – Figma C-02 chỉ có một biểu tượng con mắt */
+input::-ms-reveal,
+input::-ms-clear { display: none; }

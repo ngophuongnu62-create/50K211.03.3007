@@ -16,6 +16,7 @@ module.exports = Object.freeze({
   // UC_2 – Phòng học
   PHONG_TIM_KIEM_KHONG_HOP_LE: 'Thông tin tìm kiếm không hợp lệ',
   PHONG_KHONG_TAI_DUOC: 'Không thể tải danh sách phòng trống.',
+  PHONG_NGAY_KET_THUC_TRUOC: 'Ngày kết thúc đang trước ngày bắt đầu.', // Figma QL-2.1-c
   PHONG_KHONG_CON_TRONG: 'Phòng không còn trống trong thời gian đã chọn. Vui lòng chọn phòng hoặc thời gian khác.',
   PHONG_THIEU_THONG_TIN: 'Thông tin phòng học và thời gian đăng ký phải được cung cấp đầy đủ và hợp lệ.',
   PHONG_DANG_KY_THANH_CONG: 'Đăng ký phòng học thành công',

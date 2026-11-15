@@ -4,7 +4,7 @@
  */
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, Copy, Paperclip, Send, X } from 'lucide-react';
+import { CheckCircle2, Copy, Paperclip, Send, X } from 'lucide-react';
 import { api } from '../../api/client';
 import { useAuth } from '../../auth/AuthContext';
 import { useToast } from '../../components/Toast';
@@ -57,16 +57,16 @@ export default function GuiYKien() {
     return (
       <div className="col" style={{ alignItems: 'center', textAlign: 'center', paddingTop: 220 }}>
         <span className="tb-icon success" style={{ width: 64, height: 64 }}><CheckCircle2 size={32} /></span>
-        <h1 style={{ fontSize: 28, fontWeight: 700, margin: '24px 0 0' }}>Gửi thành công</h1>
-        <p className="t-15 c-muted" style={{ marginTop: 22 }}>Trung tâm đã nhận ý kiến của bạn và chuyển tới Quản lý để xử lý.</p>
-        <div className="card" style={{ width: 560, padding: '22px 0', marginTop: 14 }}>
-          <div className="t-12 w-600 c-muted" style={{ letterSpacing: '.04em' }}>MÃ PHIẾU (TICKET ID)</div>
-          <div style={{ fontSize: 32, fontWeight: 700, color: 'var(--brand)', letterSpacing: '.03em', marginTop: 4 }}>{ketQua.maPhieu}</div>
+        <h1 style={{ fontSize: 28, lineHeight: '34px', fontWeight: 700, margin: '24px 0 0' }}>Gửi thành công</h1>
+        <p className="t-15 c-muted" style={{ marginTop: 24, lineHeight: '22px' }}>Trung tâm đã nhận ý kiến của bạn và chuyển tới Quản lý để xử lý.</p>
+        <div className="card" style={{ width: 560, padding: 24, marginTop: 24 }}>
+          <div className="t-12 w-600 c-muted" style={{ lineHeight: '15px' }}>MÃ PHIẾU (TICKET ID)</div>
+          <div style={{ fontSize: 30, lineHeight: '36px', fontWeight: 700, color: 'var(--brand)', marginTop: 8 }}>{ketQua.maPhieu}</div>
         </div>
-        <p className="t-13 c-ink-600" style={{ maxWidth: 480, marginTop: 24, lineHeight: 1.55 }}>Dùng mã phiếu ở mục “Tra cứu phiếu” để theo dõi tiến độ và nhận câu trả lời chính thức.</p>
-        <div className="row gap-12" style={{ marginTop: 14 }}>
+        <p className="t-13 c-ink-600" style={{ maxWidth: 480, marginTop: 24, lineHeight: '20px' }}>Dùng mã phiếu ở mục “Tra cứu phiếu” để theo dõi tiến độ và nhận câu trả lời chính thức.</p>
+        <div className="row gap-12" style={{ marginTop: 24 }}>
           <Button variant="outline" icon={Copy} onClick={() => navigator.clipboard?.writeText(ketQua.maPhieu).then(() => toast({ title: 'Đã sao chép mã phiếu.' }))}>Sao chép mã</Button>
-          <Button iconRight={ArrowRight} onClick={() => nav(`/phu-huynh/tra-cuu-phieu?ma=${ketQua.maPhieu}`)}>Tra cứu tiến độ</Button>
+          <Button onClick={() => nav(`/phu-huynh/tra-cuu-phieu?ma=${ketQua.maPhieu}`)}>Tra cứu tiến độ</Button>
         </div>
       </div>
     );
@@ -75,13 +75,14 @@ export default function GuiYKien() {
   return (
     <>
       <PageHeader crumbs={[{ label: 'Gửi ý kiến' }]} title="Gửi phản hồi / ý kiến" sub="Góp ý về chất lượng giảng dạy, cơ sở vật chất, dịch vụ. Bạn sẽ nhận mã phiếu để theo dõi." />
-      {loiChung && <div style={{ marginBottom: 16 }}><Alert type="error">{loiChung}</Alert></div>}
-      <section className="card" style={{ padding: 32 }}>
+      <section className="card form-gy" style={{ padding: 32 }}>
+        {/* Figma PH-14-b: thông báo lỗi nằm trong thẻ biểu mẫu */}
+        {loiChung && <div style={{ marginBottom: 20 }}><Alert type="error">{loiChung}</Alert></div>}
         <div className="grid-2" style={{ gap: 20 }}>
           <Field label="Tên học viên"><TextInput value={hv.tenHocVien} readOnly size="readonly" tabIndex={-1} /></Field>
           <Field label="Số điện thoại"><TextInput value={sdtDep(hv.soDienThoai || '') || hv.soDienThoaiAn} readOnly size="readonly" tabIndex={-1} /></Field>
         </div>
-        <div style={{ marginTop: 18 }}>
+        <div style={{ marginTop: 20 }}>
           <Field label="Phân loại ý kiến" required error={typeof loi.loaiPhanHoi === 'string' ? loi.loaiPhanHoi : null}>
             <div className="row gap-10" role="radiogroup" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 10 }}>
               {LOAI.map((l) => (
@@ -93,17 +94,17 @@ export default function GuiYKien() {
             </div>
           </Field>
         </div>
-        <div style={{ marginTop: 18 }}>
+        <div style={{ marginTop: 20 }}>
           <Field label="Tiêu đề" required>
             <TextInput value={f.tieuDe} onChange={doi('tieuDe')} placeholder="Nhập tiêu đề" error={loi.tieuDe} maxLength={200} />
           </Field>
         </div>
-        <div style={{ marginTop: 18 }}>
+        <div style={{ marginTop: 20 }}>
           <Field label="Nội dung đóng góp" required>
             <TextArea value={f.noiDung} onChange={doi('noiDung')} placeholder="Mô tả chi tiết ý kiến của bạn" error={loi.noiDung} rows={4} />
           </Field>
         </div>
-        <div className="row gap-12" style={{ marginTop: 14, border: '1px dashed var(--border-strong)', borderRadius: 10, padding: '12px 16px' }}>
+        <div className="row gap-12" style={{ marginTop: 20, border: '1px dashed var(--border-strong)', borderRadius: 10, padding: '12px 16px' }}>
           <Paperclip size={18} color="var(--ink-500)" />
           <div className="grow">
             <div className="t-13 w-500">{tep ? `${tep.name} · ${kichThuoc(tep.size)}` : 'Đính kèm hình ảnh hoặc tệp minh chứng'}</div>

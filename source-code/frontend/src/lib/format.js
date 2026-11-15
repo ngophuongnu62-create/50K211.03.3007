@@ -71,7 +71,7 @@ export const NHAN_TRANG_THAI_LICH = {
 };
 export const MAU_TRANG_THAI_LICH = {
   Nhap: 'gray',
-  ChoGVXacNhan: 'blue',
+  ChoGVXacNhan: 'blue', // Figma: Chờ GV xác nhận nền #dfe8f8
   DaDuyet: 'blue',
   DaPhatHanh: 'green',
   DaHuy: 'red',
