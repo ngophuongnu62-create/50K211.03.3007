@@ -131,7 +131,7 @@ export default function PheDuyet() {
         <section className="card" style={{ flex: 1, padding: 24 }}>
           <div className="card-title">Phản hồi phụ huynh / học viên</div>
           <div className="row" style={{ gap: 32, marginTop: 14 }}>
-            {[['Đã xác nhận', kt.phuHuynh.daXacNhan], ['Từ chối', kt.phuHuynh.tuChoi], ['Chưa phản hồi', kt.phuHuynh.chuaPhanHoi]].map(([n, v]) => (
+            {[['Đã xác nhận', kt.phuHuynh.daXacNhan], ['Từ chối', kt.phuHuynh.tuChoi], [kt.phuHuynh.hetHanPhanHoi ? 'Không phản hồi' : 'Chưa phản hồi', kt.phuHuynh.chuaPhanHoi]].map(([n, v]) => (
               <div key={n}><div style={{ fontSize: 22, fontWeight: 700, lineHeight: '27px' }}>{v}</div><div className="t-12 c-muted" style={{ marginTop: 2, lineHeight: '15px' }}>{n}</div></div>
             ))}
           </div>

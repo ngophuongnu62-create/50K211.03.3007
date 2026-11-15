@@ -516,6 +516,10 @@ async function kiemTraTruocPheDuyet(maLop, { trangThai } = {}) {
       daXacNhan: ketQuaHV.filter((k) => k === 'XacNhan').length,
       tuChoi: ketQuaHV.filter((k) => k === 'TuChoi').length,
       chuaPhanHoi: ketQuaHV.filter((k) => k === 'ChuaPhanHoi').length,
+      // UC_11: phụ huynh chỉ xác nhận lịch dự kiến trong 24 giờ kể từ khi gửi → lịch đã phát hành hoặc hết hạn thì
+      // các học viên chưa phản hồi là "Không phản hồi" (không còn chờ)
+      hetHanPhanHoi: dsBuoi[0].trangThaiLich === 'DaPhatHanh'
+        || dsBuoi.some((b) => b.thoiDiemGuiDuKien && b.thoiDiemGuiDuKien.getTime() + 24 * clock.MOT_GIO <= clock.now().getTime()),
       dsTuChoi: dsBuoi.flatMap((b) => b.xacNhanCaHoc.filter((x) => x.ketQua === 'TuChoi').map((x) => ({
         maLichDay: b._id, ngayDay: clock.dinhDangNgay(b.ngayDay), maPHHV: x.maPHHV, tenHocVien: tenHV.get(x.maPHHV), lyDoTuChoi: x.lyDoTuChoi,
       }))),
