@@ -135,7 +135,7 @@ const VALIDATORS = {
     $jsonSchema: doiTuong(
       ['_id', 'loaiPhanHoi', 'tieuDe', 'noiDung', 'thoiGianGui', 'trangThaiXuLy'],
       {
-        _id: str(20), maNhanSu: str(20), maPHHV: str(20), maQuanLy: str(20),
+        _id: str(20), maNhanSu: str(20), maPHHV: str(20), maQuanLy: str(20), maLichDay: str(20), maPhanHoiLichDay: str(20),
         loaiPhanHoi: enumStr(E.LOAI_PHAN_HOI), tieuDe: str(200), noiDung: str(500), thoiGianGui: ngay,
         trangThaiXuLy: enumStr(E.TRANG_THAI_XU_LY),
         tepDinhKem: mang(doiTuong(['maTep', 'tenTep', 'loaiTep', 'duongDan'], {

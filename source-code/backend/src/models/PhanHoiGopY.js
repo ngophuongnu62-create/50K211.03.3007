@@ -41,6 +41,9 @@ const phanHoiGopYSchema = new Schema(
     maNhanSu: thamChieu('NguoiDung'), // người gửi là Giáo viên / Trợ giảng
     maPHHV: thamChieu('PhuHuynhHocVien'), // người gửi là Phụ huynh / Học viên
     maQuanLy: thamChieu('NguoiDung'), // Quản lý phụ trách; trống khi chưa tiếp nhận
+    // UC_8 5a: phiếu sinh từ đề xuất thay đổi ca dạy – gắn với buổi dạy và lần phản hồi gốc
+    maLichDay: thamChieu('LichDay'),
+    maPhanHoiLichDay: { type: String, trim: true, maxlength: 20 },
     loaiPhanHoi: { type: String, enum: E.LOAI_PHAN_HOI, required: true },
     tieuDe: { type: String, required: true, trim: true, maxlength: 200 },
     noiDung: { type: String, required: true, trim: true, maxlength: 500 },

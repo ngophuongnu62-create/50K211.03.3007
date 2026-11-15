@@ -247,11 +247,23 @@ async function deXuatThayDoi(user, maLichDay, body) {
       { arrayFilters: [{ 'pc.maNhanSu': user.ma }], session },
     );
     if (kq.modifiedCount !== 1) throw await lyDoKhongPhanHoiDuoc(user.ma, maLichDay);
+    // UC_8 5a.2: tạo phiếu "Chờ xử lý" trong Phản hồi & yêu cầu của Quản lý (UC_4)
+    // Tiêu đề = ca dạy đề xuất thay thế (nhãn giống ô chọn của giáo viên); nội dung chi tiết = lý do thay đổi
+    const caDeXuat = phanHoi.maCaDeXuat ? banDo.ca.get(phanHoi.maCaDeXuat) : null;
+    const tieuDePhieu = caDeXuat
+      ? `${clock.tenThu(phanHoi.ngayDeXuat)} ${clock.nhanNgayNgan(phanHoi.ngayDeXuat)} · ${nhanCa(caDeXuat)}`
+      : `Đổi ca dạy ${clock.tenThu(ld.ngayDay)} ${clock.nhanNgayNgan(ld.ngayDay)} · ${banDo.ca.get(ld.maCa)?.tenCa || ''}`.trim(); // không chọn ca thay thế
+    const maPhieu = await sinhMa('YC', session);
+    await PhanHoiGopY.create([{
+      _id: maPhieu, maNhanSu: user.ma, loaiPhanHoi: 'DoiLich', tieuDe: tieuDePhieu, noiDung: lyDoThayDoi,
+      maLichDay, maPhanHoiLichDay: phanHoi.maPhanHoiLichDay,
+      thoiGianGui: phanHoi.thoiGianPhanHoi, trangThaiXuLy: 'ChoXuLy', tepDinhKem: [],
+    }], { session });
     await ghiNhatKy({
       hanhDong: 'PHAN_CONG.GV_DE_XUAT_THAY_DOI',
       doiTuong: { loai: 'LichDay', ma: maLichDay },
       truoc: { maNhanSu: user.ma, trangThaiPhanCong: 'ChoXacNhan' },
-      sau: { maNhanSu: user.ma, trangThaiPhanCong: 'DeXuatThayDoi', phanHoiLichDay: phanHoi },
+      sau: { maNhanSu: user.ma, trangThaiPhanCong: 'DeXuatThayDoi', phanHoiLichDay: phanHoi, maPhieu },
     }, session);
     await thongBaoQuanLy({
       loaiThongBao: 'PhanHoiMoi',

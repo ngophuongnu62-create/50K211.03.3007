@@ -11,7 +11,7 @@ const { sinhMa, sinhMaPhieu } = require('../utils/sinhMa');
 const { trongGiaoDich } = require('../utils/giaoDich');
 const { ghiNhatKy } = require('../utils/nhatKy');
 const { laChuoiRong, catChuoi } = require('../utils/kiemTra');
-const { PhanHoiGopY, PhuHuynhHocVien } = require('../models');
+const { PhanHoiGopY, PhuHuynhHocVien, LichDay, DangKyPhong } = require('../models');
 const { layTenNguoiDung } = require('./danhMuc.service');
 const { guiThongBao, thongBaoQuanLy } = require('./thongBao.service');
 
@@ -86,6 +86,45 @@ function nguoiNhanCuaPhieu(p) {
 }
 
 /** UC_4.2 – Cập nhật trạng thái xử lý (BR01–BR06) */
+/**
+ * UC_8 5a → UC_4.2: phiếu sinh từ đề xuất thay đổi ca dạy của giáo viên.
+ * - "Đã xử lý": buổi dạy chuyển sang ca / ngày giáo viên đề xuất, phân công chuyển "Đã xác nhận".
+ *   Không chọn ca thay thế thì lịch giữ nguyên để Quản lý tự sắp xếp.
+ * - "Từ chối": lịch giữ nguyên, giáo viên dạy đúng ca cũ (phân công chuyển "Đã xác nhận").
+ * Kiểm tra trùng phòng (đăng ký phòng còn hiệu lực) và dựa vào chỉ mục duy nhất của LichDay (phòng / lớp / nhân sự).
+ */
+async function apDungDeXuatDoiCa(p, trangThaiMoi, session) {
+  if (!p.maLichDay || !['DaXuLy', 'TuChoi'].includes(trangThaiMoi)) return;
+  const ld = await LichDay.findById(p.maLichDay).session(session);
+  if (!ld || ld.trangThaiLich === 'DaHuy') return;
+  const pc = ld.phanCong.find((x) => x.maNhanSu === p.maNhanSu);
+  if (!pc || pc.trangThaiPhanCong !== 'DeXuatThayDoi') return;
+  const ph = (pc.phanHoiLichDay || []).find((x) => x.maPhanHoiLichDay === p.maPhanHoiLichDay);
+  if (trangThaiMoi === 'DaXuLy') {
+    if (!ph?.maCaDeXuat) return;
+    const ngayMoi = ph.ngayDeXuat || ld.ngayDay;
+    const trungDangKy = await DangKyPhong.exists({ maPhong: ld.maPhong, ngaySuDung: ngayMoi, maCa: ph.maCaDeXuat, trangThaiDangKy: 'DaDangKy' }).session(session);
+    if (trungDangKy) throw new AppError(409, M.TL_TRUNG);
+    ld.ngayDay = ngayMoi;
+    ld.maCa = ph.maCaDeXuat;
+    ph.trangThaiXuLy = 'DaChapNhan';
+  } else if (ph) {
+    ph.trangThaiXuLy = 'TuChoi';
+  }
+  pc.trangThaiPhanCong = 'DaXacNhan';
+  try {
+    await ld.save({ session });
+  } catch (err) {
+    if (err?.code === 11000) throw new AppError(409, M.TL_TRUNG); // trùng phòng / lớp / giáo viên ở ca mới
+    throw err;
+  }
+  await ghiNhatKy({
+    hanhDong: 'PHAN_CONG.XU_LY_DE_XUAT_THAY_DOI',
+    doiTuong: { loai: 'LichDay', ma: ld._id },
+    sau: { maPhanHoi: p._id, ketQua: trangThaiMoi, ngayDay: clock.dinhDangNgay(ld.ngayDay), maCa: ld.maCa, trangThaiPhanCong: 'DaXacNhan' },
+  }, session);
+}
+
 async function capNhatTrangThai(maPhanHoi, { trangThaiMoi, ghiChu }, maQuanLy) {
   const ghiChuXuLy = catChuoi(ghiChu);
   if (!trangThaiMoi) throw new AppError(400, M.PH_CHUA_CHON_TRANG_THAI, { fieldErrors: { trangThaiMoi: M.PH_CHUA_CHON_TRANG_THAI } }); // 7a
@@ -117,6 +156,7 @@ async function capNhatTrangThai(maPhanHoi, { trangThaiMoi, ghiChu }, maQuanLy) {
       { session, runValidators: true },
     );
     if (kq.modifiedCount !== 1) throw new AppError(409, M.PH_CHI_CAP_NHAT_KHI);
+    await apDungDeXuatDoiCa(p, trangThaiMoi, session);
     await ghiNhatKy({
       hanhDong: trangThaiMoi === 'TuChoi' ? 'PHAN_HOI.TU_CHOI' : 'PHAN_HOI.CAP_NHAT_TRANG_THAI',
       doiTuong: { loai: 'PhanHoiGopY', ma: maPhanHoi },
