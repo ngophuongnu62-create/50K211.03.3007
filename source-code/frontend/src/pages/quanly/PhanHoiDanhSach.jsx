@@ -90,7 +90,6 @@ export default function PhanHoiDanhSach() {
                   <td><NhanXuLy trangThai={p.trangThaiXuLy} /></td>
                 </tr>
               ))}
-              {!kq.ds.length && <tr><td colSpan={5} className="c-muted">Không có phản hồi phù hợp.</td></tr>}
             </tbody>
           </table>
         )}
