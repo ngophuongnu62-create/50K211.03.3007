@@ -6,7 +6,7 @@ const AppError = require('../utils/AppError');
 const M = require('../constants/messages');
 const E = require('../constants/enums');
 const clock = require('../utils/clock');
-const { sinhMa } = require('../utils/sinhMa');
+const { sinhMa, sinhMaPhieu } = require('../utils/sinhMa');
 const { trongGiaoDich } = require('../utils/giaoDich');
 const { ghiNhatKy } = require('../utils/nhatKy');
 const { catChuoi } = require('../utils/kiemTra');
@@ -270,6 +270,8 @@ async function thongTinXinNghi(maPHHV, maLichDay) {
 }
 
 /** UC_13 bước 3–7; ngoại lệ 1a, 5a; BR01, BR02 */
+const NHAN_LY_DO_NGHI = { NghiOm: 'Nghỉ ốm', BanViecGiaDinh: 'Bận việc gia đình', BanLichTruong: 'Bận lịch trường', LyDoKhac: 'Lý do khác' };
+
 async function xinNghi(user, maLichDay, body) {
   const lyDoXinNghi = catChuoi(body.lyDoXinNghi);
   const ghiChu = catChuoi(body.ghiChu);
@@ -296,14 +298,23 @@ async function xinNghi(user, maLichDay, body) {
       { session },
     );
     if (kq.modifiedCount !== 1) throw new AppError(409, M.NGHI_DA_GUI);
-    await ghiNhatKy({ hanhDong: 'XIN_NGHI.TAO', doiTuong: { loai: 'LichDay', ma: maLichDay }, sau: { ...yc } }, session);
+    // Bước 6: tạo phiếu "Chờ xử lý" trong Phản hồi & yêu cầu của Quản lý (UC_4) để sắp xếp học bù / theo dõi
+    const tenLop = banDo.lop.get(ld.maLop)?.tenLop;
+    const maPhieu = await sinhMaPhieu(session);
+    await PhanHoiGopY.create([{
+      _id: maPhieu, maPHHV: user.ma, loaiPhanHoi: 'NghiPhep', maLichDay,
+      tieuDe: `Xin nghỉ học ${clock.tenThu(ld.ngayDay)} ${clock.nhanNgayNgan(ld.ngayDay)} · ${ca?.tenCa || ld.maCa} – ${tenLop}`.slice(0, 200),
+      noiDung: `Lý do: ${NHAN_LY_DO_NGHI[lyDoXinNghi]}.${ghiChu ? ` Ghi chú: ${ghiChu}` : ''}`.slice(0, 500),
+      thoiGianGui: yc.thoiGianGui, trangThaiXuLy: 'ChoXuLy', tepDinhKem: [],
+    }], { session });
+    await ghiNhatKy({ hanhDong: 'XIN_NGHI.TAO', doiTuong: { loai: 'LichDay', ma: maLichDay }, sau: { ...yc, maPhieu } }, session);
     // Bước 6: thông báo ngay đến Quản lý
     await thongBaoQuanLy({
       loaiThongBao: 'BaoVang',
       tieuDe: `Báo vắng: ${user.hoTen}`,
       noiDung: `Lớp ${banDo.lop.get(ld.maLop)?.tenLop} · ${clock.nhanNgayDayDu(ld.ngayDay)} · ${nhanCa(ca)}.`,
     }, session);
-    return { maLichDay, trangThaiNghi: 'BaoVang', maYeuCauNghi: yc.maYeuCauNghi };
+    return { maLichDay, trangThaiNghi: 'BaoVang', maYeuCauNghi: yc.maYeuCauNghi, maPhieu };
   });
 }
 
