@@ -30,6 +30,15 @@ export default function ChiTietCaDuKien() {
     });
   }, [maLichDay, nav, toast]);
 
+  // Figma GV-8-g (BR03): đang mở trang mà hết hạn 24 giờ → tự chuyển sang trạng thái quá hạn, khóa phản hồi
+  useEffect(() => {
+    if (!b?.coThePhanHoi || !b.hanPhanHoi) return undefined;
+    const conLai = new Date(b.hanPhanHoi).getTime() - Date.now();
+    if (conLai > 2147483647) return undefined;
+    const h = setTimeout(() => setB((x) => ({ ...x, coThePhanHoi: false, quaHan: true })), Math.max(0, conLai));
+    return () => clearTimeout(h);
+  }, [b?.coThePhanHoi, b?.hanPhanHoi]);
+
   useEffect(() => {
     if (b && loc.state?.cheDo === 'deXuat') document.getElementById('ly-do-thay-doi')?.focus();
   }, [b, loc.state]);
@@ -51,7 +60,7 @@ export default function ChiTietCaDuKien() {
       veDanhSach('DaXacNhan', { title: t(message === 'Đã xác nhận thành công' ? 'Đã xác nhận thành công' : message), text: `${t('Quản lý đã nhận thông báo xác nhận ca')} ${thuCua(b.ngayDay)} ${ddmm(b.ngayDay)}.` });
     } catch (e) {
       toast({ type: 'error', title: e.message });
-      if (e.status === 403) setB((x) => ({ ...x, coThePhanHoi: false }));
+      if (e.status === 403) setB((x) => ({ ...x, coThePhanHoi: false, quaHan: true }));
     } finally {
       setDang('');
     }
@@ -69,7 +78,7 @@ export default function ChiTietCaDuKien() {
     } catch (e) {
       if (Object.keys(e.fieldErrors).length) setLoi(e.fieldErrors);
       else toast({ type: 'error', title: e.message }); // nội dung đã nhập được giữ nguyên
-      if (e.status === 403) setB((x) => ({ ...x, coThePhanHoi: false }));
+      if (e.status === 403) setB((x) => ({ ...x, coThePhanHoi: false, quaHan: true }));
     } finally {
       setDang('');
     }

@@ -75,7 +75,7 @@ function hienThiLich(ld, maNhanSu, banDo, tenMon, bayGio) {
     loaiLich: ld.trangThaiLich === 'DaPhatHanh' ? 'ChinhThuc' : 'DuKien',
     trangThaiPhanCong: pc.trangThaiPhanCong,
     hanPhanHoi: han || null,
-    conLaiGio: choPhanHoi ? Math.max(0, Math.floor((han - bayGio) / clock.MOT_GIO)) : null,
+    conLaiGio: choPhanHoi ? Math.max(0, Math.ceil((han - bayGio) / clock.MOT_GIO)) /* làm tròn lên: còn 40 phút hiển thị "Còn 1 giờ", không hiện "Còn 0 giờ" */ : null,
     coThePhanHoi: choPhanHoi,
   };
 }

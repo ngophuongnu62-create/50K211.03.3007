@@ -155,7 +155,7 @@ async function lichDuKien(maPHHV) {
     caHoc,
     soCaChuaPhanHoi: chuaPhanHoi.length,
     hanChot: hanGanNhat,
-    conLaiGio: hanGanNhat ? Math.max(0, Math.floor((hanGanNhat - bayGio) / clock.MOT_GIO)) : null,
+    conLaiGio: hanGanNhat ? Math.max(0, Math.ceil((hanGanNhat - bayGio) / clock.MOT_GIO)) /* làm tròn lên: còn 40 phút hiển thị "Còn 1 giờ", không hiện "Còn 0 giờ" */ : null,
     // 5a: quá hạn 24 giờ → khóa phản hồi
     thongBao: daKhoaTatCa ? M.XN_QUA_HAN : undefined,
     chiTiet: daKhoaTatCa ? M.XN_QUA_HAN_CHI_TIET : undefined,
