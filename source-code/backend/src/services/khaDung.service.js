@@ -76,12 +76,14 @@ async function taiMauRanh(dsMaNhanSu, session) {
 /**
  * Nhân sự có rảnh ở ngày, ca không.
  * nghiemNgat = true (đề xuất): không có dữ liệu lịch rảnh → không rảnh.
- * nghiemNgat = false (cảnh báo): không có dữ liệu → null (không kết luận).
+ * nghiemNgat = false (cảnh báo xung đột): chỉ xét tuần giáo viên ĐÃ đăng ký lịch rảnh (UC_9 chỉ mở cổng cho tuần kế tiếp);
+ *   tuần chưa đăng ký → null (không kết luận), KHÔNG suy ra từ mẫu tuần gần nhất.
  */
 function coRanh(mauNhanSu, ngay, maCa, { nghiemNgat = true } = {}) {
   if (!mauNhanSu) return nghiemNgat ? false : null;
   const tuan = clock.dinhDangNgay(clock.dauTuan(ngay));
   if (mauNhanSu.theoTuan.has(tuan)) return mauNhanSu.theoTuan.get(tuan).has(`${clock.dinhDangNgay(ngay)}|${maCa}`);
+  if (!nghiemNgat) return null;
   if (mauNhanSu.ganNhat) return mauNhanSu.ganNhat.has(`${clock.thuTrongTuan(ngay)}|${maCa}`);
   return nghiemNgat ? false : null;
 }

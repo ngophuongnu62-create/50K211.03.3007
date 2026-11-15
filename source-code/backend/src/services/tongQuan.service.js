@@ -14,14 +14,16 @@ async function canhBaoXungDot(banDo) {
   const dsBuoi = await LichDay.find({
     ngayDay: { $gte: homNay, $lte: clock.congNgay(homNay, SO_NGAY_QUET_XUNG_DOT) },
     trangThaiLich: { $in: E.LICH_CON_HIEU_LUC },
-  }, { maLop: 1, maPhong: 1, maCa: 1, ngayDay: 1, phanCong: 1 }).lean();
+  }, { maLop: 1, maPhong: 1, maCa: 1, ngayDay: 1, phanCong: 1, trangThaiLich: 1 }).lean();
+  // Nút "Xử lý" mở đúng nhóm buổi (lớp có thể có nhiều nhóm ở trạng thái khác nhau)
+  const ttCua = new Map(dsBuoi.map((b) => [String(b._id), b.trangThaiLich]));
   const kq = await khaDung.kiemTraXungDot(dsBuoi, banDo);
   // Mỗi xung đột trùng giữa hai buổi chỉ hiện một lần
   const motLan = (ds, khoa) => [...new Map(ds.map((x) => [khoa(x), x])).values()];
   return [
-    ...motLan(kq.trungGiaoVien, (x) => `${x.maNhanSu}|${x.ngayDay}|${x.maCa}`).map((x) => ({ loai: 'TrungGiaoVien', tieuDe: 'Trùng giáo viên', moTa: x.moTa, maLichDay: x.maLichDay, maLop: x.maLop })),
-    ...motLan(kq.trungPhong, (x) => `${x.maPhong}|${x.ngayDay}|${x.maCa}`).map((x) => ({ loai: 'TrungPhong', tieuDe: 'Trùng phòng', moTa: x.moTa, maLichDay: x.maLichDay, maLop: x.maLop })),
-    ...kq.saiLichRanh.map((x) => ({ loai: 'SaiLichRanh', tieuDe: 'Sai lịch rảnh', moTa: x.moTa, maLichDay: x.maLichDay, maLop: x.maLop })),
+    ...motLan(kq.trungGiaoVien, (x) => `${x.maNhanSu}|${x.ngayDay}|${x.maCa}`).map((x) => ({ loai: 'TrungGiaoVien', tieuDe: 'Trùng giáo viên', moTa: x.moTa, maLichDay: x.maLichDay, maLop: x.maLop, trangThaiLich: ttCua.get(String(x.maLichDay)) })),
+    ...motLan(kq.trungPhong, (x) => `${x.maPhong}|${x.ngayDay}|${x.maCa}`).map((x) => ({ loai: 'TrungPhong', tieuDe: 'Trùng phòng', moTa: x.moTa, maLichDay: x.maLichDay, maLop: x.maLop, trangThaiLich: ttCua.get(String(x.maLichDay)) })),
+    ...kq.saiLichRanh.map((x) => ({ loai: 'SaiLichRanh', tieuDe: 'Sai lịch rảnh', moTa: x.moTa, maLichDay: x.maLichDay, maLop: x.maLop, trangThaiLich: ttCua.get(String(x.maLichDay)) })),
   ];
 }
 

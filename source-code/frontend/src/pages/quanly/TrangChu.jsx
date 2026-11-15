@@ -57,7 +57,7 @@ export default function TrangChu() {
                     <div className="t-14 w-600">{c.tieuDe}</div>
                     <div className="t-13 c-muted" style={{ marginTop: 2 }}>{c.moTa}</div>
                   </div>
-                  <Button variant="outline" size="sm" onClick={() => nav(`/quan-ly/quan-ly-lich/${c.maLop}/phe-duyet`)}>Xử lý</Button>
+                  <Button variant="outline" size="sm" onClick={() => nav(`/quan-ly/quan-ly-lich/${c.maLop}/phe-duyet${c.trangThaiLich ? `?trangThai=${c.trangThaiLich}` : ''}`)}>Xử lý</Button>
                 </div>
               ))}
             </div>
