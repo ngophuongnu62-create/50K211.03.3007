@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Eye, Pencil, Plus, Search } from 'lucide-react';
 import { api } from '../../api/client';
-import { useToastChuyenTrang } from '../../components/Toast';
+import { useToast, useToastChuyenTrang } from '../../components/Toast';
 import { Alert, Button, Field, Loading, PageHeader, Select, TextInput } from '../../components/ui';
 import { NHAN_LOAI_NHAN_SU, vietTat } from '../../lib/format';
 
@@ -20,7 +20,25 @@ export default function HoSoDanhSach() {
 
   const tai = (query = {}) => api('/quan-ly/ho-so-giao-vien', { query }).then((r) => setDs(r.data)).catch((e) => setLoi(e.message));
 
+  const toast = useToast();
   useToastChuyenTrang();
+
+  // QL-3.1-c (ngoại lệ 5a): không có hồ sơ khớp → thông báo lỗi, xóa điều kiện tìm, quay lại danh sách đầy đủ
+  const loc_ = async () => {
+    try {
+      const r = await api('/quan-ly/ho-so-giao-vien', { query: { q, loaiNhanSu: loai } });
+      if (!r.data.length && (q.trim() || loai)) {
+        toast({ type: 'error', title: 'Không có thông tin của giáo viên!', text: 'Hệ thống quay lại danh sách hồ sơ giáo viên.' });
+        setQ('');
+        setLoai('');
+        tai();
+        return;
+      }
+      setDs(r.data);
+    } catch (e) {
+      setLoi(e.message);
+    }
+  };
   useEffect(() => {
     tai();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -39,7 +57,7 @@ export default function HoSoDanhSach() {
         sub="Quản lý thông tin giáo viên, trợ giảng."
         actions={<Button icon={Plus} onClick={() => nav('/quan-ly/ho-so-giao-vien/them')}>Thêm hồ sơ giáo viên</Button>}
       />
-      <form className="card" style={{ padding: 20 }} onSubmit={(e) => { e.preventDefault(); tai({ q, loaiNhanSu: loai }); }}>
+      <form className="card" style={{ padding: 20 }} onSubmit={(e) => { e.preventDefault(); loc_(); }}>
         <div className="row gap-12" style={{ alignItems: 'flex-end' }}>
           <div style={{ flex: 1 }}><Field label="Tìm kiếm">
             <TextInput icon={Search} placeholder="Họ tên, số điện thoại, email" value={q} onChange={(e) => setQ(e.target.value)} />
@@ -76,7 +94,6 @@ export default function HoSoDanhSach() {
                   </td>
                 </tr>
               ))}
-              {!ds.length && <tr><td colSpan={5} className="c-muted">Không tìm thấy hồ sơ phù hợp.</td></tr>}
             </tbody>
           </table>
         )}
