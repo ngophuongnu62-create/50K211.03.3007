@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search } from 'lucide-react';
 import { api } from '../../api/client';
-import { useToastChuyenTrang } from '../../components/Toast';
+import { useToast, useToastChuyenTrang } from '../../components/Toast';
 import { Alert, Loading, PageHeader, Seg, Select, TextInput } from '../../components/ui';
 import { gioNgay, NHAN_LOAI_NHAN_SU, NHAN_LOAI_PHAN_HOI, NHAN_XU_LY, MAU_XU_LY } from '../../lib/format';
 
@@ -23,19 +23,40 @@ const TABS = [
 export default function PhanHoiDanhSach() {
   const nav = useNavigate();
   const [nguoiGui, setNguoiGui] = useState('');
-  const [q, setQ] = useState('');
+  const [q, setQ] = useState(''); // nội dung đang gõ trong ô tìm kiếm
+  const [tuKhoa, setTuKhoa] = useState(''); // từ khóa đã áp dụng (sau khi bấm Enter)
   const [trangThai, setTrangThai] = useState('');
   const [kq, setKq] = useState(null);
   const [loi, setLoi] = useState(null);
 
+  const toast = useToast();
   useToastChuyenTrang();
 
   useEffect(() => {
     const h = setTimeout(() => {
-      api('/quan-ly/phan-hoi', { query: { nguoiGui, q, trangThai } }).then((r) => setKq(r.data)).catch((e) => setLoi(e.message));
+      api('/quan-ly/phan-hoi', { query: { nguoiGui, q: tuKhoa, trangThai } }).then((r) => setKq(r.data)).catch((e) => setLoi(e.message));
     }, 250);
     return () => clearTimeout(h);
-  }, [nguoiGui, q, trangThai]);
+  }, [nguoiGui, tuKhoa, trangThai]);
+
+  // QL-4.1-c (ngoại lệ 3a): gõ từ khóa rồi bấm Enter; không có kết quả → thông báo lỗi, xóa ô tìm kiếm, giữ danh sách
+  const timKiem = async () => {
+    const tu = q.trim();
+    if (!tu) { setTuKhoa(''); return; }
+    try {
+      const r = await api('/quan-ly/phan-hoi', { query: { nguoiGui, q: tu, trangThai } });
+      if (!r.data.ds.length) {
+        toast({ type: 'error', title: 'Không tìm thấy phản hồi!', text: 'Phản hồi đã bị xóa hoặc hủy trước đó.' });
+        setQ('');
+        setTuKhoa('');
+        return;
+      }
+      setKq(r.data);
+      setTuKhoa(tu);
+    } catch (e) {
+      setLoi(e.message);
+    }
+  };
 
   return (
     <>
@@ -45,7 +66,8 @@ export default function PhanHoiDanhSach() {
         <Seg cream value={nguoiGui} onChange={setNguoiGui}
           items={TABS.map((t) => ({ ...t, count: t.key === '' && kq?.dem?.ChoXuLy > 0 ? kq.dem.ChoXuLy : undefined }))} />
         <div className="row gap-12">
-          <div style={{ width: 280 }}><TextInput icon={Search} placeholder="Tìm theo mã, tiêu đề" value={q} onChange={(e) => setQ(e.target.value)} /></div>
+          <div style={{ width: 280 }}><TextInput icon={Search} placeholder="Tìm theo mã, tiêu đề" value={q} onChange={(e) => { setQ(e.target.value); if (!e.target.value) setTuKhoa(''); }}
+            onKeyDown={(e) => { if (e.key === 'Enter') timKiem(); }} /></div>
           <div style={{ width: 200 }}>
             <Select value={trangThai} onChange={setTrangThai}
               options={[{ value: '', label: 'Tất cả trạng thái' }, ...Object.entries(NHAN_XU_LY).map(([value, label]) => ({ value, label }))]} />
