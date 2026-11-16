@@ -69,6 +69,8 @@ export default function ChiTietCaDuKien() {
   const guiDeXuat = async () => {
     setLoi({});
     if (!lyDo.trim()) { setLoi({ lyDoThayDoi: 'Không được để trống' }); return; }
+    // Sơ đồ hoạt động UC_8: nhánh "Lý do vượt quá 500 ký tự?" – cho nhập quá để báo lỗi thay vì chặn cứng
+    if (lyDo.length > 500) { setLoi({ lyDoThayDoi: 'Lý do thay đổi không được vượt quá 500 ký tự' }); return; }
     if (caThayThe === caHienTai.value) { setLoi({ maCaDeXuat: 'Ca dạy đề xuất không được trùng với ca dạy hiện tại!' }); return; }
     const [ngayDeXuat, maCaDeXuat] = caThayThe ? caThayThe.split('|') : [];
     setDang('gui');
@@ -123,7 +125,7 @@ export default function ChiTietCaDuKien() {
             <>
               <div className="hoac"><span>{t('hoặc đề xuất thay đổi')}</span></div>
               <Field label={t('Lý do thay đổi')} required error={loi.lyDoThayDoi && t(loi.lyDoThayDoi)}>
-                <TextArea id="ly-do-thay-doi" value={lyDo} error={loi.lyDoThayDoi} placeholder={t('Nhập lý do (tối đa 500 ký tự)')} rows={4}
+                <TextArea id="ly-do-thay-doi" value={lyDo} error={loi.lyDoThayDoi} placeholder={t('Nhập lý do (tối đa 500 ký tự)')} rows={4} maxLength={undefined}
                   onChange={(e) => { setLyDo(e.target.value); setLoi((l) => ({ ...l, lyDoThayDoi: undefined })); }} />
               </Field>
               <div style={{ marginTop: 18 }}>

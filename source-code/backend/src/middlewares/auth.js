@@ -3,6 +3,7 @@
  * - Nhân sự (Quản lý / Giáo viên / Trợ giảng): token sau khi đăng nhập bằng tên đăng nhập + mật khẩu.
  * - Phụ huynh / Học viên: token phiên sau khi xác thực Họ tên học viên + Số điện thoại.
  */
+const crypto = require('node:crypto');
 const jwt = require('jsonwebtoken');
 const env = require('../config/env');
 const AppError = require('../utils/AppError');
@@ -18,7 +19,8 @@ const DUOC_PHEP_KHI_PHAI_DOI_MK = new Set([
 ]);
 
 function kyToken(payload, hetHan) {
-  return jwt.sign(payload, env.JWT_SECRET, { expiresIn: hetHan });
+  // jwtid: mã riêng của từng phiên để đăng xuất chỉ thu hồi đúng phiên đó (không ảnh hưởng thiết bị khác)
+  return jwt.sign(payload, env.JWT_SECRET, { expiresIn: hetHan, jwtid: crypto.randomUUID() });
 }
 
 function docToken(req) {
@@ -41,16 +43,20 @@ async function xacThuc(req, res, next) {
     if (payload.vaiTro === VAI_TRO.PHU_HUYNH) {
       const hv = await PhuHuynhHocVien.findById(payload.sub).lean();
       if (!hv) throw new AppError(401, M.CHUA_DANG_NHAP);
+      if (payload.jti && (hv.tokenThuHoi || []).includes(payload.jti)) throw new AppError(401, M.CHUA_DANG_NHAP);
       req.user = { ma: hv._id, vaiTro: VAI_TRO.PHU_HUYNH, hoTen: hv.tenHocVien, lopTheoHoc: hv.lopTheoHoc || [] };
     } else {
       const nd = await NguoiDung.findById(payload.sub).lean();
       if (!nd) throw new AppError(401, M.CHUA_DANG_NHAP);
       // Token cấp trước lần đổi mật khẩu gần nhất bị vô hiệu ngay (phiên bản token lệch)
       if ((payload.pv ?? 0) !== (nd.phienBanToken ?? 0)) throw new AppError(401, M.PHIEN_HET_HIEU_LUC, { code: 'PHIEN_HET_HIEU_LUC' });
+      // Token đã đăng xuất (A5-03: phiên kết thúc khi đăng xuất)
+      if (payload.jti && (nd.tokenThuHoi || []).includes(payload.jti)) throw new AppError(401, M.CHUA_DANG_NHAP);
       if (nd.trangThaiTaiKhoan !== 'HoatDong') throw new AppError(403, M.DN_TAI_KHOAN_KHOA);
       const vaiTro = nd.loaiNguoiDung === 'QuanLy' ? VAI_TRO.QUAN_LY : nd.loaiNhanSu;
       req.user = { ma: nd._id, vaiTro, hoTen: nd.hoTen, mustChangePassword: !!nd.mustChangePassword };
     }
+    req.phien = { jti: payload.jti };
     datNguoiThucHien(req.user);
     // Mật khẩu tạm (tài khoản mới cấp): chỉ được xem thông tin của mình, đổi mật khẩu hoặc đăng xuất
     if (req.user.mustChangePassword && !DUOC_PHEP_KHI_PHAI_DOI_MK.has(`${req.method} ${req.originalUrl.split('?')[0].replace(/\/+$/, '')}`)) {

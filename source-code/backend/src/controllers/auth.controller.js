@@ -11,6 +11,6 @@ module.exports = {
   toi: asyncHandler(async (req, res) => traVe(res, await authService.thongTinToi(req.user))),
   /** POST /api/auth/doi-mat-khau – đổi mật khẩu (bắt buộc khi mustChangePassword = true) */
   doiMatKhau: asyncHandler(async (req, res) => traVe(res, await authService.doiMatKhau(req.user, req.body))),
-  /** POST /api/auth/dang-xuat – kết thúc phiên (client xóa token) */
-  dangXuat: (req, res) => traVe(res, null),
+  /** POST /api/auth/dang-xuat – kết thúc phiên: thu hồi token hiện tại ở máy chủ, client xóa token */
+  dangXuat: asyncHandler(async (req, res) => { await authService.dangXuat(req.user, req.phien); traVe(res, null); }),
 };

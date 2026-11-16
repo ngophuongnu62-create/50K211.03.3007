@@ -10,6 +10,7 @@ const phuHuynhHocVienSchema = new Schema(
     _id: ma({ required: true }), // maPHHV
     tenHocVien: { type: String, required: true, trim: true, maxlength: 100 },
     soDienThoai: { type: String, required: true, trim: true, maxlength: 15 },
+    tokenThuHoi: { type: [String], default: undefined }, // mã (jti) các token đã đăng xuất
     lopTheoHoc: {
       type: [thamChieu('LopHoc')],
       default: [],

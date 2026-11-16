@@ -139,4 +139,12 @@ async function thongTinToi(user) {
   };
 }
 
-module.exports = { dangNhapNhanSu, dangNhapPhuHuynh, thongTinToi, doiMatKhau };
+/** Đăng xuất: thu hồi riêng token đang dùng (giữ 50 mã gần nhất – token tự hết hạn sau 8 giờ / 4 giờ) */
+async function dangXuat(user, phien) {
+  if (!phien?.jti) return;
+  const capNhat = { $push: { tokenThuHoi: { $each: [phien.jti], $slice: -50 } } };
+  if (user.vaiTro === VAI_TRO.PHU_HUYNH) await PhuHuynhHocVien.updateOne({ _id: user.ma }, capNhat);
+  else await NguoiDung.updateOne({ _id: user.ma }, capNhat);
+}
+
+module.exports = { dangNhapNhanSu, dangNhapPhuHuynh, thongTinToi, doiMatKhau, dangXuat };

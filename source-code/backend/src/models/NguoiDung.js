@@ -30,6 +30,7 @@ const nguoiDungSchema = new Schema(
     mustChangePassword: { type: Boolean, default: false },
     // Tăng mỗi lần đổi mật khẩu → mọi phiên đăng nhập (token) cũ mất hiệu lực
     phienBanToken: { type: Number, default: 0, min: 0 },
+    tokenThuHoi: { type: [String], default: undefined }, // mã (jti) các token đã đăng xuất – chỉ phiên đó hết hiệu lực
     matKhauDoiLuc: { type: Date },
   },
   { ...TUY_CHON_SCHEMA, collection: 'nguoiDung', discriminatorKey: 'loaiNguoiDung' },

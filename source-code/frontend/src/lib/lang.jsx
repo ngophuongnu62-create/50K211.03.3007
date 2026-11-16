@@ -100,6 +100,7 @@ const EN = {
   'hoặc đề xuất thay đổi': 'or propose a change',
   'Lý do thay đổi': 'Reason for change',
   'Nhập lý do (tối đa 500 ký tự)': 'Enter a reason (up to 500 characters)',
+  'Lý do thay đổi không được vượt quá 500 ký tự': 'The reason must not exceed 500 characters',
   'Gửi phản hồi/yêu cầu không thành công! Vui lòng gửi lại.': 'Could not send your feedback/request! Please send it again.',
   '(ghi đè dữ liệu cũ).': '(previous data overwritten).',
   'Phản hồi được lưu ở trạng thái “Chờ xử lý” và đã thông báo cho Quản lý.': 'Your response is saved as “Pending” and the manager has been notified.',

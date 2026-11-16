@@ -37,6 +37,8 @@ export function AuthProvider({ children }) {
   const [lyDoKetThuc, setLyDoKetThuc] = useState('');
   const [vaiTroCuoi, setVaiTroCuoi] = useState(null);
   const dangXuat = useCallback(() => {
+    // Báo máy chủ thu hồi token của phiên này (gửi trước khi xóa token ở trình duyệt; không chờ kết quả)
+    if (docPhien()?.token) api('/auth/dang-xuat', { method: 'POST' }).catch(() => {});
     setLyDoKetThuc('');
     luu(null);
   }, [luu]);

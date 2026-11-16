@@ -555,7 +555,8 @@ const duDieuKienPheDuyet = (dsBuoi) => dsBuoi.length > 0 && dsBuoi.every((b) => 
 /** UC_6.4 bước 5–7: phê duyệt; ngoại lệ 6.a. Khóa lớp, kiểm tra lại điều kiện trong giao dịch. */
 async function pheDuyet(maLop, maQuanLy) {
   const kt = await kiemTraTruocPheDuyet(maLop, { trangThai: 'ChoGVXacNhan' }).catch((e) => {
-    if (e.status === 404) throw new AppError(409, M.PD_CHUA_XAC_NHAN);
+    // Lớp không còn nhóm buổi "Chờ GV xác nhận" (đã duyệt / đã phát hành) → báo đúng lý do
+    if (e.status === 404) throw new AppError(409, M.PD_CHI_CHO_GV_XAC_NHAN);
     throw e;
   });
   if (!kt.coThePheDuyet) throw new AppError(409, M.PD_CHUA_XAC_NHAN, { data: { nhanSu: kt.nhanSu } });

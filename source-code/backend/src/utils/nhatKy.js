@@ -6,7 +6,7 @@ const { AuditLog } = require('../models');
 const { layNguCanh } = require('./nguCanh');
 const clock = require('./clock');
 
-const TRUONG_NHAY_CAM = new Set(['matKhau', 'phienBanToken', 'matKhauTam', 'token']);
+const TRUONG_NHAY_CAM = new Set(['matKhau', 'phienBanToken', 'matKhauTam', 'token', 'tokenThuHoi']);
 
 /** Chuyển document Mongoose / Date về dữ liệu thuần, bỏ trường nhạy cảm */
 function lamSach(v, sau = 0) {

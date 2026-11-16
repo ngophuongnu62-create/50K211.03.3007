@@ -84,6 +84,7 @@ module.exports = Object.freeze({
   PD_CHUA_XAC_NHAN: 'Lịch chưa có phản hồi xác nhận của giáo viên, chưa thể phê duyệt.', // tiền điều kiện UC_6.4
   PH_HANH_THANH_CONG: 'Phát hành lịch dạy thành công!',
   PH_HANH_THAT_BAI: 'Không phát hành được lịch. Vui lòng thử lại!',
+  PD_CHI_CHO_GV_XAC_NHAN: 'Chỉ lịch ở trạng thái “Chờ GV xác nhận” mới được phê duyệt.', // [BO SUNG] phê duyệt lại lịch đã duyệt / đã phát hành
   PH_HANH_CHI_DA_DUYET: 'Chỉ lịch ở trạng thái “Đã duyệt” mới được phát hành.', // BR02
   PH_HANH_CHUA_GUI_HET: 'Đã phát hành lịch nhưng chưa gửi được thông báo cho một số người nhận.', // [BO SUNG] (ngoại lệ 11.a)
   KHONG_TIM_THAY_LICH: 'Không tìm thấy lịch dạy.', // [BO SUNG]
