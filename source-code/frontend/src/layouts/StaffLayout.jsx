@@ -2,7 +2,7 @@
  * Khung màn hình Quản lý (MH04–MH24) và Giáo viên / Trợ giảng (MH25–MH31):
  * thanh tiêu đề (chuông thông báo, tài khoản), menu đỏ bên trái, mục đang chọn nền trắng.
  */
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import {
   Bell, CalendarCheck, CalendarClock, CalendarDays, ChevronDown, Clock, DoorOpen, Globe, LayoutGrid, LogOut,
@@ -11,6 +11,7 @@ import {
 import Brand from './Brand';
 import { useAuth } from '../auth/AuthContext';
 import { api } from '../api/client';
+import { useToast } from '../components/Toast';
 import { gioNgay, NHAN_HINH_THUC, NHAN_LOAI_NHAN_SU, vietTat } from '../lib/format';
 import { useLang } from '../lib/lang';
 import { Modal } from '../components/ui';
@@ -47,18 +48,48 @@ function useClickOutside(ref, fn) {
   }, [ref, fn]);
 }
 
-export function ThongBaoChuong({ t = (s) => s }) {
+/** Chu kỳ hỏi thông báo mới – NFR UC_13: Quản lý nhận thông báo đẩy tức thì khi học viên báo vắng */
+const CHU_KY_THONG_BAO = 10000;
+
+export function ThongBaoChuong({ t = (s) => s, onMoi }) {
   const [mo, setMo] = useState(false);
   const [ds, setDs] = useState([]);
   const ref = useRef(null);
+  const daThay = useRef(null); // mã thông báo đã có; null = chưa tải lần đầu
+  const toast = useToast();
   useClickOutside(ref, () => setMo(false));
   useEffect(() => {
-    api('/thong-bao').then((r) => setDs(r.data)).catch(() => {});
-  }, []);
+    let huy = false;
+    const tai = () => api('/thong-bao').then((r) => {
+      if (huy) return;
+      const moi = daThay.current ? r.data.filter((x) => !daThay.current.has(x.maThongBao)) : [];
+      daThay.current = new Set(r.data.map((x) => x.maThongBao));
+      setDs(r.data);
+      if (!moi.length) return;
+      // Đẩy ngay: thông báo nổi trong trang + thông báo của trình duyệt khi người dùng đã cho phép
+      for (const x of moi.slice(0, 3)) {
+        toast({ type: x.loaiThongBao === 'BaoVang' ? 'warning' : 'success', title: x.tieuDe, text: x.noiDung, thoiGian: 8000 });
+        if (typeof Notification !== 'undefined' && Notification.permission === 'granted' && document.hidden) {
+          try { new Notification(x.tieuDe, { body: x.noiDung, tag: x.maThongBao }); } catch { /* trình duyệt không hỗ trợ */ }
+        }
+      }
+      onMoi?.();
+    }).catch(() => {});
+    tai();
+    const h = setInterval(() => { if (!document.hidden || typeof Notification !== 'undefined') tai(); }, CHU_KY_THONG_BAO);
+    const khiQuayLai = () => { if (!document.hidden) tai(); };
+    document.addEventListener('visibilitychange', khiQuayLai);
+    return () => { huy = true; clearInterval(h); document.removeEventListener('visibilitychange', khiQuayLai); };
+  }, [toast, onMoi]);
+  const moChuong = () => {
+    setMo((m) => !m);
+    // Xin quyền thông báo trình duyệt khi người dùng chủ động bấm chuông (không làm phiền khi vừa mở trang)
+    if (typeof Notification !== 'undefined' && Notification.permission === 'default') Notification.requestPermission().catch(() => {});
+  };
   const coMoi = ds.some((x) => Date.now() - new Date(x.thoiDiemGui).getTime() < 24 * 3600 * 1000);
   return (
     <div ref={ref} style={{ position: 'relative' }}>
-      <button className="icon-btn" onClick={() => setMo((m) => !m)} aria-label={t('Thông báo')}>
+      <button className="icon-btn" onClick={moChuong} aria-label={t('Thông báo')}>
         <Bell size={18} />
         {coMoi && <span className="dot" />}
       </button>
@@ -92,10 +123,11 @@ export default function StaffLayout({ vaiTro }) {
   const refMenu = useRef(null);
   useClickOutside(refMenu, () => setMoMenu(false));
 
-  useEffect(() => {
+  const taiDem = useCallback(() => {
     if (laGV) api('/giao-vien/ca-du-kien').then((r) => setDem({ caDuKien: r.data.length })).catch(() => {});
     else api('/quan-ly/phan-hoi').then((r) => setDem({ phanHoi: r.data.dem.ChoXuLy || 0 })).catch(() => {});
   }, [laGV]);
+  useEffect(() => { taiDem(); }, [taiDem]);
 
   const thoat = () => {
     dangXuat();
@@ -116,7 +148,7 @@ export default function StaffLayout({ vaiTro }) {
               <button className={lang === 'en' ? 'on' : ''} onClick={() => setLang('en')}>EN</button>
             </div>
           )}
-          <ThongBaoChuong t={t} />
+          <ThongBaoChuong t={t} onMoi={taiDem} />
           <div className="vsep" />
           <div ref={refMenu} style={{ position: 'relative' }}>
             <button className="user-chip" onClick={() => setMoMenu((m) => !m)} aria-haspopup="menu" aria-expanded={moMenu}>
